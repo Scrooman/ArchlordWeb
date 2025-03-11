@@ -1,0 +1,231 @@
+body {
+    font-family: 'Sylfaen', Arial, sans-serif;
+    color: #f8f9fa;
+    background-color: #050a11;
+    background-image: url('images/deseń.png'); 
+    background-size: contain;
+    cursor: url('images/cursor_m1.png'), auto;
+}
+
+header {
+    background-color: #023568;
+    padding: 20px;
+    text-align: center;
+}
+
+.main_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 1800px;
+}
+
+/* dwie główne sekcje ekranu */
+.main_container .right_section {
+    margin: 5px;
+    width: 900px;
+    height: 800px;
+    background-color: #0f121a;
+    border: 1px solid #a7a7a7;
+    outline: 2px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px #7a817a;
+}
+
+.main_container .left_section {
+    margin: 5px;
+    padding: 5px;
+    width: 900px;
+    height: 800px;
+    background-color: #0f121a;
+    border: 1px solid #a7a7a7;
+    outline: 2px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px #7a817a;
+}
+
+
+/* sekcje lewego ekranu */
+.main_container .left_section .top_section {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    width: 870px;
+    height: 150px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
+
+.main_container .left_section .middle_section {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    width: 870px;
+    height: 400px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
+
+.main_container .left_section .bottom_section {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    width: 870px;
+    height: 200px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
+
+
+/* sekcje prawego ekranu */
+.main_container .right_section .monster_type_label {
+    /* width: 970px; */
+    height: 75px;
+    margin: 10px;
+    padding: 5px;
+    background-image: url('images/black_label.png'); 
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_container .right_section .monster_type_label a {
+    text-decoration: none; /* Usuwa podkreślenie linków */
+}
+
+.monster_type_container {
+    width: 130px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    background-image: url('images/button.png'); 
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.normal_mob {
+    color: #ffffff;
+}
+
+.normal_boss {
+    color: #BDA66B;
+}
+
+.unique_boss {
+    color: #BD806B;
+}
+
+.elemental_mob {
+    color: #FFFF00;
+}
+
+.battleground_mob {
+    color: #adff2f;
+}
+
+.main_container .right_section .spawn_lvl_label {
+    width: 600px; 
+    height: 50px;
+    margin: 10px;
+    padding: 5px;
+    background-image: url('images/black_label.png'); 
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-self: center;
+}
+
+.main_container .right_section .spawn_lvl_label a {
+    text-decoration: none; /* Usuwa podkreślenie linków */
+}
+
+.spawn_lvl_container {
+    width: 80px;
+    height: 35px;
+    margin: 5px;
+    padding: 5px;
+    background-image: url('images/button.png'); 
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spawn_lvl {
+    color: #ffffff;
+}
+
+.spawn_lvl_change_button_left {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    padding: 5px;
+    background-image: url('images/arrow_left.png'); 
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Usuwa podkreślenie linków */
+}
+
+.spawn_lvl_change_button_right {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    padding: 5px;
+    background-image: url('images/arrow_right.png'); 
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Usuwa podkreślenie linków */
+}
+
+.mob_info_container {
+    width: 600px;
+    height: 600px;
+    margin: 10px;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+    background-image: url('images/deseń.png'); 
+    background-size: contain;
+    justify-self: center;
+
+}
+
+.upper_label_img {
+    width: 600px;
+    height: 30px;
+    background-image: url('images/gorny_pasek_z_x.PNG'); 
+    background-size: 100% 100%;
+}
+
+.mob_life_bar_img { /*do podziału na poszczególne elementy grafiki wraz z containerem na nazwę moba */
+    width: 300px;
+    height: 50px;
+    margin: 0px;
+    background-image: url('images/mob_life_bar.PNG'); 
+    background-size: 100% 100%;
+    justify-self: center;
+}
+
+
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
