@@ -9,6 +9,8 @@ body {
 
 header {
     background-color: #023568;
+    background-image: url('images/archlord-logo.jpg'); 
+    align-items: center;
     padding: 20px;
     text-align: center;
 }
