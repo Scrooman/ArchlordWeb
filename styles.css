@@ -347,6 +347,35 @@ header {
 }
 
 
+/* sekcja przechowująca pola dot. material drop */
+.mob_material_drop_group_container {
+    margin: 0px;
+    padding: 0px;
+    height: 80px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.mob_material_drop_type_label {
+    width: 100px;
+    margin: 5px;
+    padding: 0px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.mob_material_drop_img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    padding: 0px;
+    text-align: center;
+    color: #ffffff;
+    align-content: center;
+}
+
 footer {
     background-color: #f8f9fa;
     text-align: center;
