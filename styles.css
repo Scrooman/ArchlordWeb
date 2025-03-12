@@ -247,7 +247,7 @@ header {
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
     justify-self: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: row;
     align-content: flex-start;
@@ -280,13 +280,22 @@ header {
 .mob_ele_group_container {
     margin: 10px;
     padding: 5px;
-    height: 300px;
-    width: 400px;
+    height: 30px;
+    width: 500px;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
-.mob_ele_group_name {
+.mob_ele_name {
+    width: 30px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.mob_ele_damage {
     width: 30px;
     margin: 5px;
     padding: 5px;
