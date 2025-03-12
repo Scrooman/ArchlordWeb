@@ -197,7 +197,7 @@ header {
 /* ekran z informacjami o mobie */
 .mob_info_container {
     width: 650px;
-    height: 1000px;
+    height: 900px;
     margin: 10px;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
@@ -358,12 +358,12 @@ header {
 }
 
 .mob_material_drop_type_label {
-    width: 125x;
+    width: 125px;
     margin: 5px;
     padding: 0px;
-    text-align: center;
+    text-align: left;
     color: #ffffff;
-    align-content: left;
+    align-content: center
 }
 
 .mob_drop_img {
@@ -381,26 +381,19 @@ header {
     display: flex;
     margin: 10px;
     padding: 5px;
-    height: 180px;
+    height: 105px;
     width: 525px;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
     justify-self: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     align-content: flex-start;
+    align-items: center;
 }
 
-.mob_accessories_label {
-    width: 125x;
-    margin: 5px;
-    padding: 0px;
-    text-align: center;
-    color: #ffffff;
-    align-content: center;
-}
 
 .mob_accessories_container {
     margin: 0px;
@@ -409,7 +402,8 @@ header {
     width: 320px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .mob_accessories_drop_img {
