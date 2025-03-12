@@ -266,7 +266,7 @@ header {
     margin: 10px;
     padding: 5px;
     color: #ffffff;
-    background-image: url('images/black_label.png'); 
+    background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
     justify-self: center;
 }
