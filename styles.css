@@ -295,12 +295,18 @@ header {
     color: #ffffff;
 }
 
-.mob_ele_damage {
+
+.mob_ele_damage_label {
     width: 30px;
     margin: 5px;
     padding: 5px;
     text-align: center;
     color: #ffffff;
+}
+
+.mob_ele_damage .dmg_value {
+    background-image: url('images/grey_label_small.png'); 
+    background-size: 100% 100%;
 }
 
 footer {
