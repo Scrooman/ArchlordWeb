@@ -304,7 +304,12 @@ header {
     color: #ffffff;
 }
 
-.mob_ele_damage_label .dmg_value {
+.mob_ele_damage_value {
+    width: 30px;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    color: #ffffff;
     background-image: url('images/grey_label_small.png'); 
     background-size: 100% 100%;
 }
