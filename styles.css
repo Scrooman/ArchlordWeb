@@ -252,7 +252,7 @@ header {
 .mob_stat_container {
     width: 100px;
     height: 45px;
-    margin: 10px;
+    margin: 0px;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -263,12 +263,14 @@ header {
 .mob_hp_label {
     width: 85px;
     height: 25px;
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
     color: #ffffff;
     background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
     justify-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 
