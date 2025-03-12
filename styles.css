@@ -196,7 +196,7 @@ header {
 
 /* ekran z informacjami o mobie */
 .mob_info_container {
-    width: 600px;
+    width: 650px;
     height: 600px;
     margin: 10px;
     border: 1px solid #a7a7a7;
@@ -208,7 +208,7 @@ header {
 }
 
 .upper_label_img {
-    width: 600px;
+    width: 650px;
     height: 30px;
     background-image: url('images/gorny_pasek_z_x.png'); 
     background-size: 100% 100%;
@@ -242,12 +242,15 @@ header {
     margin: 10px;
     padding: 5px;
     height: 300px;
-    width: 400px;
+    width: 600px;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
     justify-self: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
 }
 
 .mob_stat_container {
@@ -280,7 +283,7 @@ header {
     height: 300px;
     width: 400px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .mob_ele_group_name {
