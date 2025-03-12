@@ -359,11 +359,12 @@ header {
 }
 
 .mob_material_drop_type_label {
-    width: 100px;
+    width: 150px;
     margin: 5px;
     padding: 0px;
     text-align: center;
     color: #ffffff;
+    align-content: center;
 }
 
 .mob_material_drop_img {
