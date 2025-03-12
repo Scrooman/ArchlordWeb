@@ -250,7 +250,7 @@ header {
 }
 
 .mob_stat_container {
-    width: 100px;
+    width: 150px;
     height: 45px;
     margin: 0px;
     padding: 5px;
@@ -260,8 +260,8 @@ header {
     justify-self: center;
 }
 
-.mob_hp_label {
-    width: 85px;
+.mob_stat_label {
+    width: 100px;
     height: 25px;
     margin: 5px;
     padding: 5px;
