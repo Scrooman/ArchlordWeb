@@ -273,23 +273,20 @@ header {
     display: flex;
     justify-content: center;
 }
-
-
-.element_group_container {
+/* sekcja przechowująca pola dot. elemental dg and resis */
+.mob_ele_group_container {
+    margin: 10px;
+    padding: 5px;
+    height: 300px;
+    width: 400px;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    margin: 10px 0;
 }
 
-.element_group_item {
-    width: 30%;
+.mob_ele_group_name {
+    width: 30px;
     margin: 5px;
-    padding: 10px;
-    background-color: #06060d;
-    border: 1px solid #a7a7a7;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px #7a817a;
+    padding: 5px;
     text-align: center;
     color: #ffffff;
 }
