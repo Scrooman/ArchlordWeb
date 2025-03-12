@@ -234,6 +234,12 @@ header {
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
+    justify-self: center;
+}
+
+.mob_ing { /* testowo wyświetlany stały obrazek moba, docelowo do zmiany na pobierany z bazy danych */
+    background-image: url('images/php4img_mob_83.jpg'); 
+    background-size: 100% 100%;
 }
 
 footer {
