@@ -298,7 +298,7 @@ header {
 }
 
 
-.mob_ele_damage_label {
+.mob_ele_dmg_resis_label {
     width: 45px;
     margin: 5px;
     padding: 0px;
@@ -307,6 +307,18 @@ header {
 }
 
 .mob_ele_damage_value {
+    width: 45px;
+    height: 30px;
+    margin: 5px;
+    padding: 0px;
+    text-align: center;
+    color: #ffffff;
+    background-image: url('images/black_label_small.png'); 
+    background-size: 100% 100%;
+    align-content: center;
+}
+
+.mob_ele_resis_value {
     width: 45px;
     height: 30px;
     margin: 5px;
