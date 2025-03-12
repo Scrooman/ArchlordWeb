@@ -237,10 +237,6 @@ header {
     justify-self: center;
 }
 
-.mob_img { /* testowo wyświetlany stały obrazek moba, docelowo do zmiany na pobierany z bazy danych */
-    background-image: url('images/php4img_mob_83.jpg'); 
-    background-size: 100% 100%;
-}
 
 footer {
     background-color: #f8f9fa;
