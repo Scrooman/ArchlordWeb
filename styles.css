@@ -247,6 +247,7 @@ header {
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
     justify-self: center;
+    justify-content: space-between;
 }
 
 .mob_stat_container {
@@ -273,6 +274,25 @@ header {
     justify-content: center;
 }
 
+
+.element_group_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.element_group_item {
+    width: 30%;
+    margin: 5px;
+    padding: 10px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+    text-align: center;
+    color: #ffffff;
+}
 
 footer {
     background-color: #f8f9fa;
