@@ -203,9 +203,8 @@ header {
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
     background-image: url('images/window_background.png'); 
-    background-size: contain;
+    background-size: 100% 100%;
     justify-self: center;
-
 }
 
 .upper_label_img {
