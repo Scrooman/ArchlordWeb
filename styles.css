@@ -304,7 +304,7 @@ header {
     color: #ffffff;
 }
 
-.mob_ele_damage .dmg_value {
+.mob_ele_damage_label .dmg_value {
     background-image: url('images/grey_label_small.png'); 
     background-size: 100% 100%;
 }
