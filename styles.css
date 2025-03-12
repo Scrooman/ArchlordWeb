@@ -194,6 +194,7 @@ header {
     text-decoration: none; /* Usuwa podkreślenie linków */
 }
 
+/* ekran z informacjami o mobie */
 .mob_info_container {
     width: 600px;
     height: 600px;
@@ -223,6 +224,17 @@ header {
     justify-self: center;
 }
 
+.mob_img_container {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+    height: 200px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
 
 footer {
     background-color: #f8f9fa;
