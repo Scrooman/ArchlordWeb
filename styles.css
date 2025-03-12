@@ -202,7 +202,7 @@ header {
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
-    background-image: url('images/deseń.png'); 
+    background-image: url('images/window_background.png'); 
     background-size: contain;
     justify-self: center;
 
@@ -227,14 +227,49 @@ header {
 .mob_img_container {
     display: flex;
     margin: 10px;
-    padding: 5px;
-    width: 300px;
-    height: 200px;
+    padding: 10px;
+    width: 180px;
+    height: 220px;
     background-color: #06060d;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
     justify-self: center;
+}
+
+
+.mob_ele_info_container {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    height: 300px;
+    width: 400px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+    justify-self: center;
+}
+
+.mob_info_container {
+    width: 60px;
+    height: 35px;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-self: center;
+}
+
+.mob_hp_label {
+    width: 35px;
+    height: 25px;
+    margin: 10px;
+    padding: 5px;
+    color: #ffffff;
+    background-image: url('images/black_label.png'); 
+    background-size: 100% 100%;
 }
 
 
