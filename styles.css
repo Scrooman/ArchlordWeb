@@ -27,7 +27,7 @@ header {
 .main_container .right_section {
     margin: 5px;
     width: 900px;
-    height: 800px;
+    height: 1000px;
     background-color: #0f121a;
     border: 1px solid #a7a7a7;
     outline: 2px solid #000000;
@@ -39,7 +39,7 @@ header {
     margin: 5px;
     padding: 5px;
     width: 900px;
-    height: 800px;
+    height: 1000px;
     background-color: #0f121a;
     border: 1px solid #a7a7a7;
     outline: 2px solid #000000;
@@ -197,7 +197,7 @@ header {
 /* ekran z informacjami o mobie */
 .mob_info_container {
     width: 650px;
-    height: 600px;
+    height: 800px;
     margin: 10px;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
@@ -241,7 +241,7 @@ header {
     display: flex;
     margin: 10px;
     padding: 5px;
-    height: 300px;
+    height: 180px;
     width: 525px;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
@@ -329,6 +329,23 @@ header {
     background-size: 100% 100%;
     align-content: center;
 }
+
+.mob_material_info_container {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    height: 180px;
+    width: 525px;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+    justify-self: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
 
 footer {
     background-color: #f8f9fa;
