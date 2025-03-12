@@ -236,13 +236,13 @@ header {
     justify-self: center;
 }
 
-
+/* ekran przechowujący informacje o mobie */
 .mob_ele_info_container {
     display: flex;
     margin: 10px;
     padding: 5px;
     height: 300px;
-    width: 600px;
+    width: 525px;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
@@ -278,40 +278,44 @@ header {
 }
 /* sekcja przechowująca pola dot. elemental dg and resis */
 .mob_ele_group_container {
-    margin: 10px;
-    padding: 5px;
-    height: 100px;
-    width: 450px;
+    margin: 0px;
+    padding: 0px;
+    height: 80px;
+    width: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .mob_ele_name {
-    width: 30px;
+    width: 45px;
+    height: 30px;
     margin: 5px;
-    padding: 5px;
+    padding: 0px;
     text-align: center;
     color: #ffffff;
+    align-content: flex-end;
 }
 
 
 .mob_ele_damage_label {
-    width: 30px;
+    width: 45px;
     margin: 5px;
-    padding: 5px;
+    padding: 0px;
     text-align: center;
     color: #ffffff;
 }
 
 .mob_ele_damage_value {
-    width: 30px;
+    width: 45px;
+    height: 30px;
     margin: 5px;
-    padding: 5px;
+    padding: 0px;
     text-align: center;
     color: #ffffff;
-    background-image: url('images/grey_label_small.png'); 
+    background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
+    align-content: center;
 }
 
 footer {
