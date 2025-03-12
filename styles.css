@@ -351,7 +351,7 @@ header {
     margin: 0px;
     padding: 0px;
     height: 80px;
-    width: 500px;
+    width: 320px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -363,7 +363,7 @@ header {
     padding: 0px;
     text-align: center;
     color: #ffffff;
-    align-content: center;
+    align-content: left;
 }
 
 .mob_drop_img {
@@ -400,6 +400,16 @@ header {
     text-align: center;
     color: #ffffff;
     align-content: center;
+}
+
+.mob_accessories_container {
+    margin: 0px;
+    padding: 0px;
+    height: 80px;
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .mob_accessories_drop_img {
