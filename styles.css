@@ -263,7 +263,7 @@ header {
 .minimap_img_container {
     margin-top: 10px;
     width: 135px;
-    height: 185px;
+    height: 125px;
     display: flex;
     background-color: #06060d;
     border: 1px solid #a7a7a7;
