@@ -62,24 +62,20 @@ header {
 }
 
 .top_section_row_container {
-    width: 600px;
-    height: 60px;
-    margin: 0px;
-    padding: 5px;
+    width: 870px;
+    height: 45px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     justify-self: center;
 }
 
 .top_section_container {
     width: 300px;
     height: 45px;
-    margin: 0px;
-    padding: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     justify-self: center;
 }
 
