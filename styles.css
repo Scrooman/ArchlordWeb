@@ -221,6 +221,11 @@ header {
     justify-self: left;
 }
 
+.mob_life_bar_img img {
+    width: 300px; 
+    height: 25px; 
+}
+
 .mob_img_container {
     display: flex;
     margin: 10px;
