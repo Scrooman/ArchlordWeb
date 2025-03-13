@@ -215,12 +215,10 @@ header {
 }
 
 .mob_life_bar_img { /*do podziału na poszczególne elementy grafiki wraz z containerem na nazwę moba */
-    width: 300px;
+    width: 600px;
     height: 50px;
     margin: 0px;
-    background-image: url('images/mob_life_bar.png'); 
-    background-size: 100% 100%;
-    justify-self: center;
+    justify-self: left;
 }
 
 .mob_img_container {
