@@ -261,18 +261,23 @@ header {
 }
 
 .minimap_img_container {
-    margin: 0px;
-    width: 150px;
-    height: 150px;
+    margin-top: 10px;
+    width: 125px;
+    height: 125px;
+    display: flex;
     justify-self: center;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
 }
 
 .minimap_img_container img {
     display: flex;
     margin: 10px;
     padding: 10px;
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     justify-self: center;
 }
 
