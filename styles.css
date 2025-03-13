@@ -194,6 +194,17 @@ header {
     text-decoration: none; /* Usuwa podkreślenie linków */
 }
 
+.mob_info_column_container {
+    width: 650px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
+
 /* ekran z informacjami o mobie */
 .mob_info_container {
     width: 650px;
