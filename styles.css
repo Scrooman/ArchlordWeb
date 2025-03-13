@@ -51,6 +51,8 @@ header {
 /* sekcje lewego ekranu */
 .main_container .left_section .top_section {
     display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     margin: 10px;
     padding: 5px;
     width: 870px;
@@ -75,7 +77,7 @@ header {
     height: 45px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     justify-self: center;
 }
 
