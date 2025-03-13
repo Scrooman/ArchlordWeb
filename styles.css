@@ -105,6 +105,9 @@ header {
 .middle_section_main_container {
     width: 880px;
     height: 900px;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
     background-image: url('images/window_background.png'); 
     background-size: 100% 100%;
 }
