@@ -107,6 +107,55 @@ header {
     box-shadow: 0 1px 4px #7a817a;
 }
 
+.middle_section_main_container {
+    width: 800px;
+    height: 900px;
+    margin: 10px;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+    background-image: url('images/window_background.png'); 
+    background-size: 100% 100%;
+    justify-self: center;
+}
+
+.middle_section_upper_label_img {
+    width: 800px;
+    height: 30px;
+    background-image: url('images/gorny_pasek_z_x.png'); 
+    background-size: 100% 100%;
+}
+
+.middle_section_column_container {
+    width: 800px;
+    height: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
+.middle_section_menu_container {
+    width: 300px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
+.middle_section_opened_menu_option_container {
+    width: 500px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
 .main_container .left_section .bottom_section {
     display: flex;
     margin: 10px;
@@ -228,16 +277,6 @@ header {
     text-decoration: none; /* Usuwa podkreślenie linków */
 }
 
-.mob_info_column_container {
-    width: 650px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    justify-self: center;
-}
-
 
 /* ekran z informacjami o mobie */
 .mob_info_container {
@@ -267,6 +306,16 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: row;
+}
+
+.mob_info_column_container {
+    width: 650px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
 }
 
 .mob_life_bar_img img {
