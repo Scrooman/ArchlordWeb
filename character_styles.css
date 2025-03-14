@@ -1,12 +1,13 @@
 body {
     font-family: 'Sylfaen', Arial, sans-serif;
+    font-size: 14px;
     color: #f8f9fa;
     cursor: url('images/cursor_m1.png'), auto;
 }
 
 .opened_menu_option_column_container {
-    width: 765px;
-    height: 900px;
+    width: 700px;
+    height: 860px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -19,13 +20,76 @@ body {
 .character_class_label_container {
     width: 200px;
     height: 25px;
-    margin: 30px;
+    margin: 10px;
     padding: 5px;
     color: #FFF0C8;
-    font-size: 20px;
     background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
     justify-self: center;
     display: flex;
     justify-content: center;
+}
+
+.character_containers_column_container {
+    width: 700px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+    background-image: url('images/window_background.png'); 
+    background-size: 100% 100%;
+}
+
+.character_stats_column_container {
+    width: 300px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+    background-image: url('images/window_background.png'); 
+    background-size: 100% 100%;
+}
+
+.character_stats_top_section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
+
+.character_stats_bottom_section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
+
+.equiped_inventory {
+    width: 300px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+    background-image: url('images/equiped_inventory.png'); 
+    background-size: 100% 100%;
 }
