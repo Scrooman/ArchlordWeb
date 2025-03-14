@@ -85,6 +85,7 @@ header {
 .top_section_label {
     width: 150px;
     height: 25px;
+    line-height: 25px;
     margin: 5px;
     padding: 5px;
     color: #ffffff;
@@ -158,6 +159,7 @@ header {
 .menu_name_label_container {
     width: 100px;
     height: 25px;
+    line-height: 25px;
     margin: 30px;
     padding: 5px;
     color: #FFF0C8;
@@ -182,6 +184,7 @@ header {
 .menu_option_label_container {
     width: 100px;
     height: 25px;
+    line-height: 25px;
     margin: 2px;
     padding: 5px;
     color: #ffffff;
@@ -221,6 +224,7 @@ header {
 .main_container .right_section .monster_type_label {
     /* width: 970px; */
     height: 75px;
+    line-height: 75px;
     margin: 10px;
     padding: 5px;
     background-image: url('images/black_label.png'); 
@@ -237,6 +241,7 @@ header {
 .monster_type_container {
     width: 130px;
     height: 50px;
+    line-height: 50px;
     margin: 5px;
     padding: 5px;
     background-image: url('images/button.png'); 
@@ -269,6 +274,7 @@ header {
 .main_container .right_section .spawn_lvl_label {
     width: 600px; 
     height: 50px;
+    line-height: 50px;
     margin: 10px;
     padding: 5px;
     background-image: url('images/black_label.png'); 
@@ -286,6 +292,7 @@ header {
 .spawn_lvl_container {
     width: 80px;
     height: 35px;
+    line-height: 35px;
     margin: 5px;
     padding: 5px;
     background-image: url('images/button.png'); 
@@ -440,6 +447,7 @@ header {
 .mob_stat_label {
     width: 100px;
     height: 25px;
+    line-height: 25px;
     margin: 5px;
     padding: 5px;
     color: #ffffff;
@@ -483,6 +491,7 @@ header {
 .mob_ele_damage_value {
     width: 45px;
     height: 30px;
+    line-height: 30px;
     margin: 5px;
     padding: 0px;
     text-align: center;
@@ -495,6 +504,7 @@ header {
 .mob_ele_resis_value {
     width: 45px;
     height: 30px;
+    line-height: 30px;
     margin: 5px;
     padding: 0px;
     text-align: center;
