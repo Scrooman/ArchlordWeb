@@ -1,9 +1,6 @@
 body {
     font-family: 'Sylfaen', Arial, sans-serif;
     color: #f8f9fa;
-    background-color: #050a11;
-    background-image: url('images/deseń.png'); 
-    background-size: contain;
     cursor: url('images/cursor_m1.png'), auto;
 }
 
@@ -11,10 +8,12 @@ body {
     width: 765px;
     height: 900px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     justify-self: center;
+    background-image: url('images/window_background.png'); 
+    background-size: 100% 100%;
 }
 
 .character_class_label_container {
