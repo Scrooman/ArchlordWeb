@@ -139,6 +139,55 @@ header {
     justify-self: center;
 }
 
+.menu_container {
+    width: 175px;
+    height: 900px;
+    border: 1px solid #a7a7a7;
+    border-radius: 0px;
+    box-shadow: 0 1px 4px #7a817a;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
+.menu_name_label_container {
+    width: 100px;
+    height: 25px;
+    margin: 5px;
+    padding: 5px;
+    color: #ffffff;
+    background-image: url('images/black_label_small.png'); 
+    background-size: 100% 100%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_options_container {
+    width: 100px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
+.menu_option_label_container {
+    width: 100px;
+    height: 25px;
+    margin: 5px;
+    padding: 5px;
+    color: #ffffff;
+    background-image: url('images/button.png'); 
+    background-size: 100% 100%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
 .middle_section_opened_menu_option_container {
     width: 765px;
     height: 900px;
