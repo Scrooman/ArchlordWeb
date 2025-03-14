@@ -201,6 +201,19 @@ header {
     justify-self: center;
 }
 
+.opened_menu_option_column_container {
+    width: 765px;
+    height: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
+
+
+/* dolna sekcja lewego ekranu */
 .main_container .left_section .bottom_section {
     display: flex;
     margin: 10px;

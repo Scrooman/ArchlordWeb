@@ -1,0 +1,32 @@
+body {
+    font-family: 'Sylfaen', Arial, sans-serif;
+    color: #f8f9fa;
+    background-color: #050a11;
+    background-image: url('images/deseń.png'); 
+    background-size: contain;
+    cursor: url('images/cursor_m1.png'), auto;
+}
+
+.opened_menu_option_column_container {
+    width: 765px;
+    height: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+}
+
+.character_class_label_container {
+    width: 200px;
+    height: 25px;
+    margin: 30px;
+    padding: 5px;
+    color: #FFF0C8;
+    font-size: 20px;
+    background-image: url('images/black_label_small.png'); 
+    background-size: 100% 100%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
