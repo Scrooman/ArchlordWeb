@@ -13,8 +13,6 @@ body {
     justify-content: flex-start;
     align-items: center;
     justify-self: center;
-    background-image: url('images/window_background.png'); 
-    background-size: 100% 100%;
 }
 
 .character_class_label_container {
@@ -38,8 +36,6 @@ body {
     justify-content: flex-start;
     align-items: center;
     justify-self: center;
-    background-image: url('images/window_background.png'); 
-    background-size: 100% 100%;
 }
 
 .character_stats_column_container {
@@ -50,15 +46,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     justify-self: center;
-    background-image: url('images/window_background.png'); 
-    background-size: 100% 100%;
 }
 
 .character_stats_top_section {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    margin: 10px;
     padding: 5px;
     width: 300px;
     height: 300px;
@@ -72,7 +65,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    margin: 10px;
     padding: 5px;
     width: 300px;
     height: 300px;
@@ -83,8 +75,8 @@ body {
 }
 
 .equiped_inventory {
-    width: 300px;
-    height: 800px;
+    width: 350px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
