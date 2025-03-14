@@ -18,6 +18,7 @@ body {
 .character_class_label_container {
     width: 200px;
     height: 25px;
+    line-height: 25px;
     margin: 10px;
     padding: 5px;
     color: #FFF0C8;
