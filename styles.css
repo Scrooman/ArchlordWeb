@@ -141,11 +141,9 @@ header {
 
 .menu_container {
     width: 175px;
-    height: 900px;
-    margin: 10px;
-    padding: 5px;
-    border: 1px solid #a7a7a7;
-    border-radius: 0px;
+    height: 870px;
+    margin: 0px;
+    padding: 0px;
     box-shadow: 0 1px 4px #7a817a;
     display: flex;
     flex-direction: column;
@@ -159,7 +157,7 @@ header {
 .menu_name_label_container {
     width: 100px;
     height: 25px;
-    margin: 5px;
+    margin: 30px;
     padding: 5px;
     color: #ffffff;
     background-image: url('images/black_label_small.png'); 
@@ -182,7 +180,7 @@ header {
 .menu_option_label_container {
     width: 100px;
     height: 25px;
-    margin: 5px;
+    margin: 1px;
     padding: 5px;
     color: #ffffff;
     background-image: url('images/button.png'); 
