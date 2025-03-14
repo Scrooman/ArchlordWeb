@@ -159,7 +159,8 @@ header {
     height: 25px;
     margin: 30px;
     padding: 5px;
-    color: #ffffff;
+    color: #FFF0C8;
+    font: bold 14px;
     background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
     justify-self: center;
@@ -180,7 +181,7 @@ header {
 .menu_option_label_container {
     width: 100px;
     height: 25px;
-    margin: 1px;
+    margin: 2px;
     padding: 5px;
     color: #ffffff;
     background-image: url('images/button.png'); 
