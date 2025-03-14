@@ -160,7 +160,7 @@ header {
     margin: 30px;
     padding: 5px;
     color: #FFF0C8;
-    font: bold 14px;
+    font: bold 20px sans-serif;
     background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
     justify-self: center;
