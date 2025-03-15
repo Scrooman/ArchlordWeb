@@ -340,7 +340,7 @@ header {
 }
 
 .spawn_lvl_change_button_left:hover {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/button.png');
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/arrow_left.png');
     background-size: 100% 100%;
     background-blend-mode: lighten;
 }
@@ -360,7 +360,7 @@ header {
 }
 
 .spawn_lvl_change_button_right:hover {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/button.png');
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/arrow_right.png');
     background-size: 100% 100%;
     background-blend-mode: lighten;
 }
