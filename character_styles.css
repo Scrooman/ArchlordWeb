@@ -59,7 +59,7 @@ body {
     padding: 5px;
     margin: 0px;
     width: 400px;
-    height: 375px;
+    height: 175px;
     background-color: #06060d;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
@@ -73,11 +73,13 @@ body {
     align-items: center;
     justify-content: space-around;
     justify-self: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .exp_progress_bar_label {
     align-items: center;
-    padding: 5px;
+    padding: 0px;
     margin: 0px;
     width: 350px;
     height: 25px;
@@ -92,8 +94,8 @@ body {
     width: 150px;
     height: 25px;
     line-height: 25px;
-    margin: 10px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
     color: #fc0000;
     justify-self: center;
     display: flex;
