@@ -188,6 +188,14 @@ body {
     justify-self: center;
     display: flex;
     justify-content: center;
+    transition: background 0.3s ease, background-blend-mode 0.3s ease;
+    background-blend-mode: normal;
+}
+
+.character_stats_menu_button_container:hover {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/button.png');
+    background-size: 100% 100%;
+    background-blend-mode: lighten;
 }
 
 .character_stats_bottom_section {
