@@ -471,6 +471,7 @@ header {
     height: 45px;
     margin: 0px;
     padding: 5px;
+    color: #FFF0C8;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -483,7 +484,7 @@ header {
     line-height: 25px;
     margin: 5px;
     padding: 5px;
-    color: #FFF0C8;
+    color: #ffffff;
     background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
     justify-self: center;
