@@ -76,7 +76,6 @@ body {
 }
 
 .exp_progress_bar_label {
-    display: flex;
     align-items: center;
     padding: 5px;
     margin: 0px;
@@ -90,7 +89,7 @@ body {
 }
 
 .hp_label_container {
-    width: 200px;
+    width: 150px;
     height: 25px;
     line-height: 25px;
     margin: 10px;
@@ -104,7 +103,7 @@ body {
 }
 
 .hp_mp_value_container {
-    width: 200px;
+    width: 150px;
     height: 25px;
     line-height: 25px;
     margin-left: 10px;
@@ -149,6 +148,7 @@ body {
     justify-self: center;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* pole dla wartości atrybutu */
