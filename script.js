@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funkcja do wyświetlania etykiety poziomu spawn
     function showSpawnLevelLabel() {
-            spawnLvlLabel.style.display = 'block'; // Displays the section
+            spawnLvlLabel.style.display = 'flex'; // Displays the section
     }
 
     
