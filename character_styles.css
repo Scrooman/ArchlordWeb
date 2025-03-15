@@ -35,12 +35,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     justify-self: center;
 }
 
 .character_stats_column_container {
-    width: 300px;
+    width: 400px;
     height: 800px;
     margin: 10px;
     display: flex;
@@ -50,27 +50,100 @@ body {
     justify-self: center;
 }
 
+
+/* atrybuty postaci */
 .character_stats_top_section {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 5px;
-    margin: 10px;
-    width: 300px;
-    height: 300px;
+    margin: 0px;
+    width: 400px;
+    height: 375px;
     background-color: #06060d;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
 }
 
+.attributes_field_row_container {
+    width: 400px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    justify-self: center;
+}
+
+.exp_progress_bar_label {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 0px;
+    width: 350px;
+    height: 25px;
+    line-height: 25px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
+
+.hp_label_container {
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px;
+    padding: 5px;
+    color: #fc0000;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.mp_label_container {
+    width: 150px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px;
+    padding: 5px;
+    color: #003cff;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.attributes_field_container {
+    width: 150px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px;
+    padding: 5px;
+    color: #FFF0C8;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* pole dla wartości atrybutu */
+.attributes_field_value {
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px;
+    padding: 5px;
+    color: #ffffff;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
 .character_stats_bottom_section {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 5px;
-    margin: 10px;
-    width: 300px;
+    margin: 0px;
+    width: 400px;
     height: 300px;
     background-color: #06060d;
     border: 1px solid #a7a7a7;
@@ -79,8 +152,8 @@ body {
 }
 
 .equiped_inventory {
-    width: 350px;
-    height: 600px;
+    width: 250px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -89,3 +162,5 @@ body {
     background-image: url('images/equiped_inventory.png'); 
     background-size: 100% 100%;
 }
+
+
