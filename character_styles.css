@@ -170,7 +170,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    flex-direction: row;
     padding: 5px;
     margin: 10px;
     width: 400px;
@@ -181,7 +180,7 @@ body {
     width: 100px;
     height: 25px;
     line-height: 25px;
-    margin: 0px;
+    margin: 2px;
     padding: 5px;
     color: #ffffff;
     background-image: url('images/button.png'); 
