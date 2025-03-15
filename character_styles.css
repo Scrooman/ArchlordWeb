@@ -137,13 +137,13 @@ body {
     padding: 5px;
     justify-self: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .attributes_field_label {
-    margin: 10px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
     color: #FFF0C8;
     justify-self: center;
     display: flex;
