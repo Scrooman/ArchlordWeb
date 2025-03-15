@@ -86,10 +86,11 @@ body {
     background-color: #06060d;
     border: 1px solid #454343;
     border-radius: 5px;
+    text-align: center;
 }
 
 .hp_label_container {
-    width: 100px;
+    width: 200px;
     height: 25px;
     line-height: 25px;
     margin: 10px;
@@ -99,10 +100,11 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+    align-items: center;
 }
 
 .hp_mp_value_container {
-    width: 100px;
+    width: 200px;
     height: 25px;
     line-height: 25px;
     margin-left: 10px;
@@ -125,6 +127,7 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+    align-items: center;
 }
 
 .attributes_field_container {
@@ -136,6 +139,7 @@ body {
     justify-self: center;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .attributes_field_label {
