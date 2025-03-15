@@ -57,7 +57,7 @@ body {
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 5px;
-    margin: 0px;
+    margin-bottom: 10px;
     width: 400px;
     height: 175px;
     background-color: #06060d;
@@ -165,6 +165,32 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.character_stats_menu_buttons_section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: row;
+    padding: 5px;
+    margin: 10px;
+    width: 400px;
+    height: 50px;
+}
+
+.character_stats_menu_button_container {
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    margin: 0px;
+    padding: 5px;
+    color: #ffffff;
+    background-image: url('images/button.png'); 
+    background-size: 100% 100%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
 .character_stats_bottom_section {
     display: flex;
     flex-wrap: wrap;
