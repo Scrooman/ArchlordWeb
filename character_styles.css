@@ -57,7 +57,7 @@ body {
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     width: 400px;
     height: 175px;
     background-color: #06060d;
@@ -171,10 +171,9 @@ body {
     flex-wrap: wrap;
     align-content: flex-start;
     flex-direction: row;
-    padding: 5px;
-    margin: 10px;
-    width: 400px;
-    height: 50px;
+    padding: 0px;
+    margin: 00px;
+    width: 410px;
 }
 
 .character_stats_menu_button_container {
