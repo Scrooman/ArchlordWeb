@@ -68,7 +68,7 @@ body {
 
 .attributes_field_row_container {
     width: 400px;
-    height: 45px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -109,7 +109,7 @@ body {
     height: 25px;
     line-height: 25px;
     margin-left: 10px;
-    padding: 5px;
+    padding: 0px;
     line-height: 25px;
     color:#ffffff;
     background-color: #06060d;
