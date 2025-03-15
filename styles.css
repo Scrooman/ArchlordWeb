@@ -242,9 +242,6 @@ header {
     justify-content: space-between;
 }
 
-.main_container .right_section .monster_type_label a {
-    text-decoration: none; /* Usuwa podkreślenie linków */
-}
 
 .monster_type_container {
     width: 130px;
@@ -301,9 +298,6 @@ header {
     justify-self: center;
 }
 
-.main_container .right_section .spawn_lvl_label a {
-    text-decoration: none; /* Usuwa podkreślenie linków */
-}
 
 .spawn_lvl_container {
     width: 80px;
@@ -337,6 +331,7 @@ header {
     padding: 5px;
     background-image: url('images/arrow_left.png'); 
     background-size: 100% 100%;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
