@@ -26,6 +26,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 elementId: 'characterLocalization',
                 valuePath: ['characterState', 'localization', 'localizationType'],
                 transform: (localizationTypeId) => localizationTypeId === 0 ? 'City' : 'Spawn'
+            },
+            {
+                elementId: 'characterOperationStatus',
+                valuePath: ['characterState', 'operationKind'],
+                transform: (localizationTypeId) => {
+                switch (localizationTypeId) {
+                case 0: return 'Idle';
+                case 1: return 'Respawning';
+                case 2: return 'Travelling';
+                case 3: return 'Battle';
+                default: return 'Unknown';
+                    }   
+                }
             }
         ];
 
