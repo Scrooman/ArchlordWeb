@@ -2,26 +2,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // funkcje aktualizowania danych na stronie
 
-    function updateData(endpoint, elementId, callback) {
+    function updateData(endpoint, fields) {
         fetch(endpoint)
             .then(response => response.json())
             .then(data => {
-                const element = document.getElementById(elementId);
-                callback(data, element);
+                fields.forEach(({ elementId, valuePath, transform }) => {
+                    const element = document.getElementById(elementId);
+                    const value = valuePath.reduce((acc, key) => acc[key], data);
+                    element.textContent = transform ? transform(value) : value;
+                });
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
 
     function updateCharacterInfo() {
-        updateData('http://127.0.0.1:5000/get_character', 'characterState', (data, element) => {
-            const stateId = data["characterState"]["stateId"];
-            element.textContent = stateId === 1 ? 'Alive' : 'Dead';
-        });
+        const fields = [
+            {
+                elementId: 'characterState',
+                valuePath: ['characterState', 'stateId'],
+                transform: (stateId) => stateId === 1 ? 'Alive' : 'Dead'
+            },
+            {
+                elementId: 'characterLocalization',
+                valuePath: ['characterState', 'localization', 'localizationType'],
+                transform: (localizationTypeId) => localizationTypeId === 0 ? 'City' : 'Spawn'
+            }
+        ];
 
-        updateData('http://127.0.0.1:5000/get_character', 'characterLocalization', (data, element) => {
-            const localizationTypeId = data["characterState"]["localization"]["localizationType"];
-            element.textContent = localizationTypeId === 1 ? 'City' : 'Spawn';
-        });
+        updateData('http://127.0.0.1:5000/get_character', fields);
     }
 
     // wywołanie funkcji aktualizowania danych na stronie
