@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // funkcje aktualizowania danych na stronie
+
+    function updateCharacterInfo() {
+        fetch('http://127.0.0.1:5000/get_character')
+            .then(response => response.json())
+            .then(data => {
+                const characterStatus = document.getElementById('heroState');
+                characterStatus.textContent = data["characterStade"]["stateId"]; // Zakładając, że odpowiedź zawiera pole 'status'
+            })
+            .catch(error => console.error('Error fetching character status:', error));
+    }  
+
+    // wywołanie funkcji aktualizowania danych na stronie
+
+    updateCharacterInfo();
+    
     // Zmienne dla opcji menu
     const menuOptions = document.querySelectorAll('.menu_option_label_container');
     const contentIframe = document.getElementById('contentIframe');
