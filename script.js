@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 const characterStatus = document.getElementById('heroState');
-                characterStatus.textContent = data["characterStade"]["stateId"]; // Zakładając, że odpowiedź zawiera pole 'status'
+                characterStatus.textContent = data["characterState"]["stateId"]; // Zakładając, że odpowiedź zawiera pole 'status'
             })
             .catch(error => console.error('Error fetching character status:', error));
     }  
