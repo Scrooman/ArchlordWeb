@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         updateData('http://127.0.0.1:5000/get_character', 'characterLocalization', (data, element) => {
-            const localization = data["characterState"]["localization"]["localizationType"];
-            element.textContent = stateId === 1 ? 'City' : 'Spawn';
+            const localizationTypeId = data["characterState"]["localization"]["localizationType"];
+            element.textContent = localizationTypeId === 1 ? 'City' : 'Spawn';
         });
     }
 
