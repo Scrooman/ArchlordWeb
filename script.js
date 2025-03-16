@@ -6,8 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('http://127.0.0.1:5000/get_character')
             .then(response => response.json())
             .then(data => {
-                const characterStatus = document.getElementById('heroState');
-                characterStatus.textContent = data["characterState"]["stateId"]; // Zakładając, że odpowiedź zawiera pole 'status'
+                const heroState = document.getElementById('heroState');
+                const stateId = data["characterState"]["stateId"];
+                if (stateId === 1) {
+                    heroState.textContent = 'Alive';
+                } else {
+                    heroState.textContent = 'Dead';
+                }
             })
             .catch(error => console.error('Error fetching character status:', error));
     }  
