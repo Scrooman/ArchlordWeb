@@ -2,23 +2,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // funkcje aktualizowania danych na stronie
 
-    function updateCharacterInfo() {
-        fetch('http://127.0.0.1:5000/get_character')
+    function updateData(endpoint, elementId, callback) {
+        fetch(endpoint)
             .then(response => response.json())
             .then(data => {
-                const heroState = document.getElementById('heroState');
-                const stateId = data["characterState"]["stateId"];
-                if (stateId === 1) {
-                    heroState.textContent = 'Alive';
-                } else {
-                    heroState.textContent = 'Dead';
-                }
+                const element = document.getElementById(elementId);
+                callback(data, element);
             })
-            .catch(error => console.error('Error fetching character status:', error));
-    }  
+            .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
+    }
+
+    function updateCharacterInfo() {
+        updateData('http://127.0.0.1:5000/get_character', 'characterState', (data, element) => {
+            const stateId = data["characterState"]["stateId"];
+            element.textContent = stateId === 1 ? 'Alive' : 'Dead';
+        });
+
+        updateData('http://127.0.0.1:5000/get_character', 'characterLocalization', (data, element) => {
+            const localization = data["characterState"]["localization"]["localizationType"];
+            element.textContent = stateId === 1 ? 'City' : 'Spawn';
+        });
+    }
 
     // wywołanie funkcji aktualizowania danych na stronie
-
     updateCharacterInfo();
     
     // Zmienne dla opcji menu
