@@ -29,7 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
             {
             elementId: 'experiencePoints',
             valuePath: ['characteristics'],
-            transform: (characteristics) => `EXP ${characteristics['currentExperiencePoints']} / ${characteristics['requiredExperiencePoints']}`
+            transform: (characteristics) => `EXP ${characteristics['currentExperiencePoints']}/${characteristics['requiredExperiencePoints']}`
+            },
+            {
+            elementId: 'healthPoints',
+            valuePath: ['characteristics'],
+            transform: (characteristics) => `${characteristics['currentHp']}/${characteristics['totalMaxHp']}`
+            },
+            {
+            elementId: 'manaPoints',
+            valuePath: ['characteristics'],
+            transform: (characteristics) => `${characteristics['currentMana']}/${characteristics['totalMaxMana']}`
             },
             {
             elementId: 'characterSta',
