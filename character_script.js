@@ -20,7 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
             {
             elementId: 'className',
             valuePath: [],
-            transform: (character) => `EXP ${character.race}/${character.class}`
+            transform: (character) => {
+            let className = character.class;
+            if (className === 4) {
+                className = "Human";
+            } else if (className === 8) {
+                className = "Knight";
+            }
+            return `${character.race}${className}`;
+            }
             },
             {
             elementId: 'characterLvl',
