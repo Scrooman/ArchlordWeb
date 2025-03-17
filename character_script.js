@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
             elementId: 'experiencePoints',
             valuePath: ['characteristics'],
-            transform: (characteristics) => `${characteristics['currentExperiencePoints']} / ${characteristics['requiredExperiencePoints']}`
+            transform: (characteristics) => `EXP ${characteristics['currentExperiencePoints']} / ${characteristics['requiredExperiencePoints']}`
             },
             {
             elementId: 'characterSta',
