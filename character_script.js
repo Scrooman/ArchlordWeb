@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
             elementId: 'className',
             valuePath: [],
             transform: (character) => {
-            let className = character.class;
-            let raceName = character.race
-            if (raceName === 4) {
+                let className = character.class;
+                let raceName = character.race;
+                if (raceName === 4) {
                 raceName = "Human";
-            } else if (className === 8) {
+                } else if (className === 8) {
                 className = "Knight";
-            }
-            return `${character.race} ${className}`;
+                }
+                return `${character.race} ${className}`;
             }
             },
             {
