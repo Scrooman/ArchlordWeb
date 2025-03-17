@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (className === 8) {
                 className = "Knight";
             }
-            return `${character.race}${className}`;
+            return `${character.race} ${className}`;
             }
             },
             {
