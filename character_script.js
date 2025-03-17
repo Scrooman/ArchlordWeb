@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
             valuePath: ['name']
             },
             {
+            elementId: 'experiencePoints',
+            valuePath: ['characteristics'],
+            transform: (characteristics) => `${characteristics['currentExperiencePoints']} / ${characteristics['requiredExperiencePoints']}`
+            },
+            {
             elementId: 'characterSta',
             valuePath: ['atributes', 'currentStamina']
             },
