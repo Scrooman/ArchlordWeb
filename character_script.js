@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCharacterInfo() {
         const fields = [
             {
+            elementId: 'className',
+            valuePath: ['race', 'class'],
+            transform: (race, className) => `${race} ${className}`
+            },
+            {
             elementId: 'characterLvl',
             valuePath: ['lvl'],
             transform: (lvl) => `Level ${lvl}`
