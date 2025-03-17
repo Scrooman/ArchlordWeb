@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCharacterInfo() {
         const fields = [
             {
-            elementId: 'className',
+            elementId: 'classRaceName',
             valuePath: [],
             transform: (character) => {
             const race = character.race === 4 ? "Human" : character.race;

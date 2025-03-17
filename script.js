@@ -45,6 +45,31 @@ document.addEventListener('DOMContentLoaded', function() {
         updateData('http://127.0.0.1:5000/get_character', fields);
     }
 
+
+    function updateSpawnList() {
+        fetch('http://127.0.0.1:5000/get_character')
+            .then(response => response.json())
+            .then(characterData => {
+                const characterLevel = characterData['lvl']; // Pobierz poziom postaci
+    
+                fetch('http://127.0.0.1:5000/get_mob_spawn_dictionary')
+                    .then(response => response.json())
+                    .then(mobSpawnDictionary => {
+                        // Znajdź spawnId na podstawie spawnLevel odpowiadającego characterLevel
+                        const spawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel);
+    
+                        const spawnLvlCenterElement = document.getElementById('spawn_lvl_center');
+                        if (spawnEntry) {
+                            spawnLvlCenterElement.textContent = spawnEntry.spawnId; // Wyświetl spawnId
+                        } else {
+                            spawnLvlCenterElement.textContent = 'No spawn found'; // Jeśli brak dopasowania
+                        }
+                    })
+                    .catch(error => console.error('Error fetching mob spawn dictionary:', error));
+            })
+            .catch(error => console.error('Error fetching character data:', error));
+    }
+
     // wywołanie funkcji aktualizowania danych na stronie
     updateCharacterInfo();
     
@@ -83,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funkcja do wyświetlania etykiety poziomu spawn
     function showSpawnLevelLabel() {
             spawnLvlLabel.style.display = 'flex'; // Displays the section
+            updateSpawnList(); // Updates the spawn list
     }
 
     
