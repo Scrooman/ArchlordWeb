@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const fields = [
             {
             elementId: 'className',
-            valuePath: ['race', 'class'],
-            transform: (race, className) => `${race} ${className}`
+            valuePath: ['race', 'name'],
+            transform: (race) => race === 4 ? 'Human' : 'Unknown'
             },
             {
             elementId: 'characterLvl',
