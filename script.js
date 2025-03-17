@@ -59,10 +59,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         const spawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel);
     
                         const spawnLvlCenterElement = document.getElementById('spawn_lvl_center');
+                        const spawnLvlLeftElement = document.getElementById('spawn_lvl_left');
+                        
                         if (spawnEntry) {
-                            spawnLvlCenterElement.textContent = spawnEntry.spawnId; // Wyświetl spawnId
+                            spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`; // Wyświetl spawnLevel
+                            
+                            // Znajdź wpis dla spawnLevel o jeden mniejszy
+                            const previousSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === spawnEntry.spawnLevel - 1);
+                            if (previousSpawnEntry) {
+                                spawnLvlLeftElement.textContent = `Lvl ${previousSpawnEntry.spawnLevel}`; // Wyświetl poprzedni spawnLevel
+                            } else {
+                                spawnLvlLeftElement.textContent = 'No previous spawn'; // Jeśli brak dopasowania
+                            }
                         } else {
                             spawnLvlCenterElement.textContent = 'No spawn found'; // Jeśli brak dopasowania
+                            spawnLvlLeftElement.textContent = 'No previous spawn'; // Jeśli brak dopasowania
                         }
                     })
                     .catch(error => console.error('Error fetching mob spawn dictionary:', error));
