@@ -18,17 +18,37 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCharacterInfo() {
         const fields = [
             {
-                elementId: 'characterLvl',
-                valuePath: ['lvl'],
-                transform: (lvl) => `Level ${lvl}`
+            elementId: 'characterLvl',
+            valuePath: ['lvl'],
+            transform: (lvl) => `Level ${lvl}`
             },
             {
-                elementId: 'characterName',
-                valuePath: ['name']
+            elementId: 'characterName',
+            valuePath: ['name']
             },
             {
-                elementId: 'characterSta',
-                valuePath: ['atributes', 'currentStamina']
+            elementId: 'characterSta',
+            valuePath: ['atributes', 'currentStamina']
+            },
+            {
+            elementId: 'characterStr',
+            valuePath: ['atributes', 'currentStrength']
+            },
+            {
+            elementId: 'characterWis',
+            valuePath: ['atributes', 'currentWisdom']
+            },
+            {
+            elementId: 'characterInt',
+            valuePath: ['atributes', 'currentIntelligence']
+            },
+            {
+            elementId: 'characterAgi',
+            valuePath: ['atributes', 'currentAgility']
+            },
+            {
+            elementId: 'characterCha',
+            valuePath: ['atributes', 'currentCharisma']
             }
         ];
 
