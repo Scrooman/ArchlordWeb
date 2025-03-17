@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
             valuePath: [],
             transform: (character) => {
             let className = character.class;
-            if (className === 4) {
-                className = "Human";
+            let raceName = character.race
+            if (raceName === 4) {
+                raceName = "Human";
             } else if (className === 8) {
                 className = "Knight";
             }
