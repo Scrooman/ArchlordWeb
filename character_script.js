@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 elementId: 'characterName',
                 valuePath: ['name']
+            },
+            {
+                elementId: 'characterSta',
+                valuePath: ['atributes', 'currentStamina']
             }
         ];
 
