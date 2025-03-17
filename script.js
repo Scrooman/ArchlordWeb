@@ -62,25 +62,24 @@ document.addEventListener('DOMContentLoaded', function() {
                         const spawnLvlLeftElement = document.getElementById('spawn_lvl_left');
                         
                         if (spawnEntry) {
-                            spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`; // Wyświetl spawnLevel
+                            spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`; // Display spawnLevel
                             
-                            // Znajdź wpis dla spawnLevel o jeden mniejszy
+                            // Find the entry for spawnLevel one level lower
                             const previousSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === spawnEntry.spawnLevel - 1);
-                            if (previousSpawnEntry) {
-                                spawnLvlLeftElement.textContent = `Lvl ${previousSpawnEntry.spawnLevel}`; // Wyświetl poprzedni spawnLevel
-                            } else {
-                                spawnLvlLeftElement.textContent = 'No previous spawn'; 
-                            }
-                            // Znajdź wpis dla spawnLevel o jeden większy
+                            spawnLvlLeftElement.textContent = previousSpawnEntry 
+                                ? `Lvl ${previousSpawnEntry.spawnLevel}` 
+                                : 'No previous spawn';
+
+                            // Find the entry for spawnLevel one level higher
                             const nextSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === spawnEntry.spawnLevel + 1);
-                            if (nextSpawnEntry) {
-                                spawnLvlRightElement.textContent = `Lvl ${nextSpawnEntry.spawnLevel}`; // Wyświetl następny spawnLevel
-                            } else {
-                                spawnLvlRightElement.textContent = 'No next spawn'; //
-                            }
+                            const spawnLvlRightElement = document.getElementById('spawn_lvl_right');
+                            spawnLvlRightElement.textContent = nextSpawnEntry 
+                                ? `Lvl ${nextSpawnEntry.spawnLevel}` 
+                                : 'No next spawn';
                         } else {
                             spawnLvlCenterElement.textContent = 'No spawn found';
                             spawnLvlLeftElement.textContent = 'No previous spawn'; 
+                            const spawnLvlRightElement = document.getElementById('spawn_lvl_right');
                             spawnLvlRightElement.textContent = 'No next spawn'; 
                         }
                     })
