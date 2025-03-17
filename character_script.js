@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
             valuePath: [],
             transform: (character) => {
             const race = character.race === 4 ? "Human" : character.race;
-            return `${race} ${character.class}`;
+            const className = character.class === 8 ? "Knight" : character.class;
+            return `${race} ${className}`;
             }
             },
             {
