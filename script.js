@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    function updateSpawnList() {
+    function updateSpawnList(referenceKey) {
         fetch('http://127.0.0.1:5000/get_character')
             .then(response => response.json())
             .then(characterData => {
@@ -55,8 +55,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetch('http://127.0.0.1:5000/get_mob_spawn_dictionary')
                     .then(response => response.json())
                     .then(mobSpawnDictionary => {
-                        // Znajdź spawnId na podstawie spawnLevel odpowiadającego characterLevel
-                        const spawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel);
+                        // Znajdź spawnEntry na podstawie referenceKey i characterLevel
+                        let spawnEntry;
+                        if (referenceKey === 'characterLevel') {
+                            spawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel);
+                        } else if (referenceKey === 'higher') {
+                            spawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel + 1);
+                        } else if (referenceKey === 'lower') {
+                            spawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel - 1);
+                        } else {
+                            console.warn('Invalid referenceKey provided:', referenceKey);
+                        }
     
                         const spawnLvlCenterElement = document.getElementById('spawn_lvl_center');
                         const spawnLvlLeftElement = document.getElementById('spawn_lvl_left');
@@ -126,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funkcja do wyświetlania etykiety poziomu spawn
     function showSpawnLevelLabel() {
             spawnLvlLabel.style.display = 'flex'; // Displays the section
-            updateSpawnList(); // Updates the spawn list
+            updateSpawnList("characterLevel"); // Updates the spawn list
     }
 
     
