@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             spawnLvlLabel.style.display = 'none'; // Hide the section first
             setTimeout(() => {
                 showSpawnLevelLabel(event); // Reload the section after a brief delay
-            }, 0);
+            }, 1);
         });
     });
 
