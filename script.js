@@ -50,48 +50,49 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('http://127.0.0.1:5000/get_character')
             .then(response => response.json())
             .then(characterData => {
-                const characterLevel = referenceLevel || characterData['lvl']; // Use referenceLevel if provided, otherwise use character level
-                const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}`;
-    
-                fetch(url)
-                    .then(response => response.json())
-                    .then(mobSpawnDictionary => {
-                        const spawnLvlCenterElement = document.getElementById('spawn_lvl_center');
-                        const spawnLvlLeftElement = document.getElementById('spawn_lvl_left');
-                        const spawnLvlRightElement = document.getElementById('spawn_lvl_right');
-                        
-                        // Reset content in case no spawn is found
-                        spawnLvlCenterElement.textContent = 'No spawn found';
-                        spawnLvlLeftElement.textContent = 'No previous spawn';
-                        spawnLvlRightElement.textContent = 'No next spawn';
+            const characterLevel = referenceLevel || characterData['lvl']; // Use referenceLevel if provided, otherwise use character level
+            const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(mobSpawnDictionary => {
+                const spawnLvlCenterElement = document.getElementById('spawn_lvl_center');
+                const spawnLvlLeftElement = document.getElementById('spawn_lvl_left');
+                const spawnLvlRightElement = document.getElementById('spawn_lvl_right');
+                
+                // Reset content in case no spawn is found
+                spawnLvlCenterElement.textContent = 'No spawn found';
+                spawnLvlLeftElement.textContent = 'No previous spawn';
+                spawnLvlRightElement.textContent = 'No next spawn';
 
-                        // Find spawnEntry based on characterLevel
-                        const spawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel);
-                        
-                        if (spawnEntry) {
-                            spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`; // Display spawnLevel
-                        } else {
-                            // Find the first spawnLevel greater than characterLevel
-                            const nextHigherSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel > characterLevel);
-                            if (nextHigherSpawnEntry) {
-                                spawnLvlCenterElement.textContent = `Lvl ${nextHigherSpawnEntry.spawnLevel}`;
-                            }
-                        }
+                // Extract and display the center spawn level data
+                const centerSpawnData = mobSpawnDictionary.centerSpawnLvl;
+                if (centerSpawnData) {
+                    const spawnEntry = Object.values(centerSpawnData)[0]; // Assuming there's only one entry
+                    if (spawnEntry) {
+                    spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                    }
+                }
 
-                        // Find the first spawnLevel greater than the value in spawnLvlCenterElement
-                        const currentCenterLevel = parseInt(spawnLvlCenterElement.textContent.replace('Lvl ', ''), 10);
-                        const nextLowerSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel < currentCenterLevel);
-                        if (nextLowerSpawnEntry) {
-                            spawnLvlLeftElement.textContent = `Lvl ${nextHigherSpawnEntry.spawnLevel}`;
-                        }
+                // Extract and display the left spawn level data
+                const leftSpawnData = mobSpawnDictionary.leftSpawnLvl;
+                if (leftSpawnData) {
+                    const spawnEntry = Object.values(leftSpawnData)[0]; // Assuming there's only one entry
+                    if (spawnEntry) {
+                    spawnLvlLeftElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                    }
+                }
 
-                        // Find the entry for spawnLevel one level higher
-                        const nextSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel + 1);
-                        if (nextSpawnEntry) {
-                            spawnLvlRightElement.textContent = `Lvl ${nextSpawnEntry.spawnLevel}`;
-                        }
-                    })
-                    .catch(error => console.error('Error fetching mob spawn dictionary:', error));
+                // Extract and display the right spawn level data
+                const rightSpawnData = mobSpawnDictionary.rightSpawnLvl;
+                if (rightSpawnData) {
+                    const spawnEntry = Object.values(rightSpawnData)[0]; // Assuming there's only one entry
+                    if (spawnEntry) {
+                    spawnLvlRightElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                    }
+                }
+                })
+                .catch(error => console.error('Error fetching mob spawn dictionary:', error));
             })
             .catch(error => console.error('Error fetching character data:', error));
     }
