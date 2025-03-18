@@ -78,10 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                         }
 
-                        // Find the entry for spawnLevel one level lower
-                        const previousSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel - 1);
-                        if (previousSpawnEntry) {
-                            spawnLvlLeftElement.textContent = `Lvl ${previousSpawnEntry.spawnLevel}`;
+                        // Find the first spawnLevel greater than the value in spawnLvlCenterElement
+                        const currentCenterLevel = parseInt(spawnLvlCenterElement.textContent.replace('Lvl ', ''), 10);
+                        const nextHigherSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel > currentCenterLevel);
+                        if (nextHigherSpawnEntry) {
+                            spawnLvlRightElement.textContent = `Lvl ${nextHigherSpawnEntry.spawnLevel}`;
                         }
 
                         // Find the entry for spawnLevel one level higher
