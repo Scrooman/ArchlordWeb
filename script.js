@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 spawnLvlLabel.style.display = 'flex'; // Redisplay the section
                 updateSpawnList(mobType); // Updates the spawn list with the extracted mob type
-            }, 0); // Small delay to ensure proper reloading
+            }, 50); // Small delay to ensure proper reloading
         } else {
             // If the section is not displayed, show it and update
             spawnLvlLabel.style.display = 'flex'; // Displays the section
