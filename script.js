@@ -70,18 +70,24 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         if (spawnEntry) {
                             spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`; // Display spawnLevel
-                            
-                            // Find the entry for spawnLevel one level lower
-                            const previousSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === spawnEntry.spawnLevel - 1);
-                            if (previousSpawnEntry) {
-                                spawnLvlLeftElement.textContent = `Lvl ${previousSpawnEntry.spawnLevel}`;
+                        } else {
+                            // Find the first spawnLevel greater than characterLevel
+                            const nextHigherSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel > characterLevel);
+                            if (nextHigherSpawnEntry) {
+                                spawnLvlCenterElement.textContent = `Lvl ${nextHigherSpawnEntry.spawnLevel}`;
                             }
+                        }
 
-                            // Find the entry for spawnLevel one level higher
-                            const nextSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === spawnEntry.spawnLevel + 1);
-                            if (nextSpawnEntry) {
-                                spawnLvlRightElement.textContent = `Lvl ${nextSpawnEntry.spawnLevel}`;
-                            }
+                        // Find the entry for spawnLevel one level lower
+                        const previousSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel - 1);
+                        if (previousSpawnEntry) {
+                            spawnLvlLeftElement.textContent = `Lvl ${previousSpawnEntry.spawnLevel}`;
+                        }
+
+                        // Find the entry for spawnLevel one level higher
+                        const nextSpawnEntry = Object.values(mobSpawnDictionary).find(entry => entry.spawnLevel === characterLevel + 1);
+                        if (nextSpawnEntry) {
+                            spawnLvlRightElement.textContent = `Lvl ${nextSpawnEntry.spawnLevel}`;
                         }
                     })
                     .catch(error => console.error('Error fetching mob spawn dictionary:', error));
