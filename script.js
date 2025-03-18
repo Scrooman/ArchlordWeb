@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funkcja do wyświetlania etykiety poziomu spawn
     function showSpawnLevelLabel(event) {
         const clickedElement = event.currentTarget;
-        const mobType = clickedElement.className.split('_').pop(); // Extract mob type from class name
+        const mobType = clickedElement.id.split('_').pop(); // Extract mob type from the ID after the last "_"
         spawnLvlLabel.style.display = 'flex'; // Displays the section
         updateSpawnList(mobType); // Updates the spawn list with the extracted mob type
     }
