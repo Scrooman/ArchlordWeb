@@ -142,15 +142,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function showSpawnLevelLabel(event) {
         const clickedElement = event.currentTarget;
         const mobType = clickedElement.id.split('_').pop(); // Extract mob type from the ID after the last "_"
-        spawnLvlLabel.style.display = 'none';
         spawnLvlLabel.style.display = 'flex'; // Displays the section
         updateSpawnList(mobType); // Updates the spawn list with the extracted mob type
     }
 
     // Dodaj nasłuchiwanie na kliknięcia kontenerów typu potwora
     monsterTypeContainers.forEach(container => {
-        spawnLvlLabel.style.display = 'none';
-        container.addEventListener('click', showSpawnLevelLabel);
+        container.addEventListener('click', event => {
+            spawnLvlLabel.style.display = 'none'; // Hide the section first
+            setTimeout(() => {
+                showSpawnLevelLabel(event); // Reload the section after a brief delay
+            }, 0);
+        });
     });
 
     // Ukryj sekcję na początku
