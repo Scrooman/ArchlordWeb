@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Dodaj nasłuchiwanie na kliknięcia kontenerów typu potwora
     monsterTypeContainers.forEach(container => {
+        spawnLvlLabel.style.display = 'none';
         container.addEventListener('click', showSpawnLevelLabel);
     });
 
