@@ -134,26 +134,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
         } // do dodania kolejne warunki dla innych opcji
 
-        contentIframe.src = contentUrl;
+        if (contentIframe.src.includes(contentUrl)) {
+            contentIframe.src = ''; // Reset iframe source
+            setTimeout(() => {
+                contentIframe.src = contentUrl; // Reload iframe content
+            }, 50);
+        } else {
+            contentIframe.src = contentUrl;
+        }
     }
-
 
     // Funkcja do wyświetlania etykiety poziomu spawn
     function showSpawnLevelLabel(event) {
         const clickedElement = event.currentTarget;
-        const mobType = clickedElement.id.split('_').pop(); // Extract mob type from the ID after the last "_"
+        const mobType = clickedElement.id.split('_').pop(); 
         
         if (spawnLvlLabel.style.display === 'flex') {
-            // If the section is already displayed, reload it
-            spawnLvlLabel.style.display = 'none'; // Temporarily hide the section
+            spawnLvlLabel.style.display = 'none'; 
             setTimeout(() => {
-                spawnLvlLabel.style.display = 'flex'; // Redisplay the section
-                updateSpawnList(mobType); // Updates the spawn list with the extracted mob type
-            }, 50); // Small delay to ensure proper reloading
+                spawnLvlLabel.style.display = 'flex'; 
+                updateSpawnList(mobType); 
+            }, 50); 
         } else {
-            // If the section is not displayed, show it and update
-            spawnLvlLabel.style.display = 'flex'; // Displays the section
-            updateSpawnList(mobType); // Updates the spawn list with the extracted mob type
+            spawnLvlLabel.style.display = 'flex'; 
+            updateSpawnList(mobType);
         }
     }
 
