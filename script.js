@@ -46,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     let chosedMobType = null;
-    let centerSpawnData = null;
-    let leftSpawnData = null;
-    let rightSpawnData = null;
+    let centerSpawnLvl = null;
 
     // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
     function showUpdatedSpawnList(mobType, referenceLevel = null) {
@@ -77,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(centerSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                     spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                    const centerSpawnLvl = Object.values(centerSpawnData)[0].spawnLevel; // pobranie poziomu spawnu
                     }
                 }
 
@@ -109,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('http://127.0.0.1:5000/get_character')
             .then(response => response.json())
             .then(characterData => {
-            const url = `http://127.0.0.1:5000/get_another_mob_spawn_dictionary?mobType=${mobType}&lvlChange=${direction}&currentCenterSpawnLvl=${centerSpawnData}`;
+            const url = `http://127.0.0.1:5000/get_another_mob_spawn_dictionary?mobType=${mobType}&lvlChange=${direction}&currentCenterSpawnLvl=${centerSpawnLvl}`;
             
             fetch(url)
                 .then(response => response.json())
