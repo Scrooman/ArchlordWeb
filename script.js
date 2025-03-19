@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     let chosedMobType = null;
-    let centerSpawnLvl = null;
+    let currentCenterSpawnLvl = null;
 
     // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
     function showUpdatedSpawnList(mobType, referenceLevel = null) {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(centerSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                     spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
-                    centerSpawnLvl = Object.values(centerSpawnData)[0].spawnLevel; // nadpisanie zmiennej centerSpawnLvl
+                    currentCenterSpawnLvl = spawnEntry.spawnLevel; // nadpisanie zmiennej currentCenterSpawnLvl levelem bieżącego centralnego spawnu
                     }
                 }
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('http://127.0.0.1:5000/get_character')
             .then(response => response.json())
             .then(characterData => {
-            const url = `http://127.0.0.1:5000/get_another_mob_spawn_dictionary?mobType=${mobType}&lvlChange=${direction}&currentCenterSpawnLvl=${centerSpawnLvl}`;
+            const url = `http://127.0.0.1:5000/get_another_mob_spawn_dictionary?mobType=${mobType}&lvlChange=${direction}&currentCenterSpawnLvl=${currentCenterSpawnLvl}`;
             
             fetch(url)
                 .then(response => response.json())
@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 console.log(mobSpawnDictionary);
                 console.log(mobSpawnDictionary.centerSpawnLvl);
-                console.log(centerSpawnData);
                 // Extract and display the center spawn level data
                 const centerSpawnData = mobSpawnDictionary.centerSpawnLvl;
                 if (centerSpawnData) {
