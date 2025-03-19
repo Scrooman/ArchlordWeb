@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('No spawn ID selected to activate.');
             return;
         }
-
+        console.log('Activating spawn:', mobSpawnId);
         const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl`;
         const payload = { spawnId: mobSpawnId };
 
