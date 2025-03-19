@@ -253,26 +253,33 @@ document.addEventListener('DOMContentLoaded', function() {
         let mobSpawnId;
         switch (chosedSpawnLvlButtonName) {
             case 'center':
-            mobSpawnId = centerSpawnId;
-            break;
+                mobSpawnId = centerSpawnId;
+                break;
             case 'left':
-            mobSpawnId = leftSpawnId;
-            break;
+                mobSpawnId = leftSpawnId;
+                break;
             case 'right':
-            mobSpawnId = rightSpawnId;
-            break;
+                mobSpawnId = rightSpawnId;
+                break;
             default:
-            console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
-            return;
+                console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
+                return;
         }
         if (!mobSpawnId) {
             console.error('No spawn ID selected to activate.');
             return;
         }
 
-        const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl?spawnId=${mobSpawnId}`;
-        
-        fetch(url)
+        const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl`;
+        const payload = { spawnId: mobSpawnId };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
