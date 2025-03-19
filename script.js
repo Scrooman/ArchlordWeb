@@ -167,8 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const spawnLvlLabel = document.getElementById('spawnLvlLabel');
 
         // Zmienne dla sekcji poziomu spawn
-    const spawnLvlChangeButtonLower = document.getElementById('.spawn_lvl_change_button_left');
-    const spawnLvlChangeButtonHigher = document.getElementById('.spawn_lvl_change_button_right');
+    const spawnLvlChangeButtonLower = document.getElementById('spawn_lvl_change_button_left');
+    const spawnLvlChangeButtonHigher = document.getElementById('spawn_lvl_change_button_right');
 
 
     // Funkcja do obsługi kliknięcia opcji menu
