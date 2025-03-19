@@ -45,13 +45,71 @@ document.addEventListener('DOMContentLoaded', function() {
         updateData('http://127.0.0.1:5000/get_character', fields);
     }
 
+    let chosedMobType = null;
+    let centerSpawnData = null;
+    let leftSpawnData = null;
+    let rightSpawnData = null;
 
-    function updateSpawnList(mobType, referenceLevel = null) {
+    // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
+    function showUpdatedSpawnList(mobType, referenceLevel = null) {
         fetch('http://127.0.0.1:5000/get_character')
             .then(response => response.json())
             .then(characterData => {
             const characterLevel = referenceLevel || characterData['lvl']; // Use referenceLevel if provided, otherwise use character level
             const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}`;
+            const chosedMobType = mobType;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(mobSpawnDictionary => {
+                const spawnLvlCenterElement = document.getElementById('spawn_lvl_center');
+                const spawnLvlLeftElement = document.getElementById('spawn_lvl_left');
+                const spawnLvlRightElement = document.getElementById('spawn_lvl_right');
+                
+                // Reset content in case no spawn is found
+                spawnLvlCenterElement.textContent = 'No spawn found';
+                spawnLvlLeftElement.textContent = 'No previous spawn';
+                spawnLvlRightElement.textContent = 'No next spawn';
+
+                // Extract and display the center spawn level data
+                const centerSpawnData = mobSpawnDictionary.centerSpawnLvl;
+                if (centerSpawnData) {
+                    const spawnEntry = Object.values(centerSpawnData)[0]; // Assuming there's only one entry
+                    if (spawnEntry) {
+                    spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                    }
+                }
+
+                // Extract and display the left spawn level data
+                const leftSpawnData = mobSpawnDictionary.leftSpawnLvl;
+                if (leftSpawnData) {
+                    const spawnEntry = Object.values(leftSpawnData)[0]; // Assuming there's only one entry
+                    if (spawnEntry) {
+                    spawnLvlLeftElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                    }
+                }
+
+                // Extract and display the right spawn level data
+                const rightSpawnData = mobSpawnDictionary.rightSpawnLvl;
+                if (rightSpawnData) {
+                    const spawnEntry = Object.values(rightSpawnData)[0]; // Assuming there's only one entry
+                    if (spawnEntry) {
+                    spawnLvlRightElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                    }
+                }
+                })
+                .catch(error => console.error('Error fetching mob spawn dictionary:', error));
+            })
+            .catch(error => console.error('Error fetching character data:', error));
+    }
+
+
+    // Funkcja do zmiany wyświetlnej listy spawnów na podstawie typu moba i kierunku zmiany
+    function showAnotherSpawnOnSpawnList(mobType, direction) {
+        fetch('http://127.0.0.1:5000/get_character')
+            .then(response => response.json())
+            .then(characterData => {
+            const url = `http://127.0.0.1:5000/get_another_mob_spawn_dictionary?mobType=${mobType}&lvlChange=${direction}&currentCenterSpawnLvl=${centerSpawnData}`;
             
             fetch(url)
                 .then(response => response.json())
@@ -153,11 +211,11 @@ document.addEventListener('DOMContentLoaded', function() {
             spawnLvlLabel.style.display = 'none'; 
             setTimeout(() => {
                 spawnLvlLabel.style.display = 'flex'; 
-                updateSpawnList(mobType); 
-            }, 50); 
+                showUpdatedSpawnList(mobType); 
+            }, 100); 
         } else {
             spawnLvlLabel.style.display = 'flex'; 
-            updateSpawnList(mobType);
+            showUpdatedSpawnList(mobType);
         }
     }
 
@@ -170,13 +228,13 @@ document.addEventListener('DOMContentLoaded', function() {
     spawnLvlLabel.style.display = 'none';
 
     function showLowerLvlSpawn() {
-        updateSpawnList("lower");
+        showAnotherSpawnOnSpawnList(mobType, "lower");
     }
 
     spawnLvlChangeButtonLower.addEventListener('click', showLowerLvlSpawn);
 
     function showHigherLvlSpawn() {
-        updateSpawnList("higher");
+        showAnotherSpawnOnSpawnList(mobType, "higher");
     }
 
     spawnLvlChangeButtonHigher.addEventListener('click', showHigherLvlSpawn);
