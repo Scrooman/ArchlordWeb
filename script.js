@@ -228,13 +228,13 @@ document.addEventListener('DOMContentLoaded', function() {
     spawnLvlLabel.style.display = 'none';
 
     function showLowerLvlSpawn() {
-        showAnotherSpawnOnSpawnList(mobType, "lower");
+        showAnotherSpawnOnSpawnList(chosedMobType, "lower");
     }
 
     spawnLvlChangeButtonLower.addEventListener('click', showLowerLvlSpawn);
 
     function showHigherLvlSpawn() {
-        showAnotherSpawnOnSpawnList(mobType, "higher");
+        showAnotherSpawnOnSpawnList(chosedMobType, "higher");
     }
 
     spawnLvlChangeButtonHigher.addEventListener('click', showHigherLvlSpawn);
