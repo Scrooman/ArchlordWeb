@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
             return;
         }
-        if (!chosedSpawnId) {
+        if (!mobSpawnId) {
             console.error('No spawn ID selected to activate.');
             return;
         }
