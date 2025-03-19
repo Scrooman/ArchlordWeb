@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let chosedMobType = null;
     let currentCenterSpawnLvl = null;
+    centerSpawnId = null;
+    leftSpawnId = null;
+    rightSpawnId = null;
 
     // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
     function showUpdatedSpawnList(mobType, referenceLevel = null) {
@@ -76,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (spawnEntry) {
                                 spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
                                 currentCenterSpawnLvl = spawnEntry.spawnLevel; // Update global variable
+                                centerSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
                             }
                         }
 
@@ -85,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const spawnEntry = Object.values(leftSpawnData)[0]; // Assuming there's only one entry
                             if (spawnEntry) {
                                 spawnLvlLeftElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                                leftSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
                             }
                         }
 
@@ -94,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const spawnEntry = Object.values(rightSpawnData)[0]; // Assuming there's only one entry
                             if (spawnEntry) {
                                 spawnLvlRightElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                                rightSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
                             }
                         }
                     })
@@ -127,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (spawnEntry) {
                         spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
                         currentCenterSpawnLvl = spawnEntry.spawnLevel; // Update global variable
+                        centerSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
                     }
                 }
 
@@ -136,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(leftSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                         spawnLvlLeftElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                        lefftSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
                     }
                 }
 
@@ -145,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(rightSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                         spawnLvlRightElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                        rightSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
                     }
                 }
             })
@@ -163,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const spawnLvlLabel = document.getElementById('spawnLvlLabel');
 
         // Zmienne dla sekcji poziomu spawn
+    const spawnLvlChangeButtonContainers = document.querySelectorAll('.spawn_lvl_container');
     const spawnLvlChangeButtonLower = document.getElementById('spawn_lvl_change_button_left');
     const spawnLvlChangeButtonHigher = document.getElementById('spawn_lvl_change_button_right');
 
@@ -220,20 +230,71 @@ document.addEventListener('DOMContentLoaded', function() {
         container.addEventListener('click', showSpawnLevelLabel);
     });
 
-    // Ukryj sekcję na początku
+    // Ukryj sekcję ze spawnLvl na początku
     spawnLvlLabel.style.display = 'none';
 
+
+    //pobierz mniejsze poziomy spawnów
     function showLowerLvlSpawn() {
         showAnotherSpawnOnSpawnList(chosedMobType, "lower");
     }
 
     spawnLvlChangeButtonLower.addEventListener('click', showLowerLvlSpawn);
 
+
+    // pobierz wyższy poziom spawnów
     function showHigherLvlSpawn() {
         showAnotherSpawnOnSpawnList(chosedMobType, "higher");
     }
 
     spawnLvlChangeButtonHigher.addEventListener('click', showHigherLvlSpawn);
+
+    function activateSpawnForSpawnLvl(chosedSpawnLvlButtonName) {
+        let mobSpawnId;
+        switch (chosedSpawnLvlButtonName) {
+            case 'center':
+            mobSpawnId = centerSpawnId;
+            break;
+            case 'left':
+            mobSpawnId = leftSpawnId;
+            break;
+            case 'right':
+            mobSpawnId = rightSpawnId;
+            break;
+            default:
+            console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
+            return;
+        }
+        if (!chosedSpawnId) {
+            console.error('No spawn ID selected to activate.');
+            return;
+        }
+
+        const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl?spawnId=${mobSpawnId}`;
+        
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Spawn activated successfully:', data);
+            })
+            .catch(error => console.error('Error activating spawn:', error));
+    }
+
+    // funkcja do wyboru i aktywowania spawnu
+    function selectSpawnLvl(event) {
+        const clickedElement = event.currentTarget;
+        const chosedSpawnLvlButton = clickedElement.id.split('_').pop(); // Extract the last word after "_" from the ID
+        activateSpawnForSpawnLvl(chosedSpawnLvlButton);
+    }
+
+    spawnLvlChangeButtonContainers.forEach(container => {
+        container.addEventListener('click', selectSpawnLvl);
+    });
 
 
 
