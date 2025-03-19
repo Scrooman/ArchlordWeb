@@ -122,14 +122,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 spawnLvlLeftElement.textContent = 'No previous spawn';
                 spawnLvlRightElement.textContent = 'No next spawn';
 
-                console.log(currentCenterSpawnLvl);
+                console.log('Current Center Spawn Level:', currentCenterSpawnLvl);
                 // Extract and display the center spawn level data
-                const centerSpawnData = mobSpawnDictionary.centerSpawnLvl;
-                if (centerSpawnData) {
+                if (mobSpawnDictionary && mobSpawnDictionary.centerSpawnLvl) {
+                    const centerSpawnData = mobSpawnDictionary.centerSpawnLvl;
                     const spawnEntry = Object.values(centerSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
-                    spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                        spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
+                        currentCenterSpawnLvl = spawnEntry.spawnLevel; // Update currentCenterSpawnLvl
                     }
+                } else {
+                    console.error('Center spawn level data is missing or undefined.');
                 }
 
                 // Extract and display the left spawn level data
