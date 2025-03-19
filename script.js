@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(centerSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                     spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
-                    const centerSpawnLvl = Object.values(centerSpawnData)[0].spawnLevel; // pobranie poziomu spawnu
+                    centerSpawnLvl = Object.values(centerSpawnData)[0].spawnLevel; // nadpisanie zmiennej centerSpawnLvl
                     }
                 }
 
