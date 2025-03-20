@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let chosedMobType = null;
     let currentCenterSpawnLvl = null;
-    centerSpawnId = null;
-    leftSpawnId = null;
-    rightSpawnId = null;
+    centerSpawnLevel = null;
+    leftSpawnLevel = null;
+    rightSpawnLevel = null;
 
     // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
     function showUpdatedSpawnList(mobType, referenceLevel = null) {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (spawnEntry) {
                                 spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
                                 currentCenterSpawnLvl = spawnEntry.spawnLevel; // Update global variable
-                                centerSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
+                                centerSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
                             }
                         }
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const spawnEntry = Object.values(leftSpawnData)[0]; // Assuming there's only one entry
                             if (spawnEntry) {
                                 spawnLvlLeftElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
-                                leftSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
+                                leftSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
                             }
                         }
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const spawnEntry = Object.values(rightSpawnData)[0]; // Assuming there's only one entry
                             if (spawnEntry) {
                                 spawnLvlRightElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
-                                rightSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
+                                rightSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
                             }
                         }
                     })
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (spawnEntry) {
                         spawnLvlCenterElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
                         currentCenterSpawnLvl = spawnEntry.spawnLevel; // Update global variable
-                        centerSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
+                        centerSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
                     }
                 }
 
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(leftSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                         spawnLvlLeftElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
-                        lefftSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
+                        lefftSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
                     }
                 }
 
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(rightSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                         spawnLvlRightElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
-                        rightSpawnId = spawnEntry.spawnId; // Store the spawnId for rightSpawnLvl
+                        rightSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
                     }
                 }
             })
@@ -250,28 +250,28 @@ document.addEventListener('DOMContentLoaded', function() {
     spawnLvlChangeButtonHigher.addEventListener('click', showHigherLvlSpawn);
 
     function activateSpawnForSpawnLvl(chosedSpawnLvlButtonName) {
-        let mobSpawnId;
+        let mobSpawnLevel;
         switch (chosedSpawnLvlButtonName) {
             case 'center':
-                mobSpawnId = centerSpawnId;
+                mobSpawnLevel = centerSpawnLevel;
                 break;
             case 'left':
-                mobSpawnId = leftSpawnId;
+                mobSpawnLevel = leftSpawnLevel;
                 break;
             case 'right':
-                mobSpawnId = rightSpawnId;
+                mobSpawnLevel = rightSpawnLevel;
                 break;
             default:
                 console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
                 return;
         }
-        if (!mobSpawnId) {
+        if (!mobSpawnLevel) {
             console.error('No spawn ID selected to activate.');
             return;
         }
-        console.log('Activating spawn:', mobSpawnId);
+        console.log('Activating spawn level:', mobSpawnLevel);
         const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl`;
-        const payload = { spawnId: mobSpawnId };
+        const payload = { spawnLevel: mobSpawnLevel };
 
         fetch(url, {
             method: 'POST',
