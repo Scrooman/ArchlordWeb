@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
         }
         if (!mobSpawnLevel) {
-            console.error('No spawn ID selected to activate.');
+            console.error('No spawn level selected to activate.');
             return;
         }
         console.log('Activating spawn level:', mobSpawnLevel);
@@ -287,9 +287,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                console.log('Spawn activated successfully:', data);
+                console.log('Spawn level activated successfully:', data);
             })
-            .catch(error => console.error('Error activating spawn:', error));
+            .catch(error => console.error('Error activating spawn level:', error));
     }
 
     // funkcja do wyboru i aktywowania spawnu
