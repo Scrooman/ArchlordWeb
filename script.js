@@ -318,13 +318,13 @@ spawnLvlOptions.forEach(option => {
 function loadIframeContentMobBattle() {
     const contentUrl = 'mob_battle.html';
 
-    if (contentIframe.src.includes(contentUrl)) {
-        contentIframe.src = ''; // Reset iframe source
+    if (contentIframeMobBattle.src.includes(contentUrl)) {
+        contentIframeMobBattle.src = ''; // Reset iframe source
         setTimeout(() => {
-            contentIframe.src = contentUrl; // Reload iframe content
+            contentIframeMobBattle.src = contentUrl; // Reload iframe content
         }, 50);
     } else {
-        contentIframe.src = contentUrl;
+        contentIframeMobBattle.src = contentUrl;
     }
 }
 
