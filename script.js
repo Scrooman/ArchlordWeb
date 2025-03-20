@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const spawnLvlChangeButtonLower = document.getElementById('spawn_lvl_change_button_left');
     const spawnLvlChangeButtonHigher = document.getElementById('spawn_lvl_change_button_right');
     const spawnLvlChangeButtonCenter = document.getElementById('spawn_lvl_change_button_center');
-    const spawnLvlOptions = document.querySelectorAll('spawn_lvl_option');
+    const spawnLvlOptions = document.querySelectorAll('.spawn_lvl_container.spawn_lvl');
 
 
     // Funkcja do obsługi kliknięcia opcji menu
