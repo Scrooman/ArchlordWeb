@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const spawnEntry = Object.values(leftSpawnData)[0]; // Assuming there's only one entry
                     if (spawnEntry) {
                         spawnLvlLeftElement.textContent = `Lvl ${spawnEntry.spawnLevel}`;
-                        lefftSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
+                        leftSpawnLevel = spawnEntry.spawnLevel; // Store the spawnId for rightSpawnLvl
                     }
                 }
 
