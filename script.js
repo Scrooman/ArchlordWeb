@@ -311,18 +311,17 @@ spawnLvlOptions.forEach(option => {
     option.addEventListener('click', loadIframeContentMobBattle);
 });
 
-
 // Funkcja do wyświetlania odpowiedniej zawartości w iframe
 function loadIframeContentMobBattle() {
     const contentUrl = 'mob_battle.html';
 
-    if (contentIframeMobBattle.src.includes(contentUrl)) {
-        contentIframeMobBattle.src = ''; // Reset iframe source
+    if (contentIframe.src.includes(contentUrl)) {
+        contentIframe.src = ''; // Reset iframe source
         setTimeout(() => {
-            contentIframeMobBattle.src = contentUrl; // Reload iframe content
+            contentIframe.src = contentUrl; // Reload iframe content
         }, 50);
     } else {
-        contentIframeMobBattle.src = contentUrl;
+        contentIframe.src = contentUrl;
     }
 }
 
