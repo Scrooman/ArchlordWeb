@@ -308,11 +308,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Dodaj nasłuchiwanie na kliknięcia opcji menu 
 spawnLvlOptions.forEach(option => {
-    option.addEventListener('click', function(event) {
-        console.log(`Button clicked: ${event.currentTarget.id}`);
-        loadIframeContentMobBattle();
-    });
+    option.addEventListener('click', loadIframeContentMobBattle);
 });
+
 
 // Funkcja do wyświetlania odpowiedniej zawartości w iframe
 function loadIframeContentMobBattle() {
