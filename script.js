@@ -175,6 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const spawnLvlChangeButtonContainers = document.querySelectorAll('.spawn_lvl_container');
     const spawnLvlChangeButtonLower = document.getElementById('spawn_lvl_change_button_left');
     const spawnLvlChangeButtonHigher = document.getElementById('spawn_lvl_change_button_right');
+    const spawnLvlChangeButtonCenter = document.getElementById('spawn_lvl_change_button_center');
+    const spawnLvlOptions = document.querySelectorAll('.spawn_lvl_option');
 
 
     // Funkcja do obsługi kliknięcia opcji menu
@@ -304,5 +306,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+// Dodaj nasłuchiwanie na kliknięcia opcji menu 
+spawnLvlOptions.forEach(option => {
+    option.addEventListener('click', loadIframeContentMobBattle);
+});
+
+
+// Funkcja do wyświetlania odpowiedniej zawartości w iframe
+function loadIframeContentMobBattle() {
+    const contentUrl = 'mob_battle.html';
+
+    if (contentIframeMobBattle.src.includes(contentUrl)) {
+        contentIframeMobBattle.src = ''; // Reset iframe source
+        setTimeout(() => {
+            contentIframeMobBattle.src = contentUrl; // Reload iframe content
+        }, 50);
+    } else {
+        contentIframeMobBattle.src = contentUrl;
+    }
+}
 
 });
