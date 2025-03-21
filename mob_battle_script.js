@@ -20,18 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // pola do aktualizacji na stronie
         const fields = [
             {
-            elementId: 'classRaceName',
-            valuePath: [],
-            transform: (character) => {
-            const race = character.race === 4 ? "Human" : character.race;
-            const className = character.class === 8 ? "Knight" : character.class;
-            return `${race} ${className}`;
-            }
-            },
-            {
-            elementId: 'characterLvl',
-            valuePath: ['lvl'],
-            transform: (lvl) => `Level ${lvl}`
+            elementId: 'mobHpLabel',
+            valuePath: ['mobHp'],
             }
         ];
         const url = `http://127.0.0.1:5000/get_mob_data?mobId=${mobId}`;
