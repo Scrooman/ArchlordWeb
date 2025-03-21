@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
             elementId: 'mob_ele_damage_value_magic',
             valuePath: ['mobElementalDamageMagic'], 
-            transform: (value) => value === 1 ? 'x' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'x' : value === 0 ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_light',
