@@ -46,22 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
             elementId: 'mobTypeLabel',
             valuePath: ['mobTypeId'],
             transform: (value) => {
-                if (value === 1) return 'Normal';
-                if (value === 2) return 'Normal Boss';
-                if (value === 3) return 'Unique Boss';
-                if (value === 4) return 'Elemental';
-                if (value === 5) return 'Battleground Human';
-                if (value === 6) return 'Battleground Orc';
-                if (value === 7) return 'Battleground Moonelf';
-                if (value === 8) return 'Battleground Dragonscion';
-                if (value === 9) return "Heaven's Hell";
-                return 'Unknown'; // Default case
+            if (value === 1) return 'Normal';
+            if (value === 2) return 'Normal Boss';
+            if (value === 3) return 'Unique Boss';
+            if (value === 4) return 'Elemental';
+            if (value === 5) return 'Battleground Human';
+            if (value === 6) return 'Battleground Orc';
+            if (value === 7) return 'Battleground Moonelf';
+            if (value === 8) return 'Battleground Dragonscion';
+            if (value === 9) return "Heaven's Hell";
+            return 'Unknown'; // Default case
             },
             },
             {
             elementId: 'mob_ele_damage_value_fire',
             valuePath: ['mobElementalDamageFire'], 
-            transform: (value) => value === 1 ? 'x' : value
+            transform: (value) => value === 1 ? 'x' : value === 0 ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_water',
@@ -81,20 +81,18 @@ document.addEventListener('DOMContentLoaded', function () {
             {
             elementId: 'mob_ele_damage_value_magic',
             valuePath: ['mobElementalDamageMagic'], 
-            transform: (value) => value === 1 ? 'x' : value
+            transform: (value) => value === 1 ? 'x' : value === 0 ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_light',
             valuePath: ['mobElementalDamageLight'], 
             transform: (value) => value === 1 ? 'x' : value
             },
-            ,
             {
             elementId: 'mob_ele_damage_value_poison',
             valuePath: ['mobElementalDamagePoison'], 
             transform: (value) => value === 1 ? 'x' : value
             },
-            ,
             {
             elementId: 'mob_ele_damage_value_ice',
             valuePath: ['mobElementalDamageIce'], 
