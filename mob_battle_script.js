@@ -58,6 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 return 'Unknown'; // Default case
             },
             },
+            {
+            elementId: 'mob_ele_damage_value_fire',
+            valuePath: ['mobElementalDamageFire'], 
+            transform: (value) => value === 1 ? 'x' : value
+            }
         ];
         updateMobData(fields);
     }
