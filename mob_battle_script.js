@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // funkcje aktualizowania danych na stronie
 
-    function updateMobData(endpoint, fields) {
+    function updateMobData(fields) {
+        const mobId = new URLSearchParams(window.location.search).get('mobId');
+        const endpoint = `http://127.0.0.1:5000/get_mob_data?mobId=${mobId}`;
         fetch(endpoint)
             .then(response => response.json())
             .then(data => {
@@ -21,12 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateMobInfo() {
-        const mobId = new URLSearchParams(window.location.search).get('mobId');
-        console.log('mobId:', mobId); // Logowanie mobId
-        if (!mobId) {
-            console.error('Error: mobId is null or undefined');
-            return;
-        }
         // pola do aktualizacji na stronie
         const fields = [
             {
@@ -34,8 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             valuePath: ['mobHP'],
             }
         ];
-        const url = `http://127.0.0.1:5000/get_mob_data?mobId=${mobId}`;
-        updateMobData(url, fields);
+        updateMobData(fields);
     }
 
     // wywołanie funkcji aktualizowania danych na stronie
