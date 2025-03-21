@@ -313,8 +313,8 @@ spawnLvlOptions.forEach(option => {
 
 
 // Funkcja do wyświetlania odpowiedniej zawartości w iframe
-function loadIframeContentMobBattle() {
-    const contentUrl = 'mob_battle.html';
+function loadIframeContentMobBattle(mobId) {
+    const contentUrl = `mob_battle.html?mobId=${mobId}`; // Pass mobId as a query parameter
 
     if (contentIframeMobBattle.src.includes(contentUrl)) {
         contentIframeMobBattle.src = ''; // Reset iframe source
