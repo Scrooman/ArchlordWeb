@@ -39,8 +39,24 @@ document.addEventListener('DOMContentLoaded', function () {
         // Fields to update on the page
         const fields = [
             {
-                elementId: 'mobHpLabel',
-                valuePath: ['mobHP'],
+            elementId: 'mobHpLabel',
+            valuePath: ['mobHP'],
+            },
+            {
+            elementId: 'mobTypeLabel',
+            valuePath: ['mobTypeId'],
+            transform: (value) => {
+                if (value === 1) return 'Normal';
+                if (value === 2) return 'Normal Boss';
+                if (value === 3) return 'Unique Boss';
+                if (value === 4) return 'Elemental';
+                if (value === 5) return 'Battleground Human';
+                if (value === 6) return 'Battleground Orc';
+                if (value === 7) return 'Battleground Moonelf';
+                if (value === 8) return 'Battleground Dragonscion';
+                if (value === 9) return "Heaven's Hell";
+                return 'Unknown'; // Default case
+            },
             },
         ];
         updateMobData(fields);
