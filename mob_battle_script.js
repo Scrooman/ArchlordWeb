@@ -61,42 +61,42 @@ document.addEventListener('DOMContentLoaded', function () {
             {
             elementId: 'mob_ele_damage_value_fire',
             valuePath: ['mobElementalDamageFire'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_water',
             valuePath: ['mobElementalDamageWater'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_earth',
             valuePath: ['mobElementalDamageEarth'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_air',
             valuePath: ['mobElementalDamageAir'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_magic',
             valuePath: ['mobElementalDamageMagic'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_light',
             valuePath: ['mobElementalDamageLight'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_poison',
             valuePath: ['mobElementalDamagePoison'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             },
             {
             elementId: 'mob_ele_damage_value_ice',
             valuePath: ['mobElementalDamageIce'], 
-            transform: (value) => value === '1' ? 'X' : value === 0 ? '' : value
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
             }
         ];
         updateMobData(fields);
