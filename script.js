@@ -290,10 +290,10 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 console.log('Spawn level activated successfully:', data);
-                if (data && data.mobId) {
-                    loadIframeContentMobBattle(data.mobId);
+                if (data && data.mobData && data.mobData.mobId) {
+                    loadIframeContentMobBattle(data.mobData.mobId);
                 } else {
-                    console.error('No mobId returned from the server.');
+                    console.error('No mobId found in the response.');
                 }
             })
             .catch(error => console.error('Error activating spawn level:', error));
