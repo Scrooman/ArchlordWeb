@@ -124,11 +124,14 @@ body {
     margin: 5px;
     padding: 5px;
     color: #ffffff;
-    background-image: url('images/black_label_small.png'); 
+    background-image: url('images/black_label_small.png');
     background-size: 100% 100%;
     justify-self: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional for better text visibility */
 }
 
 /* sekcja przechowująca pola dot. elemental dg and resis */
