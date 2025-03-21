@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function selectSpawnLvl(event) {
         const clickedElement = event.currentTarget;
         const chosedSpawnLvlButton = clickedElement.id.split('_').pop(); // Extract the last word after "_" from the ID
-        activateSpawnForSpawnLvl(chosedSpawnLvlButton);
+        activateSpawnForSpawnLvl(chosedSpawnLvlButton, chosedMobType);
     }
 
     spawnLvlChangeButtonContainers.forEach(container => {
