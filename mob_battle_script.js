@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const fields = [
             {
             elementId: 'mobHpLabel',
-            valuePath: [],
+            valuePath: ['mobHP'],
             }
         ];
         const url = `http://127.0.0.1:5000/get_mob_data?mobId=${mobId}`;
