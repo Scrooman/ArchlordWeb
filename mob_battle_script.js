@@ -31,6 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         element.textContent = transform ? transform(value) : value;
                     }
                 });
+                const imgElement = document.querySelector('.mob_img_container img');
+                if (imgElement) {
+                    const imagePath = data.mobImageSource;
+                    if (imagePath) {
+                        imgElement.src = imagePath;
+                        imgElement.alt = "Mob Image"; // Set the alt attribute
+                    } else {
+                        console.error('Error: mobImageSource is missing in data.');
+                    }
+                } else {
+                    console.error('Error: <img> element with class "mob_img_container" not found.');
+                }
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
@@ -137,35 +149,12 @@ document.addEventListener('DOMContentLoaded', function () {
             elementId: 'mob_ele_resis_value_ice',
             valuePath: ['mobElementalResistanceIce'], 
             transform: (value) => `${value}%`
-            },
-            {
-            elementId: 'mob_img_container',
-            valuePath: ['mobImageSource'],
-            transform: (value) => {
-                console.log('Transforming mobImageSource:', value); // Logowanie wartości
-                const container = document.querySelector('#mob_img_container');
-                if (!container) {
-                    console.error('Error: Element with id "mob_img_container" not found.');
-                    return;
-                }
-                if (!value) {
-                    console.error('Error: Image source is null or undefined.');
-                    return;
-                }
-                let imgElement = container.querySelector('img');
-                if (!imgElement) {
-                    // Jeśli element <img> nie istnieje, utwórz go
-                    imgElement = document.createElement('img');
-                    imgElement.alt = 'Mob Image';
-                    container.appendChild(imgElement);
-                }
-                imgElement.src = value; // Ustaw ścieżkę obrazu
             }
-            },
         ];
         updateMobData(fields);
     }
 
     // Call the function to update data on the page
     updateMobInfo();
+
 });
