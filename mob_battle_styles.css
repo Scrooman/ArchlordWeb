@@ -73,7 +73,7 @@ body {
 .mob_life_bar_container {
     width: 300px;
     height: 37px;
-    background-image: url('images/life_bar_name_and_lvl_label.png');
+    background-image: url('images/mob_life_bar.png');
     background-size: 100% 100%;
     justify-content: center;
     align-items: center;

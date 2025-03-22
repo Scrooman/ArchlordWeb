@@ -59,6 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Fields to update on the page
         const fields = [
             {
+            elementId: 'mob_life_bar_name_and_lvl_label',
+            valuePath: [''],
+            transform: (value) => `${value['name']} Lvl${value['lvl']}`
+            },
+            {
             elementId: 'mobHpLabel',
             valuePath: ['mobHP'],
             },
