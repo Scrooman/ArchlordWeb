@@ -102,6 +102,41 @@ document.addEventListener('DOMContentLoaded', function () {
             elementId: 'mob_ele_resis_value_fire',
             valuePath: ['mobElementalResistanceFire'], 
             transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_water',
+            valuePath: ['mobElementalResistanceWater'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_earth',
+            valuePath: ['mobElementalResistanceEarth'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_air',
+            valuePath: ['mobElementalResistanceAir'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_magic',
+            valuePath: ['mobElementalResistanceMagic'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_light',
+            valuePath: ['mobElementalResistanceLight'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_poison',
+            valuePath: ['mobElementalResistancePoison'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_ice',
+            valuePath: ['mobElementalResistanceIce'], 
+            transform: (value) => `${value}%`
             }
         ];
         updateMobData(fields);
