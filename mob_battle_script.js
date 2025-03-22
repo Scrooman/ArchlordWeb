@@ -31,20 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         element.textContent = transform ? transform(value) : value;
                     }
                 });
-                const imgContainer = document.querySelector('.mob_img_container');
-                if (imgContainer) {
-                    const imagePath = data.mobImageSource;
-                    if (imagePath) {
+                const mobImgContainer = document.querySelector('.mob_img_container');
+                if (mobImgContainer) {
+                    const mobImagePath = data.mobImageSource;
+                    if (mobImagePath) {
                         // Clear existing content in the container
-                        imgContainer.innerHTML = '';
+                        mobImgContainer.innerHTML = '';
                         
                         // Create a new <img> element
-                        const imgElement = document.createElement('img');
-                        imgElement.src = imagePath;
-                        imgElement.alt = "Mob Image"; // Set the alt attribute
+                        const mobImgElement = document.createElement('img');
+                        mobImgElement.src = mobImagePath;
+                        mobImgElement.alt = "Mob Image"; // Set the alt attribute
                         
                         // Append the <img> element to the container
-                        imgContainer.appendChild(imgElement);
+                        imgContainer.appendChild(mobImgElement);
                     } else {
                         console.error('Error: mobImageSource is missing in data.');
                     }
