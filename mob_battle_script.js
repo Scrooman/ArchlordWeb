@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const fields = [
             {
             elementId: 'mob_life_bar_name_and_lvl_label',
-            valuePath: ['name'],            },
+            valuePath: ['name'],            
+        },
             {
             elementId: 'mobHpLabel',
             valuePath: ['mobHP']
