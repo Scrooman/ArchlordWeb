@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
             elementId: 'mob_life_bar_name_and_lvl_label',
             valuePath: ['name'],            
-        },
+            },
             {
             elementId: 'mobHpLabel',
             valuePath: ['mobHP']
