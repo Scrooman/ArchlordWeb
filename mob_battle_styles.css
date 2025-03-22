@@ -26,7 +26,7 @@ body {
 }
 
 .mob_life_bar_column_container { /*do podziału na poszczególne elementy grafiki wraz z containerem na nazwę moba */
-    width: 500px;
+    width: 450px;
     height: 50px;
     margin: 0px;
     justify-self: center;
@@ -97,7 +97,7 @@ body {
 
 .mob_img_and_minimap_container {
     display: flex;
-    width: 160px;
+    width: 250px;
     height: 220px;
     justify-self: center;
 }
