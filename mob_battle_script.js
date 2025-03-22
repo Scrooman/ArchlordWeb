@@ -97,6 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
             elementId: 'mob_ele_damage_value_ice',
             valuePath: ['mobElementalDamageIce'], 
             transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_resis_value_fire',
+            valuePath: ['mobElementalResisntaceFire'], 
+            transform: (value) => `${value}%`
             }
         ];
         updateMobData(fields);
