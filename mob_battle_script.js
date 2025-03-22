@@ -31,17 +31,25 @@ document.addEventListener('DOMContentLoaded', function () {
                         element.textContent = transform ? transform(value) : value;
                     }
                 });
-                const imgElement = document.querySelector('.mob_img_container img');
-                if (imgElement) {
+                const imgContainer = document.querySelector('.mob_img_container');
+                if (imgContainer) {
                     const imagePath = data.mobImageSource;
                     if (imagePath) {
+                        // Clear existing content in the container
+                        imgContainer.innerHTML = '';
+                        
+                        // Create a new <img> element
+                        const imgElement = document.createElement('img');
                         imgElement.src = imagePath;
                         imgElement.alt = "Mob Image"; // Set the alt attribute
+                        
+                        // Append the <img> element to the container
+                        imgContainer.appendChild(imgElement);
                     } else {
                         console.error('Error: mobImageSource is missing in data.');
                     }
                 } else {
-                    console.error('Error: <img> element with class "mob_img_container" not found.');
+                    console.error('Error: Element with class "mob_img_container" not found.');
                 }
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
