@@ -26,8 +26,8 @@ body {
 }
 
 .mob_life_bar_column_container { /*do podziału na poszczególne elementy grafiki wraz z containerem na nazwę moba */
-    width: 600px;
-    height: 50px;
+    width: 500px;
+    height: 75px;
     margin: 0px;
     justify-self: center;
     display: flex;
@@ -37,24 +37,24 @@ body {
 }
 
 .mob_life_left_side_img {
-    width: 100px;
-    height: 50px;
+    width: 95px;
+    height: 75px;
     background-image: url('images/life_bar_left_side.png'); 
     background-size: 100% 100%;
     justify-self: center;
 }
 
 .mob_life_right_side_img {
-    width: 100px;
-    height: 50px;
+    width: 95px;
+    height: 75px;
     background-image: url('images/life_bar_right_side.png'); 
     background-size: 100% 100%;
     justify-self: center;
 }
 
 .mob_life_bar_middle_column_container {
-    width: 400px;
-    height: 50px;
+    width: 300px;
+    height: 75px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -62,21 +62,19 @@ body {
 }
 
 .mob_life_bar_name_and_lvl_label {
-    width: 400px;
-    height: 25px;
+    width: 300px;
+    height: 37px;
     background-image: url('images/life_bar_name_and_lvl_label.png'); 
     background-size: 100% 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .mob_life_bar_container {
-    width: 400px;
-    height: 25px;
-    /* background-image: url('images/life_bar_name_and_lvl_label.png');
-    background-size: 100% 100%; */
-    display: flex;
+    width: 300px;
+    height: 37px;
+    background-image: url('images/life_bar_name_and_lvl_label.png');
+    background-size: 100% 100%;
     justify-content: center;
     align-items: center;
 }
