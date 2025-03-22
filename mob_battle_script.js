@@ -60,40 +60,109 @@ document.addEventListener('DOMContentLoaded', function () {
         const fields = [
             {
             elementId: 'mob_life_bar_name_and_lvl_label',
-            valuePath: ['name'],            
+            valuePath: [],
+            transform: (value) => `${value['name']} Lvl${value['lvl']}`
             },
             {
             elementId: 'mobHpLabel',
-            valuePath: ['mobHP']
+            valuePath: ['mobHP'],
             },
             {
             elementId: 'mobTypeLabel',
             valuePath: ['mobTypeId'],
             transform: (value) => {
-                switch (value) {
-                case 1: return 'Normal';
-                case 2: return 'Normal Boss';
-                case 3: return 'Unique Boss';
-                case 4: return 'Elemental';
-                case 5: return 'Battleground Human';
-                case 6: return 'Battleground Orc';
-                case 7: return 'Battleground Moonelf';
-                case 8: return 'Battleground Dragonscion';
-                case 9: return "Heaven's Hell";
-                default: return 'Unknown';
-                }
-            }
+            if (value === 1) return 'Normal';
+            if (value === 2) return 'Normal Boss';
+            if (value === 3) return 'Unique Boss';
+            if (value === 4) return 'Elemental';
+            if (value === 5) return 'Battleground Human';
+            if (value === 6) return 'Battleground Orc';
+            if (value === 7) return 'Battleground Moonelf';
+            if (value === 8) return 'Battleground Dragonscion';
+            if (value === 9) return "Heaven's Hell";
+            return 'Unknown'; // Default case
             },
-            ...['Fire', 'Water', 'Earth', 'Air', 'Magic', 'Light', 'Poison', 'Ice'].map(element => ({
-            elementId: `mob_ele_damage_value_${element.toLowerCase()}`,
-            valuePath: [`mobElementalDamage${element}`],
+            },
+            {
+            elementId: 'mob_ele_damage_value_fire',
+            valuePath: ['mobElementalDamageFire'], 
             transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
-            })),
-            ...['Fire', 'Water', 'Earth', 'Air', 'Magic', 'Light', 'Poison', 'Ice'].map(element => ({
-            elementId: `mob_ele_resis_value_${element.toLowerCase()}`,
-            valuePath: [`mobElementalResistance${element}`],
+            },
+            {
+            elementId: 'mob_ele_damage_value_water',
+            valuePath: ['mobElementalDamageWater'], 
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_damage_value_earth',
+            valuePath: ['mobElementalDamageEarth'], 
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_damage_value_air',
+            valuePath: ['mobElementalDamageAir'], 
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_damage_value_magic',
+            valuePath: ['mobElementalDamageMagic'], 
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_damage_value_light',
+            valuePath: ['mobElementalDamageLight'], 
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_damage_value_poison',
+            valuePath: ['mobElementalDamagePoison'], 
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_damage_value_ice',
+            valuePath: ['mobElementalDamageIce'], 
+            transform: (value) => value === '1' ? 'X' : value === '0' ? '' : value
+            },
+            {
+            elementId: 'mob_ele_resis_value_fire',
+            valuePath: ['mobElementalResistanceFire'], 
             transform: (value) => `${value}%`
-            }))
+            },
+            {
+            elementId: 'mob_ele_resis_value_water',
+            valuePath: ['mobElementalResistanceWater'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_earth',
+            valuePath: ['mobElementalResistanceEarth'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_air',
+            valuePath: ['mobElementalResistanceAir'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_magic',
+            valuePath: ['mobElementalResistanceMagic'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_light',
+            valuePath: ['mobElementalResistanceLight'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_poison',
+            valuePath: ['mobElementalResistancePoison'], 
+            transform: (value) => `${value}%`
+            },
+            {
+            elementId: 'mob_ele_resis_value_ice',
+            valuePath: ['mobElementalResistanceIce'], 
+            transform: (value) => `${value}%`
+            }
         ];
         updateMobData(fields);
     }
