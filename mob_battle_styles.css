@@ -52,7 +52,7 @@ body {
 
 .mob_img_and_minimap_container {
     display: flex;
-    width: 315px;
+    width: 350px;
     height: 220px;
     justify-self: center;
 }
