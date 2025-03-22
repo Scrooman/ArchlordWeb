@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 elementId: 'mob_img_container',
                 valuePath: ['mobImageSource'],
                 transform: (value) => {
-                    const container = document.querySelector('.mob_img_container');
+                    const container = document.querySelector('mob_img_container');
                     if (container) {
                         container.innerHTML = `<img src="${value}" alt="Mob Image">`;
                     }
