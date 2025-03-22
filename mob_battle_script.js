@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
             elementId: 'mob_ele_resis_value_fire',
-            valuePath: ['mobElementalResisntaceFire'], 
+            valuePath: ['mobElementalResistanceFire'], 
             transform: (value) => `${value}%`
             }
         ];
