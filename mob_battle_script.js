@@ -60,9 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const fields = [
             {
             elementId: 'mob_life_bar_name_and_lvl_label',
-            valuePath: ['name', 'lvl'],
-            transform: (value) => `${value[0]} Lvl${value[1]}`
-            },
+            valuePath: ['name'],            },
             {
             elementId: 'mobHpLabel',
             valuePath: ['mobHP']
