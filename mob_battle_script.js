@@ -142,12 +142,24 @@ document.addEventListener('DOMContentLoaded', function () {
             elementId: 'mob_img_container',
             valuePath: ['mobImageSource'],
             transform: (value) => {
-                console.log('Transforming mobImageSource:', value); // Logging for verification
+                console.log('Transforming mobImageSource:', value); // Logowanie wartości
                 const container = document.querySelector('#mob_img_container');
-                if (container) {
-                container.innerHTML = `<img src="${value}" alt="Mob Image">`;
+                if (!container) {
+                    console.error('Error: Element with id "mob_img_container" not found.');
+                    return;
                 }
-                return null; // No text content to set
+                if (!value) {
+                    console.error('Error: Image source is null or undefined.');
+                    return;
+                }
+                let imgElement = container.querySelector('img');
+                if (!imgElement) {
+                    // Jeśli element <img> nie istnieje, utwórz go
+                    imgElement = document.createElement('img');
+                    imgElement.alt = 'Mob Image';
+                    container.appendChild(imgElement);
+                }
+                imgElement.src = value; // Ustaw ścieżkę obrazu
             }
             },
         ];
