@@ -85,19 +85,27 @@ body {
 .input_container {
     width: 275px;
     height: 35px;
-    line-height: 25px;
     margin-left: 10px;
     padding: 0px;
-    line-height: 35px;
     color: #ffffff;
     background-color: #06060d;
     border: 1px solid #454343;
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     align-self: center;
+}
+
+.input_container input {
+    width: 95%;
+    height: 90%;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    padding: 0 5px;
 }
 
 .main_container_buttons_section {
