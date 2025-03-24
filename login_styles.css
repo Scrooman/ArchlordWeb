@@ -21,7 +21,7 @@ body {
     align-items: flex-start;
     justify-self: center;
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 1px solid #a7a7a7;
@@ -66,6 +66,20 @@ body {
     align-items: flex-start;
     justify-self: center;
     justify-content: space-around;
+}
+
+.upper_label_container {
+    width: 425px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px;
+    padding: 0px;
+    color: #fcfcfc;
+    justify-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
 }
 
 .label_container {
