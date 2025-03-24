@@ -44,6 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateData('http://127.0.0.1:5000/get_character', fields);
     }
+    const logedInCharacterId = localStorage.getItem("logedInCharacterId"); // pobranie id postaci z local storage do pracy na stronie
+
+    if (logedInCharacterId) {
+        updateCharacterInfo(logedInCharacterId);
+    } else {
+        console.error("Character ID not found.");
+    }
 
     let chosedMobType = null;
     let currentCenterSpawnLvl = null;
@@ -159,9 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Error fetching mob spawn dictionary:', error));
     }
-
-    // wywołanie funkcji aktualizowania danych na stronie
-    updateCharacterInfo();
     
     // Zmienne dla opcji menu
     const menuOptions = document.querySelectorAll('.menu_option_label_container');
