@@ -6,7 +6,7 @@ body {
     background-color: #050a11;
     background-image: url('images/login_background.jpg'); 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: 70%;
 }
 
@@ -100,6 +100,7 @@ body {
     width: 275px;
     height: 35px;
     margin-left: 10px;
+    margin-right: 30px;
     padding: 0px;
     color: #ffffff;
     background-color: #06060d;
