@@ -4,7 +4,7 @@ body {
     color: #f8f9fa;
     cursor: url('images/cursor_m1.png'), auto;
     background-color: #050a11;
-    background-image: url('images/login_background.jpg.png'); 
+    background-image: url('images/login_background.jpg'); 
     background-size: contain;
 }
 
@@ -18,6 +18,15 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     justify-self: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+    background-image: url('images/window_background.png'); 
+    background-size: 100% 100%;
 }
 
 .main_container_upper_label_img {
@@ -28,9 +37,12 @@ body {
 }
 
 .main_container_upper_section {
-    width: 450px;
+    width: 435px;
     height: 200px;
-    margin: 0px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -44,60 +56,66 @@ body {
 }
 
 .main_container_upper_section_row_container {
-    width: 450px;
+    width: 425px;
     height: 50px;
-    margin: 0px;
-    padding: 0px;
+    margin: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: flex-start;
     justify-self: center;
+    justify-content: space-around;
 }
 
 .label_container {
-    width: 50px;
-    height: 25px;
-    line-height: 25px;
+    width: 125px;
+    height: 50px;
+    line-height: 50px;
     margin: 0px;
     padding: 0px;
     color: #fcfcfc;
     justify-self: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
     align-items: center;
 }
 
 .input_container {
-    width: 100px;
-    height: 25px;
+    width: 275px;
+    height: 35px;
     line-height: 25px;
     margin-left: 10px;
     padding: 0px;
-    line-height: 25px;
-    color:#ffffff;
+    line-height: 35px;
+    color: #ffffff;
     background-color: #06060d;
     border: 1px solid #454343;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: baseline;
+    align-self: center;
 }
 
 .main_container_buttons_section {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: flex-start;
     justify-self: center;
+    width: 450px;
+    height: 50px;
 }
 
 .login_buttons_container {
-    width: 50px;
-    height: 25px;
-    line-height: 25px;
-    margin: 0px;
+    width: 100px;
+    height: 15px;
+    line-height: 15px;
+    margin: 10px;
     padding: 5px;
     color: #ffffff;
-    background-image: url('images/button.png'); 
+    background-image: url('images/button.png');
     background-size: 100% 100%;
     justify-self: center;
     display: flex;
