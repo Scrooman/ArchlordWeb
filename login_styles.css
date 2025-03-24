@@ -5,7 +5,9 @@ body {
     cursor: url('images/cursor_m1.png'), auto;
     background-color: #050a11;
     background-image: url('images/login_background.jpg'); 
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
 }
 
 .main_container {
@@ -25,7 +27,7 @@ body {
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
-    background-image: url('images/window_background.png'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/window_background.png');
     background-size: 100% 100%;
 }
 
@@ -49,7 +51,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     justify-self: center;
-    background-color: #06060d;
+    background-color: rgba(6, 6, 13, 0.5); /* 50% transparent background */
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
