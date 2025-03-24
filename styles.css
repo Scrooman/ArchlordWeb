@@ -381,3 +381,19 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.login_page_button {
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    margin: 2px;
+    padding: 5px;
+    color: #ffffff;
+    background-image: url('images/button.png'); 
+    background-size: 100% 100%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    transition: background 0.3s ease, background-blend-mode 0.3s ease;
+    background-blend-mode: normal;
+}
