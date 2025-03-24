@@ -6,8 +6,8 @@ body {
     background-color: #050a11;
     background-image: url('images/login_background.jpg'); 
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: auto;
+    background-position: center;
+    background-size: 1920px 1080px; /* Set the specific width and height */
 }
 
 .main_container {
