@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let selectedRaceIconId = null;
 
-    document.querySelectorAll(".race_icon_button").forEach(button => {
-        button.addEventListener("click", () => {
+    document.querySelectorAll(".race_icon_button").forEach(raceButton => {
+        raceButton.addEventListener("click", () => {
             selectedRaceIconId = raceButton.id;
             console.log("Selected Race Icon ID:", selectedRaceIconId);
         });
@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let selectedClassIconId = null;
 
-    document.querySelectorAll(".class_icon_button").forEach(button => {
-        button.addEventListener("click", () => {
+    document.querySelectorAll(".class_icon_button").forEach(classButton => {
+        classButton.addEventListener("click", () => {
             selectedClassIconId = classButton.id;
             console.log("Selected class Icon ID:", selectedClassIconId);
         });
