@@ -27,6 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
         loginMainContainer.style.display = "flex";
     });
 
+    let selectedRaceIconId = null;
+
+    document.querySelectorAll(".race_icons_button").forEach(button => {
+        button.addEventListener("click", () => {
+            selectedRaceIconId = button.id;
+            console.log("Selected Race Icon ID:", selectedRaceIconId);
+        });
+    });
+
     confirmButton.addEventListener("click", async () => {
         const userId = document.getElementById("userId").value;
 
