@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let selectedRaceIconId = null;
 
-    document.querySelectorAll(".race_icons_button").forEach(button => {
+    document.querySelectorAll(".race_icon_button").forEach(button => {
         button.addEventListener("click", () => {
             selectedRaceIconId = button.id;
             console.log("Selected Race Icon ID:", selectedRaceIconId);
