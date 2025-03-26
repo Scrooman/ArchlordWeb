@@ -237,6 +237,12 @@ body {
     flex-direction: row;
 }
 
+.class_icon_button:hover {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    background-size: 100% 100%;
+    background-blend-mode: lighten;
+}
+
 .main_container_bottom_section {
     width: 435px;
     height: 100px;
