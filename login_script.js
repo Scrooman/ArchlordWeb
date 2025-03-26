@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const registerButton = document.getElementById("registerButton");
     const loginMainContainer = document.getElementById("loginMainContainer");
     const registrationMainContainer = document.getElementById("registrationMainContainer");
+    const fromRegistrationBackButton = document.getElementById("fromRegistrationBackButton");
 
     registerButton.addEventListener("click", () => {
         // Ukryj sekcję loginMainContainer
@@ -16,6 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Upewnij się, że na początku tylko loginMainContainer jest widoczny
     loginMainContainer.style.display = "flex";
     registrationMainContainer.style.display = "none";
+
+
+    fromRegistrationBackButton.addEventListener("click", () => {
+        // Ukryj sekcję registrationMainContainer
+        registrationMainContainer.style.display = "none";
+
+        // Wyświetl sekcję loginMainContainer
+        loginMainContainer.style.display = "flex";
+    });
 
     confirmButton.addEventListener("click", async () => {
         const userId = document.getElementById("userId").value;
