@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".race_icon_button").forEach(button => {
         button.addEventListener("click", () => {
-            selectedRaceIconId = button.id;
+            selectedRaceIconId = raceButton.id;
             console.log("Selected Race Icon ID:", selectedRaceIconId);
         });
     });
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".class_icon_button").forEach(button => {
         button.addEventListener("click", () => {
-            selectedRaceIconId = button.id;
+            selectedClassIconId = classButton.id;
             console.log("Selected class Icon ID:", selectedClassIconId);
         });
     });
