@@ -36,6 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    let selectedClassIconId = null;
+
+    document.querySelectorAll(".class_icon_button").forEach(button => {
+        button.addEventListener("click", () => {
+            selectedRaceIconId = button.id;
+            console.log("Selected class Icon ID:", selectedClassIconId);
+        });
+    });
+
     confirmButton.addEventListener("click", async () => {
         const userId = document.getElementById("userId").value;
 
