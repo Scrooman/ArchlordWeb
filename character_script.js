@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Funkcja aktualizowania danych na stronie
     function updateData(endpoint, fields) {
+        console.log("Endpoint:", endpoint); // Sprawdź, jaki endpoint jest używany
+        console.log("Character ID:", localStorage.getItem("logedInCharacterId"));
+        console.log("User ID:", localStorage.getItem("userId"));
+
         const characterId = localStorage.getItem("logedInCharacterId");
         const userId = localStorage.getItem("userId");
 
@@ -89,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ];
 
-        updateData('http://127.0.0.1:5000/get_character', fields);
+        updateData('http://127.0.0.1:5000/fetch_character', fields);
     }
 
     // Wywołanie funkcji aktualizowania danych na stronie
