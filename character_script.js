@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const userId = localStorage.getItem("userId");
 
         fetch(endpoint, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
