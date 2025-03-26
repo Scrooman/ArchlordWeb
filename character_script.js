@@ -35,61 +35,61 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCharacterInfo() {
         const fields = [
             {
-                elementId: 'classRaceName',
-                valuePath: [],
-                transform: (character) => {
-                    const race = character.race === 4 ? "Human" : character.race;
-                    const className = character.class === 8 ? "Knight" : character.class;
-                    return `${race} ${className}`;
-                }
+            elementId: 'classRaceName',
+            valuePath: [],
+            transform: (character) => {
+                const race = character.race === "4" ? "Human" : character.race;
+                const className = character.class === "8" ? "Knight" : character.class;
+                return `${race} ${className}`;
+            }
             },
             {
-                elementId: 'characterLvl',
-                valuePath: ['lvl'],
-                transform: (lvl) => `Level ${lvl}`
+            elementId: 'characterLvl',
+            valuePath: ['lvl'],
+            transform: (lvl) => `Level ${lvl}`
             },
             {
-                elementId: 'characterName',
-                valuePath: ['name']
+            elementId: 'characterName',
+            valuePath: ['name']
             },
             {
-                elementId: 'experiencePoints',
-                valuePath: ['characteristics'],
-                transform: (characteristics) => `EXP ${characteristics['currentExperiencePoints']}/${characteristics['requiredExperiencePoints']}`
+            elementId: 'experiencePoints',
+            valuePath: [],
+            transform: (character) => `EXP ${character.currentExperiencePoints}/${character.requiredExperiencePoints}`
             },
             {
-                elementId: 'healthPoints',
-                valuePath: ['characteristics'],
-                transform: (characteristics) => `${characteristics['currentHp']}/${characteristics['totalMaxHp']}`
+            elementId: 'healthPoints',
+            valuePath: [],
+            transform: (character) => `${character.currentHp}/${character.totalMaxHp}`
             },
             {
-                elementId: 'manaPoints',
-                valuePath: ['characteristics'],
-                transform: (characteristics) => `${characteristics['currentMana']}/${characteristics['totalMaxMana']}`
+            elementId: 'manaPoints',
+            valuePath: [],
+            transform: (character) => `${character.currentMana}/${character.totalMaxMana}`
             },
             {
-                elementId: 'characterSta',
-                valuePath: ['atributes', 'currentStamina']
+            elementId: 'characterSta',
+            valuePath: ['baseStamina']
             },
             {
-                elementId: 'characterStr',
-                valuePath: ['atributes', 'currentStrength']
+            elementId: 'characterStr',
+            valuePath: ['baseStrength']
             },
             {
-                elementId: 'characterWis',
-                valuePath: ['atributes', 'currentWisdom']
+            elementId: 'characterWis',
+            valuePath: ['baseWisdom']
             },
             {
-                elementId: 'characterInt',
-                valuePath: ['atributes', 'currentIntelligence']
+            elementId: 'characterInt',
+            valuePath: ['baseIntelligence']
             },
             {
-                elementId: 'characterAgi',
-                valuePath: ['atributes', 'currentAgility']
+            elementId: 'characterAgi',
+            valuePath: ['baseAgility']
             },
             {
-                elementId: 'characterCha',
-                valuePath: ['atributes', 'currentCharisma']
+            elementId: 'characterCha',
+            valuePath: ['baseCharisma']
             }
         ];
 
