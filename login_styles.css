@@ -176,6 +176,25 @@ body {
     background-size: 100% 100%;
 }
 
+.registration_main_container_upper_section {
+    width: 435px;
+    height: 400px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-self: center;
+    background-color: rgba(6, 6, 13, 0.5); /* 50% transparent background */
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+}
+
 .race_class_icons_container {
     width: 200px;
     height: 50px;
