@@ -19,11 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     const data = await response.json();
                     console.log(data.message); // Wyświetl wiadomość z serwera
 
-                    // Przechowaj ID w localStorage
-                    localStorage.setItem("logedInCharacterId", userId);
-
-                    // Logowanie w konsoli
-                    console.log(`User with ID ${userId} has been successfully logged in.`);
+                    // Przechowaj characterId i userId w localStorage
+                    localStorage.setItem("logedInCharacterId", data.characterId);
+                    localStorage.setItem("userId", data.userId);
 
                     // Przekieruj na index.html
                     window.location.href = "index.html";

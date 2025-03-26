@@ -3,7 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // funkcje aktualizowania danych na stronie
 
     function updateData(endpoint, fields) {
-        fetch(endpoint)
+        const characterId = localStorage.getItem("logedInCharacterId");
+        const userId = localStorage.getItem("userId");
+
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ characterId, userId })
+        })
             .then(response => response.json())
             .then(data => {
                 fields.forEach(({ elementId, valuePath, transform }) => {
