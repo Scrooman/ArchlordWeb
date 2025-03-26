@@ -157,7 +157,7 @@ body {
 
 .registraion_main_container {
     width: 450px;
-    height: 700px;
+    height: 650px;
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -178,7 +178,7 @@ body {
 
 .registration_main_container_upper_section {
     width: 435px;
-    height: 400px;
+    height: 200px;
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
@@ -198,7 +198,6 @@ body {
 .race_class_icons_container {
     width: 200px;
     height: 50px;
-    line-height: 50px;
     margin: 0px;
     padding: 0px;
     color: #fcfcfc;
@@ -213,7 +212,6 @@ body {
 .race_icon_button {
     width: 50px;
     height: 50px;
-    line-height: 50px;
     margin: 0px;
     padding: 0px;
     color: #fcfcfc;
@@ -228,7 +226,6 @@ body {
 .class_icon_button {
     width: 50px;
     height: 50px;
-    line-height: 50px;
     margin: 0px;
     padding: 0px;
     color: #fcfcfc;
