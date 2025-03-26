@@ -46,10 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 valuePath: ['characterOperation', 'operationKindId'],
                 transform: (localizationTypeId) => {
                 switch (localizationTypeId) {
-                case 0: return 'Idle';
-                case 1: return 'Respawning';
-                case 2: return 'Travelling';
-                case 3: return 'Battle';
+                case 1: return 'Battle';
+                case 2: return 'Idle';
+                case 3: return 'Travelling';
+                case 4: return 'Waiting for mob to respawn';
+                case 5: return 'Respawning';
                 default: return 'Unknown';
                     }   
                 }
@@ -74,12 +75,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
     function showUpdatedSpawnList(mobType, referenceLevel = null) {
-        fetch('http://127.0.0.1:5000/fetch_character')
-            .then(response => response.json())
-            .then(characterData => {
-                const characterLevel = referenceLevel || characterData['lvl']; // Use referenceLevel if provided, otherwise use character level
-                const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}`;
-                chosedMobType = mobType; // Update global variable
+        const characterId = localStorage.getItem("logedInCharacterId");
+        const userId = localStorage.getItem("userId");
+
+        fetch('http://127.0.0.1:5000/fetch_character', {
+            method: 'POST', // Użycie metody POST
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ characterId, userId }) // Dodano userId do przesyłanych danych
+        })
+        .then(response => {
+            if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(characterData => {
+            const characterLevel = referenceLevel || characterData['lvl']; // Use referenceLevel if provided, otherwise use character level
+            const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}`;
+            chosedMobType = mobType; // Update global variable
                 
                 fetch(url)
                     .then(response => response.json())
