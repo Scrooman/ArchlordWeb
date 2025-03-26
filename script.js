@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 elementId: 'characterOperationStatus',
-                valuePath: ['characterOperation', 'operationKind'],
+                valuePath: ['characterOperation', 'operationKindId'],
                 transform: (localizationTypeId) => {
                 switch (localizationTypeId) {
                 case 0: return 'Idle';
