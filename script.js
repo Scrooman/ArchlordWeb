@@ -306,8 +306,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         console.log('Activating spawn level:', mobSpawnLevel, 'for mob type:', mobType); // Added mobType to the log
+        const characterId = localStorage.getItem("logedInCharacterId");
         const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl`;
-        const payload = { spawnLevel: mobSpawnLevel, mobType: mobType }; // Added mobType to the payload
+        const payload = { spawnLevel: mobSpawnLevel, mobType: mobType , characterId: characterId}; // Added mobType to the payload
 
         fetch(url, {
             method: 'POST',
