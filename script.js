@@ -3,16 +3,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // funkcje aktualizowania danych na stronie
 
     function updateData(endpoint, fields) {
-        fetch(endpoint)
-            .then(response => response.json())
-            .then(data => {
-                fields.forEach(({ elementId, valuePath, transform }) => {
-                    const element = document.getElementById(elementId);
-                    const value = valuePath.reduce((acc, key) => acc[key], data);
-                    element.textContent = transform ? transform(value) : value;
-                });
-            })
-            .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
+        const characterId = localStorage.getItem("logedInCharacterId");
+        const userId = localStorage.getItem("userId");
+
+        fetch(endpoint, {
+            method: 'POST', // Użycie metody POST
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ characterId, userId }) // Dodano userId do przesyłanych danych
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            fields.forEach(({ elementId, valuePath, transform }) => {
+                const element = document.getElementById(elementId);
+                const value = valuePath.reduce((acc, key) => acc[key], data);
+                element.textContent = transform ? transform(value) : value;
+            });
+        })
+        .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
 
     function updateCharacterInfo() {
@@ -42,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ];
 
-        updateData('http://127.0.0.1:5000/get_character', fields);
+        updateData('http://127.0.0.1:5000/fetch_character', fields);
     }
     const logedInCharacterId = localStorage.getItem("logedInCharacterId"); // pobranie id postaci z local storage do pracy na stronie
 
@@ -60,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
     function showUpdatedSpawnList(mobType, referenceLevel = null) {
-        fetch('http://127.0.0.1:5000/get_character')
+        fetch('http://127.0.0.1:5000/fetch_character')
             .then(response => response.json())
             .then(characterData => {
                 const characterLevel = referenceLevel || characterData['lvl']; // Use referenceLevel if provided, otherwise use character level
