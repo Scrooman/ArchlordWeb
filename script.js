@@ -93,8 +93,17 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(characterData => {
             const characterLevel = referenceLevel || characterData['lvl']; // Use referenceLevel if provided, otherwise use character level
-            const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}`;
+            const url = `http://127.0.0.1:5000/fetch_mob_spawn_dictionary`;
+
             chosedMobType = mobType; // Update global variable
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ characterId, userId, mobType }) // Send characterId, userId, and mobType in the request body
+            })
                 
                 fetch(url)
                     .then(response => response.json())
