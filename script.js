@@ -34,16 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 elementId: 'characterState',
                 valuePath: ['characterState', 'stateId'],
-                transform: (stateId) => stateId === 1 ? 'Alive' : 'Dead'
+                transform: (stateId) => stateId === 1 ? 'Dead' : 'Alive'
             },
             {
                 elementId: 'characterLocalization',
-                valuePath: ['characterState', 'localization', 'localizationType'],
+                valuePath: ['localizationTypeId'],
                 transform: (localizationTypeId) => localizationTypeId === 0 ? 'City' : 'Spawn'
             },
             {
                 elementId: 'characterOperationStatus',
-                valuePath: ['characterState', 'operationKind'],
+                valuePath: ['characterOperation', 'operationKind'],
                 transform: (localizationTypeId) => {
                 switch (localizationTypeId) {
                 case 0: return 'Idle';
