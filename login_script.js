@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log(data.message); // Wyświetl wiadomość z serwera
                     alert("Registration successful!");
                     // Przechowaj characterId i userId w localStorage
-                    localStorage.setItem("logedInCharacterId", new_character_id);
+                    localStorage.setItem("logedInCharacterId", data.new_character_id);
                     localStorage.setItem("userId", data.new_user_id);
                     // Przekieruj na index.html
                     window.location.href = "index.html";
