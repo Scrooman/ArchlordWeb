@@ -240,11 +240,19 @@ body {
     text-align: center;
     align-items: center;
     flex-direction: row;
+    cursor: pointer;
+}
+
+.class_icon_button img {
+    transition: filter 0.5s ease;
 }
 
 .class_icon_button:hover img {
     filter: brightness(1.5);
-    transition: filter 0.5s ease;
+}
+
+.class_icon_button.active img {
+    filter: brightness(1.5);
 }
 
 .main_container_bottom_section {

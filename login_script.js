@@ -41,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".class_icon_button").forEach(classButton => {
         classButton.addEventListener("click", () => {
             selectedClassIconId = classButton.id;
-            console.log("Selected class Icon ID:", selectedClassIconId);
+            console.log("Selected Class Icon ID:", selectedClassIconId);
+            document.querySelectorAll('.class_icon_button').forEach(btn => btn.classList.remove('active'));
+            classButton.classList.add('active');
         });
     });
 
