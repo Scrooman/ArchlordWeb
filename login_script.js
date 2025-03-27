@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         raceButton.addEventListener("click", () => {
             selectedRaceIconId = raceButton.id;
             console.log("Selected Race Icon ID:", selectedRaceIconId);
+            document.querySelectorAll('.race_icon_button').forEach(btn => btn.raceList.remove('active'));
+            raceButton.raceList.add('active');
         });
     });
 
