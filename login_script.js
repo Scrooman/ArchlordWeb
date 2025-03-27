@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         raceButton.addEventListener("click", () => {
             selectedRaceIconId = raceButton.id;
             console.log("Selected Race Icon ID:", selectedRaceIconId);
-            document.querySelectorAll('.race_icon_button').forEach(btn => btn.raceList.remove('active'));
-            raceButton.raceList.add('active');
+            document.querySelectorAll('.race_icon_button').forEach(btn => btn.raceList.remove('race_active'));
+            raceButton.raceList.add('race_active');
         });
     });
 
@@ -129,6 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const registrationConfirmButton = document.getElementById("registrationConfirmButton");
+    const registrationConfirmButton = document.getElementById("createButton");
     registrationConfirmButton.addEventListener("click", registerNewCharacter);
 });

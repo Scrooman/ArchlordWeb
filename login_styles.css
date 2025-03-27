@@ -236,7 +236,7 @@ body {
     filter: brightness(1.5);
 }
 
-.race_icon_button.active img {
+.race_icon_button.race_active img {
     filter: brightness(1.5);
 }
 
