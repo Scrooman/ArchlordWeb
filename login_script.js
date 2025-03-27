@@ -119,7 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Przekieruj na index.html
                     window.location.href = "index.html";
                 } else {
-                    alert("Registration failed. Please try again.");
+                    const errorData = await response.json();
+                    alert(`Registration failed: ${errorData.message}`);
                 }
             } catch (error) {
                 console.error("Error:", error);
