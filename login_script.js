@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ userLogin, userPassowrd }),
+                    body: JSON.stringify({ userLogin, userPassword }),
                 });
 
                 if (response.ok) {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "index.html";
                 } else {
                     const errorData = await response.json();
-                    alert(`Registration failed: ${errorData.message}`);
+                    alert(`Registration failed: ${errorData.error}`);
                 }
             } catch (error) {
                 console.error("Error:", error);
