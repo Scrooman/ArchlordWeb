@@ -113,10 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     const data = await response.json();
                     console.log(data.message); // Wyświetl wiadomość z serwera
                     alert("Registration successful!");
-                    
-                    // Powrót do ekranu logowania
-                    registrationMainContainer.style.display = "none";
-                    loginMainContainer.style.display = "flex";
+                    // Przechowaj characterId i userId w localStorage
+                    localStorage.setItem("logedInCharacterId", newCharacterLogin);
+                    localStorage.setItem("userId", data.new_user_id);
+                    // Przekieruj na index.html
+                    window.location.href = "index.html";
                 } else {
                     alert("Registration failed. Please try again.");
                 }
