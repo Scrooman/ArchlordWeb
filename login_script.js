@@ -50,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     confirmButton.addEventListener("click", async () => {
-        const userId = document.getElementById("userId").value;
+        const userLogin = document.getElementById("userId").value;
+        const userPassowrd = document.getElementById("password").value;
 
-        if (userId) {
+        if (userLogin) {
             try {
                 // Wyślij żądanie POST do serwera
                 const response = await fetch("http://127.0.0.1:5000/login", {
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ userId }),
+                    body: JSON.stringify({ userLogin, userPassowrd }),
                 });
 
                 if (response.ok) {
