@@ -84,4 +84,51 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Please enter your User ID.");
         }
     });
+
+    const registerNewCharacter = async () => {
+        const newCharacterName = document.getElementById("newCharacterName").value;
+        const newCharacterLogin = document.getElementById("newCharacterLogin").value;
+        const newCharacterPassword = document.getElementById("newCharacterPassword").value;
+        const newCharacterRace = selectedRaceIconId;
+        const newCharacterClass = selectedClassIconId;
+
+        if (newCharacterName && newCharacterLogin && newCharacterPassword && newCharacterRace && newCharacterClass) {
+            try {
+                // Wyślij żądanie POST do serwera
+                const response = await fetch("http://127.0.0.1:5000/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        newCharacterName,
+                        newCharacterLogin,
+                        newCharacterPassword,
+                        newCharacterRace,
+                        newCharacterClass,
+                    }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data.message); // Wyświetl wiadomość z serwera
+                    alert("Registration successful!");
+                    
+                    // Powrót do ekranu logowania
+                    registrationMainContainer.style.display = "none";
+                    loginMainContainer.style.display = "flex";
+                } else {
+                    alert("Registration failed. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again later.");
+            }
+        } else {
+            alert("Please fill in all fields.");
+        }
+    };
+
+    const registrationConfirmButton = document.getElementById("registrationConfirmButton");
+    registrationConfirmButton.addEventListener("click", registerNewCharacter);
 });
