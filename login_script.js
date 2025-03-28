@@ -121,7 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "index.html";
                 } else {
                     const errorData = await response.json();
-                    alert(`Registration failed: ${errorData.error}`);
+                    const errorMessage = errorData.error || "Unknown error occurred.";
+                    alert(`Registration failed: ${errorMessage}`);
                 }
             } catch (error) {
                 console.error("Error:", error);
