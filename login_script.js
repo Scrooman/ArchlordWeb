@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Przechowaj characterId i userId w localStorage
                     localStorage.setItem("logedInCharacterId", data.characterId);
                     localStorage.setItem("userId", data.userId);
+                    localStorage.setItem("isLoggedIn", "true");
 
                     // Przekieruj na index.html
                     window.location.href = "index.html";

@@ -1,17 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const characterId = localStorage.getItem("logedInCharacterId");
+    // Sprawdzenie, czy użytkownik jest zalogowany
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn !== "true") {
+        alert("You must log in first!");
+        window.location.href = "login.html";
+    }
+
+    document.getElementById("logoutButton").addEventListener("click", () => {
+        // Usuń dane logowania z localStorage
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("userId");
+        localStorage.removeItem("logedInCharacterId");
+
+        // Przekieruj na login.html
+        window.location.href = "login.html";
+    });
     
     // funkcje aktualizowania danych na stronie
 
     function updateData(endpoint, fields) {
-        const characterId = localStorage.getItem("logedInCharacterId");
-        const userId = localStorage.getItem("userId");
+        
+        const userId = localStorage.getItem("userId");    
 
         fetch(endpoint, {
-            method: 'POST', // Użycie metody POST
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ characterId, userId }) // Dodano userId do przesyłanych danych
+            body: JSON.stringify({ characterId, userId })
         })
         .then(response => {
             if (!response.ok) {
