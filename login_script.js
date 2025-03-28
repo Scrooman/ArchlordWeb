@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     confirmButton.addEventListener("click", async () => {
         const userLogin = document.getElementById("userId").value;
-        const userPassowrd = document.getElementById("password").value;
+        const userPassword = document.getElementById("password").value;
 
         if (userLogin) {
             try {
