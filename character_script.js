@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
             elementId: 'healthPoints',
             valuePath: ["hpAndMp", "Hp"],
-            transform: (character) => `${character.hpAndMp.currentPoints}/${(character.hpAndMp.baseValue + character.hpAndMp.additionalValue)}`
+            transform: (character) => `${character.hpAndMp.Hp.currentPoints}/${(character.hpAndMp.Hp.baseValue + character.hpAndMp.Hp.additionalValue)}`
             },
             {
             elementId: 'manaPoints',
