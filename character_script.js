@@ -36,13 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showCharacterAttackStatsSection() {
         const section = document.getElementById('characterAttackStatsSection');
         if (section) {
-            const container = document.querySelector('.character_stats_bottom_section');
-            if (container) {
-                container.appendChild(section);
-                section.style.display = 'flex'; // Upewnij się, że sekcja jest widoczna
-            } else {
-                console.error('Container with class "character_stats_bottom_section" not found.');
-            }
+            section.style.display = 'flex'; // Upewnij się, że sekcja jest widoczna
         } else {
             console.error('Section with id "characterAttackStatsSection" not found.');
         }
