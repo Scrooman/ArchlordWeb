@@ -132,30 +132,32 @@ body {
 }
 
 .attributes_field_container {
-    width: 150px;
+    width: 200px;
     height: 25px;
-    line-height: 25px;
     margin: 10px;
     padding: 5px;
     justify-self: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    font-size: 12px;
 }
 
 .attributes_field_label {
+    width: 150px;
     margin: 0px;
     padding: 0px;
     color: #FFF0C8;
     justify-self: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 
 /* pole dla wartości atrybutu */
 .attributes_field_value {
-    width: 50px;
+    width: 25px;
     height: 20px;
     line-height: 20px;
     margin: 5px;
@@ -163,7 +165,7 @@ body {
     color: #ffffff;
     justify-self: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .character_stats_menu_buttons_section {
