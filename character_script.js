@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
             elementId: 'classRaceName',
             valuePath: [],
             transform: (character) => {
-                const race = character.race === "4" ? "Human" : character.race;
-                const className = character.class === "8" ? "Knight" : character.class;
-                return `${race} ${className}`;
+            const race = character.race === "4" ? "Human" : character.race;
+            const className = character.class === "8" ? "Knight" : character.class;
+            return `${race} ${className}`;
             }
             },
             {
@@ -69,11 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
             elementId: 'characterSta',
-            valuePath: ['baseStamina']
+            valuePath: ['attributes', 'Stamina'],
+            transform: (stamina) => stamina.baseValue + stamina.additionalValue
             },
             {
             elementId: 'characterStr',
-            valuePath: ['baseStrength']
+            valuePath: ['Agility']
             },
             {
             elementId: 'characterWis',
