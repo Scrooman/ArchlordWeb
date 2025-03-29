@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Wyświetl wybraną sekcję
                     section.style.display = 'flex';
+                    updateCharacterInfo()
 
                     // Usuń podświetlenie z poprzedniego przycisku
                     if (activeButton) {
