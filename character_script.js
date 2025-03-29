@@ -34,13 +34,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funkcja wyświetlająca sekcję o id="characterAttackStatsSection"
     function showCharacterAttackStatsSection() {
+        const allSections = document.querySelectorAll('section'); // Pobierz wszystkie sekcje
+        allSections.forEach(section => {
+            section.style.display = 'none'; // Ukryj wszystkie sekcje
+        });
+
         const section = document.getElementById('characterAttackStatsSection');
         if (section) {
-            section.style.display = 'flex'; // Upewnij się, że sekcja jest widoczna
+            section.style.display = 'flex'; // Wyświetl tylko sekcję o id "characterAttackStatsSection"
         } else {
             console.error('Section with id "characterAttackStatsSection" not found.');
         }
     }
+
     // Funkcja obsługująca wyświetlanie odpowiednich sekcji
     function setupSectionButtons() {
         const buttons = [
