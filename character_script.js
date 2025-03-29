@@ -32,6 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
 
+    // Funkcja wyświetlająca sekcję o id="characterAttackStatsSection"
+    function showCharacterAttackStatsSection() {
+        const section = document.getElementById('characterAttackStatsSection');
+        if (section) {
+            const container = document.querySelector('.character_stats_bottom_section');
+            if (container) {
+                container.appendChild(section);
+                section.style.display = 'flex'; // Upewnij się, że sekcja jest widoczna
+            } else {
+                console.error('Container with class "character_stats_bottom_section" not found.');
+            }
+        } else {
+            console.error('Section with id "characterAttackStatsSection" not found.');
+        }
+    }
+
+    // Wywołanie funkcji po załadowaniu strony
+    showCharacterAttackStatsSection();
+
     function updateCharacterInfo() {
         const fields = [
             {
