@@ -247,8 +247,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
             elementId: 'characterBlockRate',
-            valuePath: ['attributes', 'IgnoreBlockRate'],
-            transform: (ignoreBlockRate) => ignoreBlockRate.baseValue + ignoreBlockRate.additionalValue
+            valuePath: ['attributes', 'BlockRate'],
+            transform: (blockRate) => blockRate.baseValue + blockRate.additionalValue
             },
             {
             elementId: 'characterIgnoreSkillBlock',
@@ -274,6 +274,156 @@ document.addEventListener('DOMContentLoaded', function() {
             elementId: 'characterIgnoreStunResistance',
             valuePath: ['attributes', 'IgnoreStunResistance'],
             transform: (ignoreStunResistance) => ignoreStunResistance.baseValue + ignoreStunResistance.additionalValue
+            },
+            {
+            elementId: 'characterDefense',
+            valuePath: ['attributes', 'Defense'],
+            transform: (defense) => defense.baseValue + defense.additionalValue
+            },
+            {
+            elementId: 'characterHeroicDefense',
+            valuePath: ['attributes', 'HeroicDefense'],
+            transform: (heroicDefense) => heroicDefense.baseValue + heroicDefense.additionalValue
+            },
+            {
+            elementId: 'characterDRating',
+            valuePath: ['attributes', 'DRating'],
+            transform: (dRating) => dRating.baseValue + dRating.additionalValue
+            },
+            {
+            elementId: 'characterResistance',
+            valuePath: ['attributes', 'Resistance'],
+            transform: (resistance) => resistance.baseValue + resistance.additionalValue
+            },
+            {
+            elementId: 'characterSkillBlockRate',
+            valuePath: ['attributes', 'SkillBlockRate'],
+            transform: (skillBlockRate) => skillBlockRate.baseValue + skillBlockRate.additionalValue
+            },
+            {
+            elementId: 'characterMeleeDodge',
+            valuePath: ['attributes', 'MeleeDodge'],
+            transform: (meleeDodge) => meleeDodge.baseValue + meleeDodge.additionalValue
+            },
+            {
+            elementId: 'characterRangedAttack',
+            valuePath: ['attributes', 'RangedAttack'],
+            transform: (rangedAttack) => rangedAttack.baseValue + rangedAttack.additionalValue
+            },
+            {
+            elementId: 'characterCriticalHitResist',
+            valuePath: ['attributes', 'CriticalHitResist'],
+            transform: (criticalHitResist) => criticalHitResist.baseValue + criticalHitResist.additionalValue
+            },
+            {
+            elementId: 'characterResistStun',
+            valuePath: ['attributes', 'ResistStun'],
+            transform: (resistStun) => resistStun.baseValue + resistStun.additionalValue
+            },
+            {
+            elementId: 'characterChanceToReflect',
+            valuePath: ['attributes', 'ChanceToReflect'],
+            transform: (chanceToReflect) => chanceToReflect.baseValue + chanceToReflect.additionalValue
+            },
+            {
+            elementId: 'characterReflectDamage',
+            valuePath: ['attributes', 'ReflectDamage'],
+            transform: (reflectDamage) => reflectDamage.baseValue + reflectDamage.additionalValue
+            },
+            {
+            elementId: 'characterMeleeHeroicResi',
+            valuePath: ['attributes', 'MeleeHeroicResi'],
+            transform: (meleeHeroicResi) => meleeHeroicResi.baseValue + meleeHeroicResi.additionalValue
+            },
+            {
+            elementId: 'characterOriginalHeroic',
+            valuePath: ['attributes', 'OriginalHeroic'],
+            transform: (originalHeroic) => originalHeroic.baseValue + originalHeroic.additionalValue
+            },
+            {
+            elementId: 'characterMagicHeroicResi',
+            valuePath: ['attributes', 'MagicHeroicResi'],
+            transform: (magicHeroicResi) => magicHeroicResi.baseValue + magicHeroicResi.additionalValue
+            },
+            {
+            elementId: 'magicDamage',
+            valuePath: ['attributes', 'MagicDamage'],
+            transform: (magicDamage) => magicDamage.baseValue + magicDamage.additionalValue
+            },
+            {
+            elementId: 'magicResistance',
+            valuePath: ['attributes', 'MagicResistance'],
+            transform: (magicResistance) => magicResistance.baseValue + magicResistance.additionalValue
+            },
+            {
+            elementId: 'fireDamage',
+            valuePath: ['attributes', 'FireDamage'],
+            transform: (fireDamage) => fireDamage.baseValue + fireDamage.additionalValue
+            },
+            {
+            elementId: 'fireResistance',
+            valuePath: ['attributes', 'FireResistance'],
+            transform: (fireResistance) => fireResistance.baseValue + fireResistance.additionalValue
+            },
+            {
+            elementId: 'airDamage',
+            valuePath: ['attributes', 'AirDamage'],
+            transform: (airDamage) => airDamage.baseValue + airDamage.additionalValue
+            },
+            {
+            elementId: 'airResistance',
+            valuePath: ['attributes', 'AirResistance'],
+            transform: (airResistance) => airResistance.baseValue + airResistance.additionalValue
+            },
+            {
+            elementId: 'waterDamage',
+            valuePath: ['attributes', 'WaterDamage'],
+            transform: (waterDamage) => waterDamage.baseValue + waterDamage.additionalValue
+            },
+            {
+            elementId: 'waterResistance',
+            valuePath: ['attributes', 'WaterResistance'],
+            transform: (waterResistance) => waterResistance.baseValue + waterResistance.additionalValue
+            },
+            {
+            elementId: 'earthDamage',
+            valuePath: ['attributes', 'EarthDamage'],
+            transform: (earthDamage) => earthDamage.baseValue + earthDamage.additionalValue
+            },
+            {
+            elementId: 'earthResistance',
+            valuePath: ['attributes', 'EarthResistance'],
+            transform: (earthResistance) => earthResistance.baseValue + earthResistance.additionalValue
+            },
+            {
+            elementId: 'iceDamage',
+            valuePath: ['attributes', 'IceDamage'],
+            transform: (iceDamage) => iceDamage.baseValue + iceDamage.additionalValue
+            },
+            {
+            elementId: 'iceResistance',
+            valuePath: ['attributes', 'IceResistance'],
+            transform: (iceResistance) => iceResistance.baseValue + iceResistance.additionalValue
+            },
+            {
+            elementId: 'lightningDamage',
+            valuePath: ['attributes', 'LightningDamage'],
+            transform: (lightningDamage) => lightningDamage.baseValue + lightningDamage.additionalValue
+            },
+            {
+            elementId: 'lightningResistance',
+            valuePath: ['attributes', 'LightningResistance'],
+            transform: (lightningResistance) => lightningResistance.baseValue + lightningResistance.additionalValue
+            },
+            {
+            elementId: 'poisonDamage',
+            valuePath: ['attributes', 'PoisonDamage'],
+            transform: (poisonDamage) => poisonDamage.baseValue + poisonDamage.additionalValue
+            },
+            {
+            elementId: 'poisonResistance',
+            valuePath: ['attributes', 'PoisonResistance'],
+            transform: (poisonResistance) => poisonResistance.baseValue + poisonResistance.additionalValue
             }
         ];
 
