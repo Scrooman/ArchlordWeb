@@ -34,9 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funkcja wyświetlająca sekcję o id="characterAttackStatsSection"
     function showCharacterAttackStatsSection() {
-        const allSections = document.querySelectorAll('section'); // Pobierz wszystkie sekcje
-        allSections.forEach(section => {
-            section.style.display = 'none'; // Ukryj wszystkie sekcje
+        const sectionsToHide = ['characterDefenceStatsSection', 'characterElementsStatsSection']; // Sekcje do ukrycia
+        sectionsToHide.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = 'none'; // Ukryj sekcję
+            } else {
+                console.error(`Section with id "${sectionId}" not found.`);
+            }
         });
 
         const section = document.getElementById('characterAttackStatsSection');

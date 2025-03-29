@@ -216,6 +216,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Zmienne dla opcji menu
     const menuOptions = document.querySelectorAll('.menu_option_label_container');
+    let activeMenuOption = null;
+
+    menuOptions.forEach(option => {
+        option.addEventListener('click', function () {
+            // Remove highlight from the previously active option
+            if (activeMenuOption) {
+                activeMenuOption.style.background = '';
+            }
+
+            // Highlight the currently clicked option
+            this.style.background = "linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/button.png')";
+            this.style.backgroundSize = "100% 100%";
+            this.style.backgroundBlendMode = "lighten";
+
+            // Update the activeMenuOption reference
+            activeMenuOption = this;
+        });
+    });
     const contentIframe = document.getElementById('contentIframe');
     
         // Zmienne dla sekcji typu moba
@@ -260,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
             contentIframe.src = contentUrl;
         }
     }
+
 
     // Funkcja do wyświetlania etykiety poziomu spawn
     function showSpawnLevelLabel(event) {
