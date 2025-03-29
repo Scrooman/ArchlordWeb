@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
             elementId: 'healthPoints',
-            valuePath: [],
-            transform: (character) => `${character.currentHp}/${character.totalMaxHp}`
+            valuePath: ["hpAndMp", "Hp"],
+            transform: (character) => `${character.hpAndMp.currentPoints}/${(character.hpAndMp.baseValue + character.hpAndMp.additionalValue)}`
             },
             {
             elementId: 'manaPoints',
@@ -74,23 +74,28 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
             elementId: 'characterStr',
-            valuePath: ['Agility']
+            valuePath: ['attributes', 'Strength'],
+            transform: (strength) => strength.baseValue + strength.additionalValue
             },
             {
             elementId: 'characterWis',
-            valuePath: ['baseWisdom']
+            valuePath: ['attributes', 'Wisdom'],
+            transform: (wisdom) => wisdom.baseValue + wisdom.additionalValue
             },
             {
             elementId: 'characterInt',
-            valuePath: ['baseIntelligence']
+            valuePath: ['attributes', 'Intelligence'],
+            transform: (intelligence) => intelligence.baseValue + intelligence.additionalValue
             },
             {
             elementId: 'characterAgi',
-            valuePath: ['baseAgility']
+            valuePath: ['attributes', 'Agility'],
+            transform: (agility) => agility.baseValue + agility.additionalValue
             },
             {
             elementId: 'characterCha',
-            valuePath: ['baseCharisma']
+            valuePath: ['attributes', 'Charisma'],
+            transform: (charisma) => charisma.baseValue + charisma.additionalValue
             }
         ];
 
