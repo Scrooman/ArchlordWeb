@@ -46,23 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const section = document.getElementById('characterAttackStatsSection');
         if (section) {
-            section.style.display = 'flex'; // Wyświetl sekcję
-        } else {
-            console.error('Section with id "characterAttackStatsSection" not found.');
-        }
-
-        const button = document.getElementById('characterAttackStatsSectionButton');
-        if (button) {
-            button.style.background = "linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/button.png')";
-            button.style.backgroundSize = "100% 100%";
-            button.style.backgroundBlendMode = "lighten";
-        } else {
-            console.error('Button with id "characterAttackStatsSectionButton" not found.');
-        }
-    }
-
-        const section = document.getElementById('characterAttackStatsSection');
-        if (section) {
             section.style.display = 'flex'; // Wyświetl tylko sekcję o id "characterAttackStatsSection"
         } else {
             console.error('Section with id "characterAttackStatsSection" not found.');
