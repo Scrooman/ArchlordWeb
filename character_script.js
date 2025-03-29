@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
             elementId: 'classRaceName',
             valuePath: [],
             transform: (character) => {
-            const race = character.race === "4" ? "Human" : character.race;
-            const className = character.class === "8" ? "Knight" : character.class;
-            return `${race} ${className}`;
+                const race = character.race === "4" ? "Human" : character.race;
+                const className = character.class === "8" ? "Knight" : character.class;
+                return `${race} ${className}`;
             }
             },
             {
@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
             elementId: 'healthPoints',
-            valuePath: ["hpAndMp", "Hp"],
-            transform: (character) => `${character.hpAndMp.Hp.currentPoints}/${(character.hpAndMp.Hp.baseValue + character.hpAndMp.Hp.additionalValue)}`
+            valuePath: ['hpAndMp', 'Hp'],
+            transform: (hp) => `${hp.currentPoints}/${hp.baseValue + hp.additionalValue}`
             },
             {
             elementId: 'manaPoints',
-            valuePath: [],
-            transform: (character) => `${character.currentMana}/${character.totalMaxMana}`
+            valuePath: ['hpAndMp', 'Mana'],
+            transform: (mana) => `${mana.currentPoints}/${mana.baseValue + mana.additionalValue}`
             },
             {
             elementId: 'characterSta',
