@@ -193,47 +193,47 @@ document.addEventListener('DOMContentLoaded', function() {
             {
             elementId: 'characterAccuracy',
             valuePath: ['attributes', 'Accuracy'],
-            transform: (accuracy) => accuracy.baseValue + accuracy.additionalValue
+            transform: (accuracy) => `${accuracy.baseValue + accuracy.additionalValue}%`
             },
             {
             elementId: 'characterSkillCastingTime',
             valuePath: ['attributes', 'SkillCastingTime'],
-            transform: (skillCastingTime) => skillCastingTime.baseValue + skillCastingTime.additionalValue
+            transform: (skillCastingTime) => `${skillCastingTime.baseValue + skillCastingTime.additionalValue}%`
             },
             {
             elementId: 'characterSkillCooldown',
             valuePath: ['attributes', 'SkillCooldown'],
-            transform: (skillCooldown) => skillCooldown.baseValue + skillCooldown.additionalValue
+            transform: (skillCooldown) => `${skillCooldown.baseValue + skillCooldown.additionalValue}%`
             },
             {
             elementId: 'characterMSpeed',
             valuePath: ['attributes', 'MSpeed'],
-            transform: (mSpeed) => mSpeed.baseValue + mSpeed.additionalValue
+            transform: (mSpeed) => `${mSpeed.baseValue + mSpeed.additionalValue}%`
             },
             {
             elementId: 'characterAttackSpeed',
             valuePath: ['attributes', 'ASpeed'],
-            transform: (aSpeed) => aSpeed.baseValue + aSpeed.additionalValue
+            transform: (aSpeed) => `${aSpeed.baseValue + aSpeed.additionalValue}%`
             },
             {
             elementId: 'characterCriticalHitRate',
             valuePath: ['attributes', 'CriticalHitRate'],
-            transform: (criticalHitRate) => criticalHitRate.baseValue + criticalHitRate.additionalValue
+            transform: (criticalHitRate) => `${criticalHitRate.baseValue + criticalHitRate.additionalValue}%`
             },
             {
             elementId: 'characterCriticalDamage',
             valuePath: ['attributes', 'CriticalDamage'],
-            transform: (criticalDamage) => criticalDamage.baseValue + criticalDamage.additionalValue
+            transform: (criticalDamage) => `${criticalDamage.baseValue + criticalDamage.additionalValue}%`
             },
             {
             elementId: 'characterIgnEResis',
             valuePath: ['attributes', 'IngEResis'],
-            transform: (ignEResis) => ignEResis.baseValue + ignEResis.additionalValue
+            transform: (ignEResis) => `${ignEResis.baseValue + ignEResis.additionalValue}%`
             },
             {
             elementId: 'characterIgnDefence',
             valuePath: ['attributes', 'IgnDefense'],
-            transform: (ignDefence) => ignDefence.baseValue + ignDefence.additionalValue
+            transform: (ignDefence) => `${ignDefence.baseValue + ignDefence.additionalValue}%`
             },
             {
             elementId: 'characterRange',
@@ -243,37 +243,37 @@ document.addEventListener('DOMContentLoaded', function() {
             {
             elementId: 'characterIgnorePhysicalDamage',
             valuePath: ['attributes', 'IgnorePhysicalDamage'],
-            transform: (ignorePhysicalDamage) => ignorePhysicalDamage.baseValue + ignorePhysicalDamage.additionalValue
+            transform: (ignorePhysicalDamage) => `${ignorePhysicalDamage.baseValue + ignorePhysicalDamage.additionalValue}%`
             },
             {
-            elementId: 'characterBlockRate',
-            valuePath: ['attributes', 'BlockRate'],
-            transform: (blockRate) => blockRate.baseValue + blockRate.additionalValue
+            elementId: 'characterIgnoreBlockRate',
+            valuePath: ['attributes', 'IgnoreBlockRate'],
+            transform: (ignoreBlockRate) => `${ignoreBlockRate.baseValue + ignoreBlockRate.additionalValue}%`
             },
             {
             elementId: 'characterIgnoreSkillBlock',
             valuePath: ['attributes', 'IgnsoreSkillBlock'],
-            transform: (ignoreSkillBlock) => ignoreSkillBlock.baseValue + ignoreSkillBlock.additionalValue
+            transform: (ignoreSkillBlock) => `${ignoreSkillBlock.baseValue + ignoreSkillBlock.additionalValue}%`
             },
             {
             elementId: 'characterIgnoreMeleeAttack',
             valuePath: ['attributes', 'IgnoreMeleeAttack'],
-            transform: (ignoreMeleeAttack) => ignoreMeleeAttack.baseValue + ignoreMeleeAttack.additionalValue
+            transform: (ignoreMeleeAttack) => `${ignoreMeleeAttack.baseValue + ignoreMeleeAttack.additionalValue}%`
             },
             {
             elementId: 'characterIgnoreRangedAttack',
             valuePath: ['attributes', 'IgnoreRangedAttack'],
-            transform: (ignoreRangedAttack) => ignoreRangedAttack.baseValue + ignoreRangedAttack.additionalValue
+            transform: (ignoreRangedAttack) => `${ignoreRangedAttack.baseValue + ignoreRangedAttack.additionalValue}%`
             },
             {
             elementId: 'characterIgnoreCriticalHit',
             valuePath: ['attributes', 'IgnoreCriticalHit'],
-            transform: (ignoreCriticalHit) => ignoreCriticalHit.baseValue + ignoreCriticalHit.additionalValue
+            transform: (ignoreCriticalHit) => `${ignoreCriticalHit.baseValue + ignoreCriticalHit.additionalValue}%`
             },
             {
             elementId: 'characterIgnoreStunResistance',
             valuePath: ['attributes', 'IgnoreStunResistance'],
-            transform: (ignoreStunResistance) => ignoreStunResistance.baseValue + ignoreStunResistance.additionalValue
+            transform: (ignoreStunResistance) => `${ignoreStunResistance.baseValue + ignoreStunResistance.additionalValue}%`
             },
             {
             elementId: 'characterDefense',
@@ -293,47 +293,52 @@ document.addEventListener('DOMContentLoaded', function() {
             {
             elementId: 'characterResistance',
             valuePath: ['attributes', 'Resistance'],
-            transform: (resistance) => resistance.baseValue + resistance.additionalValue
+            transform: (resistance) => `${resistance.baseValue + resistance.additionalValue}%`
+            },
+            {
+            elementId: 'characterBlockRate',
+            valuePath: ['attributes', 'BlockRate'],
+            transform: (blockRate) => `${blockRate.baseValue + blockRate.additionalValue}%`
             },
             {
             elementId: 'characterSkillBlockRate',
             valuePath: ['attributes', 'SkillBlockRate'],
-            transform: (skillBlockRate) => skillBlockRate.baseValue + skillBlockRate.additionalValue
+            transform: (skillBlockRate) => `${skillBlockRate.baseValue + skillBlockRate.additionalValue}%`
             },
             {
             elementId: 'characterMeleeDodge',
             valuePath: ['attributes', 'MeleeDodge'],
-            transform: (meleeDodge) => meleeDodge.baseValue + meleeDodge.additionalValue
+            transform: (meleeDodge) => `${meleeDodge.baseValue + meleeDodge.additionalValue}%`
             },
             {
             elementId: 'characterRangedAttack',
             valuePath: ['attributes', 'RangedAttack'],
-            transform: (rangedAttack) => rangedAttack.baseValue + rangedAttack.additionalValue
+            transform: (rangedAttack) => `${rangedAttack.baseValue + rangedAttack.additionalValue}%`
             },
             {
             elementId: 'characterCriticalHitResist',
             valuePath: ['attributes', 'CriticalHitResist'],
-            transform: (criticalHitResist) => criticalHitResist.baseValue + criticalHitResist.additionalValue
+            transform: (criticalHitResist) => `${criticalHitResist.baseValue + criticalHitResist.additionalValue}%`
             },
             {
             elementId: 'characterResistStun',
             valuePath: ['attributes', 'ResistStun'],
-            transform: (resistStun) => resistStun.baseValue + resistStun.additionalValue
+            transform: (resistStun) => `${resistStun.baseValue + resistStun.additionalValue}%`
             },
             {
             elementId: 'characterChanceToReflect',
             valuePath: ['attributes', 'ChanceToReflect'],
-            transform: (chanceToReflect) => chanceToReflect.baseValue + chanceToReflect.additionalValue
+            transform: (chanceToReflect) => `${chanceToReflect.baseValue + chanceToReflect.additionalValue}%`
             },
             {
             elementId: 'characterReflectDamage',
             valuePath: ['attributes', 'ReflectDamage'],
-            transform: (reflectDamage) => reflectDamage.baseValue + reflectDamage.additionalValue
+            transform: (reflectDamage) => `${reflectDamage.baseValue + reflectDamage.additionalValue}%`
             },
             {
             elementId: 'characterMeleeHeroicResi',
             valuePath: ['attributes', 'MeleeHeroicResi'],
-            transform: (meleeHeroicResi) => meleeHeroicResi.baseValue + meleeHeroicResi.additionalValue
+            transform: (meleeHeroicResi) => `${meleeHeroicResi.baseValue + meleeHeroicResi.additionalValue}%`
             },
             {
             elementId: 'characterOriginalHeroic',
