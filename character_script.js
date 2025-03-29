@@ -41,6 +41,44 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Section with id "characterAttackStatsSection" not found.');
         }
     }
+    // Funkcja obsługująca wyświetlanie odpowiednich sekcji
+    function setupSectionButtons() {
+        const buttons = [
+            { buttonId: 'characterAttackStatsSectionButton', sectionId: 'characterAttackStatsSection' },
+            { buttonId: 'characterDefenceStatsSectionButton', sectionId: 'characterDefenceStatsSection' },
+            { buttonId: 'characterElementsStatsSectionButton', sectionId: 'characterElementsStatsSection' }
+        ];
+
+        buttons.forEach(({ buttonId, sectionId }) => {
+            const button = document.getElementById(buttonId);
+            const section = document.getElementById(sectionId);
+
+            if (button && section) {
+                button.addEventListener('click', () => {
+                    // Ukryj wszystkie sekcje
+                    buttons.forEach(({ sectionId }) => {
+                        const otherSection = document.getElementById(sectionId);
+                        if (otherSection) {
+                            otherSection.style.display = 'none';
+                        }
+                    });
+
+                    // Wyświetl wybraną sekcję
+                    section.style.display = 'flex';
+
+                    // Wywołaj funkcję aktualizującą dane dla wybranej sekcji
+                    if (sectionId === 'characterAttackStatsSection') {
+                        updateCharacterInfo();
+                    }
+                });
+            } else {
+                console.error(`Button or section not found for buttonId: ${buttonId}, sectionId: ${sectionId}`);
+            }
+        });
+    }
+
+    // Wywołanie funkcji konfigurującej przyciski
+    setupSectionButtons();
 
     // Wywołanie funkcji po załadowaniu strony
     showCharacterAttackStatsSection();
