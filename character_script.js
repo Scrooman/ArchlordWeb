@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
             { buttonId: 'characterElementsStatsSectionButton', sectionId: 'characterElementsStatsSection' }
         ];
 
+        let activeButton = null; // Przechowuje aktualnie podświetlony przycisk
+
         buttons.forEach(({ buttonId, sectionId }) => {
             const button = document.getElementById(buttonId);
             const section = document.getElementById(sectionId);
@@ -65,6 +67,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Wyświetl wybraną sekcję
                     section.style.display = 'flex';
+
+                    // Usuń podświetlenie z poprzedniego przycisku
+                    if (activeButton) {
+                        activeButton.style.background = '';
+                    }
+
+                    // Podświetl aktualny przycisk
+                    button.style.background = "linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url('images/button.png')";
+                    button.style.backgroundSize = "100% 100%";
+                    button.style.backgroundBlendMode = "lighten";
+
+                    // Zaktualizuj aktywny przycisk
+                    activeButton = button;
 
                     // Wywołaj funkcję aktualizującą dane dla wybranej sekcji
                     if (sectionId === 'characterAttackStatsSection') {
