@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            localStorage.setItem("characterOperationKindId", response.characterOperation.operationKindId);
+            localStorage.setItem("characterOperationKindId", response.characterOperation?.operationKindId || null);
             return response.json();
         })
         .then(data => {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
             }
-            localStorage.setItem("characterOperationKindId", response.characterOperation.characterOperationKindId)
+            localStorage.setItem("characterOperationKindId", response.characterOperation?.operationKindId || null);
             return response.json();
         })
         .then(characterData => {
