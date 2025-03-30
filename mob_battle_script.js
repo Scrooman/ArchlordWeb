@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
                 const imgContainer = document.querySelector('.mob_img_container');
+                console.log('Operation status:', localStorage.getItem('operationStatus')); // Log operation status
                 if (imgContainer) {
                     const imagePath = data.mobImageSource;
                     if (imagePath) {

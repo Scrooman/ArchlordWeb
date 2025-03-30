@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateData(endpoint, fields) {
         
-        const userId = localStorage.getItem("userId");    
+        const userId = localStorage.getItem("userId");
+
 
         fetch(endpoint, {
             method: 'POST',
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+            localStorage.setItem("characterOperationKindId", response.characterOperation.characterOperationKindId);
             return response.json();
         })
         .then(data => {
@@ -106,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
             }
+            localStorage.setItem("characterOperationKindId", response.characterOperation.characterOperationKindId)
             return response.json();
         })
         .then(characterData => {
