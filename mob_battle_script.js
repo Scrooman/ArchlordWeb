@@ -58,17 +58,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to toggle visibility of the section based on localStorage value
     function toggleMobInfoSection() {
-        const section = document.querySelector('.mob_info_column_container_fade_out');
+        const fadeOutSection = document.querySelector('.mob_info_column_container_fade_out');
+        const containerSection = document.querySelector('.mob_info_column_container');
         const operationKindId = localStorage.getItem('characterOperationKindId');
 
-        if (section) {
+        if (fadeOutSection) {
             if (operationKindId === '3') {
-                section.style.display = ''; // Show the section
+                fadeOutSection.style.display = ''; // Show the fade-out section
             } else {
-                section.style.display = 'none'; // Hide the section
+                fadeOutSection.style.display = 'none'; // Hide the fade-out section
             }
         } else {
             console.error('Error: Element with class "mob_info_column_container_fade_out" not found.');
+        }
+
+        if (containerSection) {
+            if (operationKindId === '3') {
+                containerSection.style.display = 'none'; // Hide the container section
+            } else {
+                containerSection.style.display = ''; // Show the container section
+            }
+        } else {
+            console.error('Error: Element with class "mob_info_column_container" not found.');
         }
     }
 
