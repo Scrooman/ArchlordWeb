@@ -34,20 +34,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 const imgContainer = document.querySelector('.mob_img_container');
                 console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
                 if (imgContainer) {
-                    const imagePath = data.mobImageSource;
-                    if (imagePath) {
+                    const operationKindId = localStorage.getItem('characterOperationKindId');
+                    if (operationKindId === '3') {
                         // Clear existing content in the container
                         imgContainer.innerHTML = '';
-                        
-                        // Create a new <img> element
-                        const imgElement = document.createElement('img');
-                        imgElement.src = imagePath;
-                        imgElement.alt = "Mob Image"; // Set the alt attribute
-                        
-                        // Append the <img> element to the container
-                        imgContainer.appendChild(imgElement);
+
+                        // Create a new <p> element with the text "Travelling to spawn"
+                        const textElement = document.createElement('p');
+                        textElement.textContent = "Travelling to spawn";
+
+                        // Append the <p> element to the container
+                        imgContainer.appendChild(textElement);
                     } else {
-                        console.error('Error: mobImageSource is missing in data.');
+                        const imagePath = data.mobImageSource;
+                        if (imagePath) {
+                            // Clear existing content in the container
+                            imgContainer.innerHTML = '';
+
+                            // Create a new <img> element
+                            const imgElement = document.createElement('img');
+                            imgElement.src = imagePath;
+                            imgElement.alt = "Mob Image"; // Set the alt attribute
+
+                            // Append the <img> element to the container
+                            imgContainer.appendChild(imgElement);
+                        } else {
+                            console.error('Error: mobImageSource is missing in data.');
+                        }
                     }
                 } else {
                     console.error('Error: Element with class "mob_img_container" not found.');

@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const requiredLvl = characterData['lvl']; // Extract the required level from the response
             const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}&requiredLvl=${requiredLvl}`;
             chosedMobType = mobType; // Update global variable
+            localStorage.setItem("characterOperationKindId", data.characterOperation?.operationKindId || null);
                 
                 fetch(url)
                     .then(response => response.json())
