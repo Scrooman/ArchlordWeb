@@ -73,6 +73,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     console.error('Error: Element with class "travelling_destination_map_container" not found.');
                 }
+
+                const timeContainer = document.querySelector('.travelling_time_container');
+                if (timeContainer) {
+                    const endTime = new Date(Date.now() + 5 * 60 * 1000); // Current time + 5 minutes
+
+                    function updateTimer() {
+                        const now = new Date();
+                        const timeLeft = Math.max(0, endTime - now); // Ensure non-negative value
+                        const minutes = Math.floor(timeLeft / 1000 / 60);
+                        const seconds = Math.floor((timeLeft / 1000) % 60);
+                        timeContainer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+                        if (timeLeft > 0) {
+                            setTimeout(updateTimer, 1000); // Update every second
+                        }
+                    }
+
+                    updateTimer(); // Start the timer
+                } else {
+                    console.error('Error: Element with class "travelling_time_container" not found.');
+                }
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
