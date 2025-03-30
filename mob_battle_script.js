@@ -52,6 +52,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     console.error('Error: Element with class "mob_img_container" not found.');
                 }
+
+                const mapContainer = document.querySelector('.travelling_destination_map_container');
+                if (mapContainer) {
+                    const mapImagePath = data.mobLocalizationOnMiniMapSource;
+                    if (mapImagePath) {
+                        // Clear existing content in the container
+                        mapContainer.innerHTML = '';
+                        
+                        // Create a new <img> element
+                        const mapImgElement = document.createElement('img');
+                        mapImgElement.src = mapImagePath;
+                        mapImgElement.alt = "Mob Localization Map"; // Set the alt attribute
+                        
+                        // Append the <img> element to the container
+                        mapContainer.appendChild(mapImgElement);
+                    } else {
+                        console.error('Error: mobLocalizationOnMiniMapSource is missing in data.');
+                    }
+                } else {
+                    console.error('Error: Element with class "travelling_destination_map_container" not found.');
+                }
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
