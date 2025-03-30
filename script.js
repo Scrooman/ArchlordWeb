@@ -35,9 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            responseJSON = response.json();
-            localStorage.setItem("characterOperationKindId", responseJSON.characterOperation?.operationKindId || null);
-            console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
             return response.json();
         })
         .then(data => {
@@ -46,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const value = valuePath.reduce((acc, key) => acc[key], data);
                 element.textContent = transform ? transform(value) : value;
             });
+            localStorage.setItem("characterOperationKindId", data.characterOperation?.operationKindId || null);
+            console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
         })
         .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
@@ -110,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
             }
-            localStorage.setItem("characterOperationKindId", response.characterOperation?.operationKindId || null);
             return response.json();
         })
         .then(characterData => {
