@@ -35,8 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const operationKindId = response.characterOperation?.operationKindId || null;
-            localStorage.setItem("characterOperationKindId", operationKindId || null);
+            console.log('reponse:', response); // Log operation status
+            responseJSON = response.json();
+            localStorage.setItem("characterOperationKindId", response.characterOperation?.operationKindId || null);
             console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
             return response.json();
         })
