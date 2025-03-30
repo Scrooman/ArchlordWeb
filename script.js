@@ -35,8 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            localStorage.setItem("characterOperationKindId", response.characterOperation?.operationKindId || null);
-            console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
+            response.json().then(data => {
+                const operationKindId = data.characterOperation?.operationKindId || null;
+                localStorage.setItem("characterOperationKindId", operationKindId);
+                console.log('Operation status:', operationKindId); // Log operation status
+            });
             return response.json();
         })
         .then(data => {
