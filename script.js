@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const characterId = localStorage.getItem("logedInCharacterId");
+    const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
     // Sprawdzenie, czy użytkownik jest zalogowany
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn !== "true") {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateData('http://127.0.0.1:5000/fetch_character', fields);
     }
-    const logedInCharacterId = localStorage.getItem("logedInCharacterId"); // pobranie id postaci z local storage do pracy na stronie
+    const logedInCharacterId = parseInt(localStorage.getItem("logedInCharacterId"), 10); // pobranie id postaci z local storage do pracy na stronie
 
     if (logedInCharacterId) {
         updateCharacterInfo(logedInCharacterId);
