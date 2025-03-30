@@ -90,6 +90,19 @@ body {
     justify-self: center;
 }
 
+.mob_info_column_container_fade_out {
+    width: 650px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-self: center;
+    background-color: rgba(128, 128, 128, 0.5);
+    z-index: 1; /* Ensure it appears above the image */
+    position: relative; /* Ensure the overlay is positioned relative to this container */
+}
+
 .mob_life_bar_img img {
     width: 300px; 
     height: 50px; 

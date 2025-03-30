@@ -10,71 +10,65 @@ document.addEventListener('DOMContentLoaded', function () {
         const endpoint = `http://127.0.0.1:5000/get_mob_data?mobId=${mobId}`;
         fetch(endpoint)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
             })
             .then(data => {
-                console.log('Response data:', data); // Log response data
-                fields.forEach(({ elementId, valuePath, transform }) => {
-                    const element = document.getElementById(elementId);
-                    if (!element) {
-                        console.error(`Error: Element with ID "${elementId}" not found.`);
-                        return;
-                    }
+            console.log('Response data:', data); // Log response data
+            fields.forEach(({ elementId, valuePath, transform }) => {
+                const element = document.getElementById(elementId);
+                if (!element) {
+                console.error(`Error: Element with ID "${elementId}" not found.`);
+                return;
+                }
 
-                    const value = valuePath.reduce((acc, key) => (acc ? acc[key] : null), data); // Safe value extraction
-                    if (value === null) {
-                        console.error(`Error: Key path "${valuePath.join('.')}" not found in data.`);
-                    } else {
-                        element.textContent = transform ? transform(value) : value;
-                    }
-                });
-                const imgContainer = document.querySelector('.mob_img_container');
-                console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
+                const value = valuePath.reduce((acc, key) => (acc ? acc[key] : null), data); // Safe value extraction
+                if (value === null) {
+                console.error(`Error: Key path "${valuePath.join('.')}" not found in data.`);
+                } else {
+                element.textContent = transform ? transform(value) : value;
+                }
+            });
+
+            const imgContainer = document.querySelector('.mob_img_container');
+            const fadeOutContainer = document.querySelector('.mob_info_column_container_fade_out');
+            const operationKindId = localStorage.getItem('characterOperationKindId');
+            console.log('Operation status:', operationKindId); // Log operation status
+
+            if (operationKindId === '3') {
+                if (fadeOutContainer) {
+                fadeOutContainer.style.display = 'flex'; // Show fade-out container
+                }
                 if (imgContainer) {
-                    const operationKindId = localStorage.getItem('characterOperationKindId');
-                    const imagePath = data.mobImageSource;
-
+                imgContainer.style.display = 'none'; // Hide original container
+                }
+            } else {
+                if (imgContainer) {
+                imgContainer.style.display = 'flex'; // Show original container
+                const imagePath = data.mobImageSource;
+                if (imagePath) {
                     // Clear existing content in the container
                     imgContainer.innerHTML = '';
 
-                    if (imagePath) {
-                        // Create a new <img> element
-                        const imgElement = document.createElement('img');
-                        imgElement.src = imagePath;
-                        imgElement.alt = "Mob Image"; // Set the alt attribute
-                        imgElement.style.position = 'relative'; // Ensure proper positioning
+                    // Create a new <img> element
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imagePath;
+                    imgElement.alt = "Mob Image"; // Set the alt attribute
 
-                        // Append the <img> element to the container
-                        imgContainer.appendChild(imgElement);
-                    } else {
-                        console.error('Error: mobImageSource is missing in data.');
-                    }
-
-                    if (operationKindId === '3') {
-                        // Create an overlay element
-                        const overlayElement = document.createElement('div');
-                        overlayElement.textContent = "Travelling to spawn";
-                        overlayElement.style.position = 'absolute';
-                        overlayElement.style.top = '0';
-                        overlayElement.style.left = '0';
-                        overlayElement.style.width = '100%';
-                        overlayElement.style.height = '100%';
-                        overlayElement.style.backgroundColor = 'rgba(128, 128, 128, 0.5)'; // Gray background with 50% transparency
-                        overlayElement.style.color = 'white';
-                        overlayElement.style.display = 'flex';
-                        overlayElement.style.alignItems = 'center';
-                        overlayElement.style.justifyContent = 'center';
-                        overlayElement.style.zIndex = '1'; // Ensure it appears above the image
-
-                        // Append the overlay element to the container
-                        imgContainer.appendChild(overlayElement);
-                    }
+                    // Append the <img> element to the container
+                    imgContainer.appendChild(imgElement);
                 } else {
-                    console.error('Error: Element with class "mob_img_container" not found.');
+                    console.error('Error: mobImageSource is missing in data.');
                 }
+                } else {
+                console.error('Error: Element with class "mob_img_container" not found.');
+                }
+                if (fadeOutContainer) {
+                fadeOutContainer.style.display = 'none'; // Hide fade-out container
+                }
+            }
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
