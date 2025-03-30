@@ -35,9 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            console.log('reponse:', response); // Log operation status
             responseJSON = response.json();
-            localStorage.setItem("characterOperationKindId", response.characterOperation?.operationKindId || null);
+            localStorage.setItem("characterOperationKindId", responseJSON.characterOperation?.operationKindId || null);
             console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
             return response.json();
         })
