@@ -103,6 +103,52 @@ body {
     position: relative; /* Ensure the overlay is positioned relative to this container */
 }
 
+.travelling_destination_map_container {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    width: 180px;
+    height: 220px;
+    background-color: #06060d;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #7a817a;
+    justify-self: center;
+}
+
+.travelling_label_container {
+    margin-top: 10px;
+    width: 135px;
+    height: 127px;
+    display: flex;
+    flex-direction: column;
+}
+
+.traveling_label_text {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    padding: 1px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF0C8;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.travelling_time_container {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    padding: 1px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF0C8;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 .mob_life_bar_img img {
     width: 300px; 
     height: 50px; 
