@@ -35,32 +35,42 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
                 if (imgContainer) {
                     const operationKindId = localStorage.getItem('characterOperationKindId');
-                    if (operationKindId === '3') {
-                        // Clear existing content in the container
-                        imgContainer.innerHTML = '';
+                    const imagePath = data.mobImageSource;
 
-                        // Create a new <p> element with the text "Travelling to spawn"
-                        const textElement = document.createElement('p');
-                        textElement.textContent = "Travelling to spawn";
+                    // Clear existing content in the container
+                    imgContainer.innerHTML = '';
 
-                        // Append the <p> element to the container
-                        imgContainer.appendChild(textElement);
+                    if (imagePath) {
+                        // Create a new <img> element
+                        const imgElement = document.createElement('img');
+                        imgElement.src = imagePath;
+                        imgElement.alt = "Mob Image"; // Set the alt attribute
+                        imgElement.style.position = 'relative'; // Ensure proper positioning
+
+                        // Append the <img> element to the container
+                        imgContainer.appendChild(imgElement);
                     } else {
-                        const imagePath = data.mobImageSource;
-                        if (imagePath) {
-                            // Clear existing content in the container
-                            imgContainer.innerHTML = '';
+                        console.error('Error: mobImageSource is missing in data.');
+                    }
 
-                            // Create a new <img> element
-                            const imgElement = document.createElement('img');
-                            imgElement.src = imagePath;
-                            imgElement.alt = "Mob Image"; // Set the alt attribute
+                    if (operationKindId === '3') {
+                        // Create an overlay element
+                        const overlayElement = document.createElement('div');
+                        overlayElement.textContent = "Travelling to spawn";
+                        overlayElement.style.position = 'absolute';
+                        overlayElement.style.top = '0';
+                        overlayElement.style.left = '0';
+                        overlayElement.style.width = '100%';
+                        overlayElement.style.height = '100%';
+                        overlayElement.style.backgroundColor = 'rgba(128, 128, 128, 0.5)'; // Gray background with 50% transparency
+                        overlayElement.style.color = 'white';
+                        overlayElement.style.display = 'flex';
+                        overlayElement.style.alignItems = 'center';
+                        overlayElement.style.justifyContent = 'center';
+                        overlayElement.style.zIndex = '1'; // Ensure it appears above the image
 
-                            // Append the <img> element to the container
-                            imgContainer.appendChild(imgElement);
-                        } else {
-                            console.error('Error: mobImageSource is missing in data.');
-                        }
+                        // Append the overlay element to the container
+                        imgContainer.appendChild(overlayElement);
                     }
                 } else {
                     console.error('Error: Element with class "mob_img_container" not found.');
