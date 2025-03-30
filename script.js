@@ -92,15 +92,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funkcja do wyświetlania listy spawnów na podstawie typu moba i poziomu postaci
     function showUpdatedSpawnList(mobType, referenceLevel = null) {
-        const characterId = localStorage.getItem("logedInCharacterId");
-        const userId = localStorage.getItem("userId");
+        const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
+        const userId = parseInt(localStorage.getItem("userId"), 10);
 
         fetch('http://127.0.0.1:5000/fetch_character', {
             method: 'POST', // Użycie metody POST
             headers: {
             'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ characterId, userId }) // Dodano userId do przesyłanych danych
+            body: JSON.stringify({ characterId, userId }) 
         })
         .then(response => {
             if (!response.ok) {
