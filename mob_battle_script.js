@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function toggleMobInfoSection() {
         const fadeOutSection = document.querySelector('.mob_info_column_container_fade_out');
         const containerSection = document.querySelector('.mob_info_column_container');
+        const eleInfoSection = document.querySelector('.mob_ele_info_container');
+        const materialInfoSection = document.querySelector('.mob_material_info_container');
+        const accessoriesInfoSection = document.querySelector('.mob_accessories_info_container');
         const operationKindId = localStorage.getItem('characterOperationKindId');
 
         if (fadeOutSection) {
@@ -80,6 +83,36 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } else {
             console.error('Error: Element with class "mob_info_column_container" not found.');
+        }
+
+        if (eleInfoSection) {
+            if (operationKindId === '3') {
+                eleInfoSection.style.display = 'none'; // Hide the elemental info section
+            } else {
+                eleInfoSection.style.display = ''; // Show the elemental info section
+            }
+        } else {
+            console.error('Error: Element with class "mob_ele_info_container" not found.');
+        }
+
+        if (materialInfoSection) {
+            if (operationKindId === '3') {
+                materialInfoSection.style.display = 'none'; // Hide the material info section
+            } else {
+                materialInfoSection.style.display = ''; // Show the material info section
+            }
+        } else {
+            console.error('Error: Element with class "mob_material_info_container" not found.');
+        }
+
+        if (accessoriesInfoSection) {
+            if (operationKindId === '3') {
+                accessoriesInfoSection.style.display = 'none'; // Hide the accessories info section
+            } else {
+                accessoriesInfoSection.style.display = ''; // Show the accessories info section
+            }
+        } else {
+            console.error('Error: Element with class "mob_accessories_info_container" not found.');
         }
     }
 
