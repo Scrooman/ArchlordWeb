@@ -469,11 +469,11 @@ function fetchSpawnDetails(spawnId) {
 
 
 // wyświetlanie domyślnie spawnu na stronie dla travelling oraz battle
-
+const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
 if (characterOperationKindId === 3) {
     const spawnId = localStorage.getItem("characterActiveSpawnId");
     fetchSpawnDetails(spawnId)
-    const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
+    
     const charactersActiveSpawnMobId = parseInt(localStorage.getItem("charactersActiveSpawnMobId"), 10);
     const charactersActiveSpawnMobType = parseInt(localStorage.getItem("charactersActiveSpawnMobType"), 10);
     if (charactersActiveSpawnMobType) {
