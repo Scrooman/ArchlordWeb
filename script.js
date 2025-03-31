@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const userId = parseInt(localStorage.getItem("userId"), 10);
 
         fetch('http://127.0.0.1:5000/fetch_character', {
-            method: 'POST', // Użycie metody POST
+            method: 'POST', 
             headers: {
             'Content-Type': 'application/json'
             },
@@ -130,9 +130,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         const spawnLvlRightElement = document.getElementById('spawn_lvl_right');
                         
                         // Reset content in case no spawn is found
-                        spawnLvlCenterElement.textContent = 'No spawn found';
-                        spawnLvlLeftElement.textContent = 'No previous spawn';
-                        spawnLvlRightElement.textContent = 'No next spawn';
+                        spawnLvlCenterElement.textContent = '-';
+                        spawnLvlLeftElement.textContent = '->';
+                        spawnLvlRightElement.textContent = '<-';
 
                         // Extract and display the center spawn level data
                         const centerSpawnData = mobSpawnDictionary.centerSpawnLvl;
@@ -330,37 +330,59 @@ document.addEventListener('DOMContentLoaded', function() {
     spawnLvlChangeButtonHigher.addEventListener('click', showHigherLvlSpawn);
 
     function activateSpawnForSpawnLvl(chosedSpawnLvlButtonName, mobType) {
-        let mobSpawnLevel;
-        switch (chosedSpawnLvlButtonName) {
-            case 'center':
-                mobSpawnLevel = centerSpawnLevel;
-                break;
-            case 'left':
-                mobSpawnLevel = leftSpawnLevel;
-                break;
-            case 'right':
-                mobSpawnLevel = rightSpawnLevel;
-                break;
-            default:
-                console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
-                return;
-        }
-        if (!mobSpawnLevel) {
-            console.error('No spawn level selected to activate.');
-            return;
-        }
-        console.log('Activating spawn level:', mobSpawnLevel, 'for mob type:', mobType); // Added mobType to the log
         const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
-        const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl`;
-        const payload = { spawnLevel: mobSpawnLevel, mobType: mobType , characterId: characterId}; // Added mobType to the payload
+        const userId = parseInt(localStorage.getItem("userId"), 10);
 
-        fetch(url, {
+        // Fetch the latest character data first
+        fetch('http://127.0.0.1:5000/fetch_character', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ characterId, userId })
         })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(characterData => {
+            let mobSpawnLevel;
+            switch (chosedSpawnLvlButtonName) {
+                case 'center':
+                    mobSpawnLevel = centerSpawnLevel;
+                    break;
+                case 'left':
+                    mobSpawnLevel = leftSpawnLevel;
+                    break;
+                case 'right':
+                    mobSpawnLevel = rightSpawnLevel;
+                    break;
+                default:
+                    console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
+                    return;
+            }
+            localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
+            localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
+            console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
+            if (!mobSpawnLevel) {
+                console.error('No spawn level selected to activate.');
+                return;
+            }
+            console.log('Activating spawn level:', mobSpawnLevel, 'for mob type:', mobType);
+
+            // Call the set_active_spawn_for_spawn_lvl endpoint
+            const url = `http://127.0.0.1:5000/set_active_spawn_for_spawn_lvl`;
+            const payload = { spawnLevel: mobSpawnLevel, mobType: mobType, characterId: characterId };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -376,6 +398,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(error => console.error('Error activating spawn level:', error));
+        })
+        .catch(error => console.error('Error fetching character data:', error));
     }
 
     // funkcja do wyboru i aktywowania spawnu
