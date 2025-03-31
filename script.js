@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}&requiredLvl=${requiredLvl}`;
             chosedMobType = mobType; // Update global variable
             localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
+            console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
             localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
                 
@@ -364,6 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
             }
             localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
+            console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
             localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
             if (!mobSpawnLevel) {
@@ -397,6 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error('No mobId found in the response.');
                 }
                 localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
+                console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
                 localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
                 console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
             })

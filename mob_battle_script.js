@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
                 const imgContainer = document.querySelector('.mob_img_container');
-                console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
                 if (imgContainer) {
                     const imagePath = data.mobImageSource;
                     if (imagePath) {
@@ -75,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 const timeContainer = document.querySelector('.travelling_time_container');
+                const endTimeString = localStorage.getItem('characterOperationEndDate');
                 if (timeContainer) {
-                    const endTimeString = localStorage.getItem('characterOperationEndDate');
                     if (!endTimeString) {
                         console.error('Error: characterOperationEndDate is missing in localStorage.');
                         return;
