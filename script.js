@@ -461,6 +461,7 @@ function fetchSpawnDetails(spawnId) {
     .then(data => {
         console.log('Spawn details fetched successfully:', data);
         localStorage.setItem("charactersActiveSpawnMobId", data.mobId);
+        console.log('Mob ID:', localStorage.getItem('charactersActiveSpawnMobId'));
         localStorage.setItem("charactersActiveSpawnMobType", data.spawnType);
         // Process the received JSON dictionary as needed
     })
