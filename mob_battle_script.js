@@ -76,15 +76,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const timeContainer = document.querySelector('.travelling_time_container');
                 if (timeContainer) {
-                    const endTimeString = localStorage.getItem('characterOperationKindId');
+                    const endTimeString = localStorage.getItem('characterOperationEndDate');
                     if (!endTimeString) {
-                        console.error('Error: characterOperationKindId is missing in localStorage.');
+                        console.error('Error: characterOperationEndDate is missing in localStorage.');
                         return;
                     }
 
                     const endTime = new Date(endTimeString);
                     if (isNaN(endTime)) {
-                        console.error('Error: Invalid date format in characterOperationKindId.');
+                        console.error('Error: Invalid date format in characterOperationEndDate.');
                         return;
                     }
 
