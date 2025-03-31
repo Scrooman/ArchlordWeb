@@ -76,7 +76,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const timeContainer = document.querySelector('.travelling_time_container');
                 if (timeContainer) {
-                    const endTime = new Date(Date.now() + 5 * 60 * 1000); // Current time + 5 minutes
+                    const endTimeString = localStorage.getItem('characterOperationKindId');
+                    if (!endTimeString) {
+                        console.error('Error: characterOperationKindId is missing in localStorage.');
+                        return;
+                    }
+
+                    const endTime = new Date(endTimeString);
+                    if (isNaN(endTime)) {
+                        console.error('Error: Invalid date format in characterOperationKindId.');
+                        return;
+                    }
 
                     function updateTimer() {
                         const now = new Date();

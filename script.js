@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}&requiredLvl=${requiredLvl}`;
             chosedMobType = mobType; // Update global variable
             localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
-            localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
+            localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
                 
                 fetch(url)
