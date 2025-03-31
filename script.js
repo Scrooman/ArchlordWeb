@@ -475,7 +475,7 @@ if (characterOperationKindId === 3) {
     const spawnId = localStorage.getItem("characterActiveSpawnId");
     fetchSpawnDetails(spawnId)
     
-    const charactersActiveSpawnMobId = parseInt(localStorage.getItem("charactersActiveSpawnMobId"), 10);
+    
     let charactersActiveSpawnMobType = parseInt(localStorage.getItem("charactersActiveSpawnMobType"), 10);
     if (charactersActiveSpawnMobType) {
         switch (charactersActiveSpawnMobType) {
@@ -504,6 +504,7 @@ if (characterOperationKindId === 3) {
         }
         showUpdatedSpawnList(charactersActiveSpawnMobType);
     }
+    const charactersActiveSpawnMobId = parseInt(localStorage.getItem("charactersActiveSpawnMobId"), 10);
     if (charactersActiveSpawnMobId) {
         loadIframeContentMobBattle(charactersActiveSpawnMobId);
     }
