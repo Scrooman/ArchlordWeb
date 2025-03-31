@@ -44,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.textContent = transform ? transform(value) : value;
             });
             localStorage.setItem("characterOperationKindId", data.characterOperation?.operationKindId || null);
-            console.log('Operation status:', localStorage.getItem('characterOperationKindId')); // Log operation status
+            console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
+            localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
+            console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
         })
         .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
@@ -117,6 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const url = `http://127.0.0.1:5000/get_mob_spawn_dictionary?mobType=${mobType}&requiredLvl=${requiredLvl}`;
             chosedMobType = mobType; // Update global variable
             localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
+            localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
+            console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
                 
                 fetch(url)
                     .then(response => response.json())

@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const value = valuePath.reduce((acc, key) => acc[key], data);
                 element.textContent = transform ? transform(value) : value;
             });
+            localStorage.setItem("characterOperationKindId", data.characterOperation?.operationKindId || null);
+            console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
+            localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
+            console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
         })
         .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
