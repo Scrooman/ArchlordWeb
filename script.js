@@ -396,6 +396,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     console.error('No mobId found in the response.');
                 }
+                localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
+                localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
+                console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
             })
             .catch(error => console.error('Error activating spawn level:', error));
         })
