@@ -445,7 +445,7 @@ function fetchSpawnDetails(spawnId) {
         return;
     }
 
-    fetch('/fetch_spawn', {
+    fetch('http://127.0.0.1:5000/fetch_spawn', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
