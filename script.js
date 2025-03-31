@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
             localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
-            localStorage.setItem("characterActiveSpawnId", data.activeSpawnId);
-            console.log('Character active spawnId:', localStorage.getItem('characterActiveSpawnId')); 
+            localStorage.setItem("charactersActiveSpawnId", data.activeSpawnId);
+            console.log('Character active spawnId:', localStorage.getItem('charactersActiveSpawnId')); 
         })
         .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
