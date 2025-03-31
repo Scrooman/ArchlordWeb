@@ -478,23 +478,23 @@ if (characterOperationKindId === 3) {
     const charactersActiveSpawnMobType = parseInt(localStorage.getItem("charactersActiveSpawnMobType"), 10);
     if (charactersActiveSpawnMobType) {
         switch (charactersActiveSpawnMobType) {
-            case "1":
+            case 1:
             charactersActiveSpawnMobType = "normal";
             break;
-            case "2":
+            case 2:
             charactersActiveSpawnMobType = "boss";
             break;
-            case "3":
-            case "9":
+            case 3:
+            case 9:
             charactersActiveSpawnMobType = "unique";
             break;
-            case "4":
+            case 4:
             charactersActiveSpawnMobType = "elemental";
             break;
-            case "5":
-            case "6":
-            case "7":
-            case "8":
+            case 5:
+            case 6:
+            case 7:
+            case 8:
             charactersActiveSpawnMobType = "battleground";
             break;
             default:
