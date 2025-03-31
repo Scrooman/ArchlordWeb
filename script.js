@@ -475,7 +475,7 @@ if (characterOperationKindId === 3) {
     fetchSpawnDetails(spawnId)
     
     const charactersActiveSpawnMobId = parseInt(localStorage.getItem("charactersActiveSpawnMobId"), 10);
-    const charactersActiveSpawnMobType = parseInt(localStorage.getItem("charactersActiveSpawnMobType"), 10);
+    let charactersActiveSpawnMobType = parseInt(localStorage.getItem("charactersActiveSpawnMobType"), 10);
     if (charactersActiveSpawnMobType) {
         switch (charactersActiveSpawnMobType) {
             case 1:
