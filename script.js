@@ -398,10 +398,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     console.error('No mobId found in the response.');
                 }
-                localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
-                console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
-                localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
-                console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
+                // Call fetch_character after successful activation
+                updateCharacterInfo();
             })
             .catch(error => console.error('Error activating spawn level:', error));
         })
