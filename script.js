@@ -364,10 +364,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error('Invalid spawn level button name:', chosedSpawnLvlButtonName);
                     return;
             }
-            localStorage.setItem("characterOperationKindId", characterData.characterOperation?.operationKindId || null);
-            console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
-            localStorage.setItem("characterOperationEndDate", characterData.characterOperation?.operationEndDate || null);
-            console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
             if (!mobSpawnLevel) {
                 console.error('No spawn level selected to activate.');
                 return;
