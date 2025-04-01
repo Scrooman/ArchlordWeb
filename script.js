@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (logedInCharacterId) {
         updateCharacterInfo(logedInCharacterId);
+        updateCharacterInfo(logedInCharacterId);
     } else {
         console.error("Character ID not found.");
     }
@@ -489,7 +490,7 @@ function displayMobSpawnIFrame() {
         fetchSpawnDetails(spawnId);
         localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
         const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
-        console.log('Mob type after fetching spawn type while displaying iframe:', characterActiveSpawnMobType);    
+        console.log('Mob type after fetching spawn type while displaying iframe:', characterActiveSpawnMobType);
         if (characterActiveSpawnMobType) {
             let characterActiveSpawnMobTypeName;
             switch (characterActiveSpawnMobType) {
