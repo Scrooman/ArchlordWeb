@@ -393,6 +393,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Spawn level activated successfully:', data);
                 if (data && data.mobData && data.mobData.mobId) {
                     loadIframeContentMobBattle(data.mobData.mobId);
+                    localStorage.setItem("characterActiveSpawnMobId", data.mobId);
+                    console.log('Mob ID after spawn activating:', localStorage.getItem('characterActiveSpawnMobId'));
                 } else {
                     console.error('No mobId found in the response.');
                 }
@@ -461,7 +463,7 @@ function fetchSpawnDetails(spawnId) {
     .then(data => {
         console.log('Spawn details fetched successfully:', data);
         localStorage.setItem("characterActiveSpawnMobId", data.mobId);
-        console.log('Mob ID:', localStorage.getItem('characterActiveSpawnMobId'));
+        console.log('Mob ID after fetching_spawn:', localStorage.getItem('characterActiveSpawnMobId'));
         localStorage.setItem("characterActiveSpawnMobType", data.spawnType);
         console.log('Mob type:', localStorage.getItem('characterActiveSpawnMobType'));
         // Process the received JSON dictionary as needed
