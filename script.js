@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem("characterActiveSpawnId");
         localStorage.removeItem("characterActiveSpawnMobId");
         localStorage.removeItem("characterActiveSpawnMobType");
-        
+
 
         // Przekieruj na login.html
         window.location.href = "login.html";
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.textContent = transform ? transform(value) : value;
             });
             localStorage.setItem("characterOperationKindId", data.characterOperation?.operationKindId || null);
-            console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
+            console.log('Operation kind id:', localStorage.getItem('characterOperationKindId'));
             localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
             localStorage.setItem("characterActiveSpawnId", data.activeSpawnId);
@@ -89,7 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateData('http://127.0.0.1:5000/fetch_character', fields);
     }
-    const logedInCharacterId = parseInt(localStorage.getItem("logedInCharacterId"), 10); // pobranie id postaci z local storage do pracy na stronie
+    const logedInCharacterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
+    console.log('Logged in character ID:', logedInCharacterId);
 
     if (logedInCharacterId) {
         updateCharacterInfo(logedInCharacterId);
