@@ -470,7 +470,7 @@ function fetchSpawnDetails(spawnId) {
 }
 
 
-// wyświetlanie domyślnie spawnu na stronie dla travelling oraz battle
+// wyświetlanie domyślnie spawnu na stronie dla travelling lub battle
 const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
 if (characterOperationKindId === 3 || characterOperationKindId === 1) {
     const spawnId = localStorage.getItem("characterActiveSpawnId");
@@ -504,7 +504,16 @@ if (characterOperationKindId === 3 || characterOperationKindId === 1) {
                 console.error("Unknown spawn type:", characterActiveSpawnMobType);
                 return; // Exit the function if the spawn type is unknown
         }
-        showUpdatedSpawnList(characterActiveSpawnMobTypeName);
+        if (spawnLvlLabel.style.display === 'flex') {
+            spawnLvlLabel.style.display = 'none'; 
+            setTimeout(() => {
+                spawnLvlLabel.style.display = 'flex'; 
+                showUpdatedSpawnList(characterActiveSpawnMobTypeName); 
+            }, 100); 
+        } else {
+            spawnLvlLabel.style.display = 'flex'; 
+            showUpdatedSpawnList(characterActiveSpawnMobTypeName);
+        }
     }
 
     const characterActiveSpawnMobId = parseInt(localStorage.getItem("characterActiveSpawnMobId"), 10);
