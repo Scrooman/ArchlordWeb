@@ -492,7 +492,7 @@ function displayMobSpawnIFrame() {
 
         if (characterActiveSpawnMobType) {
             let characterActiveSpawnMobTypeName;
-            switch (parcharacterActiveSpawnMobType) {
+            switch (characterActiveSpawnMobType) {
                 case 1:
                     characterActiveSpawnMobTypeName = "normal";
                     break;
