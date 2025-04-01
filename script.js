@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Spawn level activated successfully:', data);
                 if (data && data.mobData && data.mobData.mobId) {
                     loadIframeContentMobBattle(data.mobData.mobId);
-                    localStorage.setItem("characterActiveSpawnMobId", data.mobId);
+                    localStorage.setItem("characterActiveSpawnMobId", data.mobData.mobId);
                     console.log('Mob ID after spawn activating:', localStorage.getItem('characterActiveSpawnMobId'));
                 } else {
                     console.error('No mobId found in the response.');
