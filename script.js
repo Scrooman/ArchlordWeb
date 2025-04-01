@@ -483,14 +483,14 @@ function fetchSpawnDetails(spawnId) {
 // wyświetlanie domyślnie spawnu na stronie dla travelling lub battle
 function displayMobSpawnIFrame() {
     const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
+    const characterActiveSpawnMobType = localStorage.getItem("characterActiveSpawnMobType");
+    console.log('Mob type after fetching spawn type while displaying iframe:', characterActiveSpawnMobType);
 
     if (characterOperationKindId === 3 || characterOperationKindId === 1) {
         const spawnId = localStorage.getItem("characterActiveSpawnId");
         fetchSpawnDetails(spawnId);
         localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
 
-        const characterActiveSpawnMobType = localStorage.getItem("characterActiveSpawnMobType");
-        console.log('Mob type after fetching spaawn type while displaying iframe:', characterActiveSpawnMobType);
         if (characterActiveSpawnMobType) {
             let characterActiveSpawnMobTypeName;
             switch (parseInt(characterActiveSpawnMobType, 10)) {
