@@ -479,11 +479,10 @@ function fetchSpawnDetails(spawnId) {
     .catch(error => console.error('Error fetching spawn details:', error));
 }
 
-
+const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
 // wyświetlanie domyślnie spawnu na stronie dla travelling lub battle
 function displayMobSpawnIFrame() {
     const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
-    const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
     console.log('Mob type after fetching spawn type while displaying iframe:', characterActiveSpawnMobType);
 
     if (characterOperationKindId === 3 || characterOperationKindId === 1) {
@@ -493,7 +492,7 @@ function displayMobSpawnIFrame() {
 
         if (characterActiveSpawnMobType) {
             let characterActiveSpawnMobTypeName;
-            switch (characterActiveSpawnMobType) {
+            switch (parcharacterActiveSpawnMobType) {
                 case 1:
                     characterActiveSpawnMobTypeName = "normal";
                     break;
