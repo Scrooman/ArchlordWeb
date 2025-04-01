@@ -519,7 +519,6 @@ if (characterOperationKindId === 3 || characterOperationKindId === 1) {
     const characterActiveSpawnMobId = parseInt(localStorage.getItem("characterActiveSpawnMobId"), 10);
     if (characterActiveSpawnMobId) {
         loadIframeContentMobBattle(characterActiveSpawnMobId);
-        localStorage.removeItem("characterActiveSpawnMobId"); 
     }
 }
 });
