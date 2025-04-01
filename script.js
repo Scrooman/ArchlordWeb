@@ -479,7 +479,7 @@ function fetchSpawnDetails(spawnId) {
     .catch(error => console.error('Error fetching spawn details:', error));
 }
 
-const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
+
 // wyświetlanie domyślnie spawnu na stronie dla travelling lub battle
 function displayMobSpawnIFrame() {
     const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
@@ -489,7 +489,7 @@ function displayMobSpawnIFrame() {
         const spawnId = localStorage.getItem("characterActiveSpawnId");
         fetchSpawnDetails(spawnId);
         localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
-
+        const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
         if (characterActiveSpawnMobType) {
             let characterActiveSpawnMobTypeName;
             switch (characterActiveSpawnMobType) {
