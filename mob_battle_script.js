@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Function to update data on the page
     function updateMobData(fields) {
-        const mobId = new URLSearchParams(window.location.search).get('mobId');
+        let mobId = new URLSearchParams(window.location.search).get('mobId');
         if (!mobId) {
-            console.error('Error: mobId is missing in the URL.');
+            mobId = localStorage.getItem('characterActiveSpawnMobId');
+            if (!mobId) {
+            console.error('Error: mobId is missing in the URL and localStorage.');
             return;
+            }
         }
 
         const endpoint = `http://127.0.0.1:5000/get_mob_data?mobId=${mobId}`;
