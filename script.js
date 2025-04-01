@@ -476,38 +476,38 @@ if (characterOperationKindId === 3) {
     fetchSpawnDetails(spawnId);
     localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
 
-    
-    
     let characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
     if (characterActiveSpawnMobType) {
         switch (characterActiveSpawnMobType) {
             case 1:
-            characterActiveSpawnMobType = "normal";
-            break;
+                characterActiveSpawnMobType = "normal";
+                break;
             case 2:
-            characterActiveSpawnMobType = "boss";
-            break;
+                characterActiveSpawnMobType = "boss";
+                break;
             case 3:
             case 9:
-            characterActiveSpawnMobType = "unique";
-            break;
+                characterActiveSpawnMobType = "unique";
+                break;
             case 4:
-            characterActiveSpawnMobType = "elemental";
-            break;
+                characterActiveSpawnMobType = "elemental";
+                break;
             case 5:
             case 6:
             case 7:
             case 8:
-            characterActiveSpawnMobType = "battleground";
-            break;
+                characterActiveSpawnMobType = "battleground";
+                break;
             default:
-            console.error("Unknown spawn type:", characterActiveSpawnMobType);
-        }
+                console.error("Unknown spawn type:", characterActiveSpawnMobType);
         }
         showUpdatedSpawnList(characterActiveSpawnMobType);
     }
+
     const characterActiveSpawnMobId = parseInt(localStorage.getItem("characterActiveSpawnMobId"), 10);
     if (characterActiveSpawnMobId) {
         loadIframeContentMobBattle(characterActiveSpawnMobId);
+        localStorage.removeItem("characterActiveSpawnMobId"); 
     }
+}
 });
