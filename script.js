@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Operation status:', localStorage.getItem('characterOperationKindId'));
             localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
-            localStorage.setItem("charactersActiveSpawnId", data.activeSpawnId);
-            console.log('Character active spawnId:', localStorage.getItem('charactersActiveSpawnId')); 
+            localStorage.setItem("characterActiveSpawnId", data.activeSpawnId);
+            console.log('Character active spawnId:', localStorage.getItem('characterActiveSpawnId')); 
         })
         .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
@@ -460,9 +460,9 @@ function fetchSpawnDetails(spawnId) {
     })
     .then(data => {
         console.log('Spawn details fetched successfully:', data);
-        localStorage.setItem("charactersActiveSpawnMobId", data.mobId);
-        console.log('Mob ID:', localStorage.getItem('charactersActiveSpawnMobId'));
-        localStorage.setItem("charactersActiveSpawnMobType", data.spawnType);
+        localStorage.setItem("characterActiveSpawnMobId", data.mobId);
+        console.log('Mob ID:', localStorage.getItem('characterActiveSpawnMobId'));
+        localStorage.setItem("characterActiveSpawnMobType", data.spawnType);
         // Process the received JSON dictionary as needed
     })
     .catch(error => console.error('Error fetching spawn details:', error));
@@ -472,40 +472,40 @@ function fetchSpawnDetails(spawnId) {
 // wyświetlanie domyślnie spawnu na stronie dla travelling oraz battle
 const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
 if (characterOperationKindId === 3) {
-    const spawnId = localStorage.getItem("characterActiveSpawnId");
+    const spawnId = localStorage.getItem("characterActiveSpawnMobId");
     fetchSpawnDetails(spawnId)
     
     
-    let charactersActiveSpawnMobType = parseInt(localStorage.getItem("charactersActiveSpawnMobType"), 10);
-    if (charactersActiveSpawnMobType) {
-        switch (charactersActiveSpawnMobType) {
+    let characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
+    if (characterActiveSpawnMobType) {
+        switch (characterActiveSpawnMobType) {
             case 1:
-            charactersActiveSpawnMobType = "normal";
+            characterActiveSpawnMobType = "normal";
             break;
             case 2:
-            charactersActiveSpawnMobType = "boss";
+            characterActiveSpawnMobType = "boss";
             break;
             case 3:
             case 9:
-            charactersActiveSpawnMobType = "unique";
+            characterActiveSpawnMobType = "unique";
             break;
             case 4:
-            charactersActiveSpawnMobType = "elemental";
+            characterActiveSpawnMobType = "elemental";
             break;
             case 5:
             case 6:
             case 7:
             case 8:
-            charactersActiveSpawnMobType = "battleground";
+            characterActiveSpawnMobType = "battleground";
             break;
             default:
-            console.error("Unknown spawn type:", charactersActiveSpawnMobType);
+            console.error("Unknown spawn type:", characterActiveSpawnMobType);
         }
         }
-        showUpdatedSpawnList(charactersActiveSpawnMobType);
+        showUpdatedSpawnList(characterActiveSpawnMobType);
     }
-    const charactersActiveSpawnMobId = parseInt(localStorage.getItem("charactersActiveSpawnMobId"), 10);
-    if (charactersActiveSpawnMobId) {
-        loadIframeContentMobBattle(charactersActiveSpawnMobId);
+    const characterActiveSpawnMobId = parseInt(localStorage.getItem("characterActiveSpawnMobId"), 10);
+    if (characterActiveSpawnMobId) {
+        loadIframeContentMobBattle(characterActiveSpawnMobId);
     }
 });
