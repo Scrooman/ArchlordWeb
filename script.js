@@ -474,7 +474,7 @@ const characterOperationKindId = parseInt(localStorage.getItem("characterOperati
 if (characterOperationKindId === 3) {
     const spawnId = localStorage.getItem("characterActiveSpawnId");
     fetchSpawnDetails(spawnId);
-    localStorage.removeItem("characterActiveSpawnMobId"); // Remove the variable after use
+    localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
 
     
     
