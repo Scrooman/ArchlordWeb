@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let mobId = new URLSearchParams(window.location.search).get('mobId');
         if (!mobId) {
             mobId = localStorage.getItem('characterActiveSpawnMobId');
+            console.log('mobId from localStorage:', mobId); // Log mobId from localStorage
             if (!mobId) {
             console.error('Error: mobId is missing in the URL and localStorage.');
             return;
