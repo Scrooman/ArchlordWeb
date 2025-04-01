@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
             localStorage.setItem("characterActiveSpawnId", data.activeSpawnId);
             console.log('Character active spawnId:', localStorage.getItem('characterActiveSpawnId')); 
+            displayMobSpawnIFrame()
         })
         .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
     }
@@ -480,54 +481,57 @@ function fetchSpawnDetails(spawnId) {
 
 
 // wyświetlanie domyślnie spawnu na stronie dla travelling lub battle
-const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
-if (characterOperationKindId === 3 || characterOperationKindId === 1) {
-    const spawnId = localStorage.getItem("characterActiveSpawnId");
-    fetchSpawnDetails(spawnId);
-    localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
+function displayMobSpawnIFrame() {
+    if (characterOperationKindId === 3 || characterOperationKindId === 1) {
+        const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
+        const spawnId = localStorage.getItem("characterActiveSpawnId");
+        fetchSpawnDetails(spawnId);
+        localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
 
-    const characterActiveSpawnMobType = localStorage.getItem("characterActiveSpawnMobType");
-    if (characterActiveSpawnMobType) {
-        let characterActiveSpawnMobTypeName;
-        switch (parseInt(characterActiveSpawnMobType, 10)) {
-            case 1:
-                characterActiveSpawnMobTypeName = "normal";
-                break;
-            case 2:
-                characterActiveSpawnMobTypeName = "boss";
-                break;
-            case 3:
-            case 9:
-                characterActiveSpawnMobTypeName = "unique";
-                break;
-            case 4:
-                characterActiveSpawnMobTypeName = "elemental";
-                break;
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-                characterActiveSpawnMobTypeName = "battleground";
-                break;
-            default:
-                console.error("Unknown spawn type:", characterActiveSpawnMobType);
-                return; // Exit the function if the spawn type is unknown
-        }
-        if (spawnLvlLabel.style.display === 'flex') {
-            spawnLvlLabel.style.display = 'none'; 
-            setTimeout(() => {
+        const characterActiveSpawnMobType = localStorage.getItem("characterActiveSpawnMobType");
+        if (characterActiveSpawnMobType) {
+            let characterActiveSpawnMobTypeName;
+            switch (parseInt(characterActiveSpawnMobType, 10)) {
+                case 1:
+                    characterActiveSpawnMobTypeName = "normal";
+                    break;
+                case 2:
+                    characterActiveSpawnMobTypeName = "boss";
+                    break;
+                case 3:
+                case 9:
+                    characterActiveSpawnMobTypeName = "unique";
+                    break;
+                case 4:
+                    characterActiveSpawnMobTypeName = "elemental";
+                    break;
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                    characterActiveSpawnMobTypeName = "battleground";
+                    break;
+                default:
+                    console.error("Unknown spawn type:", characterActiveSpawnMobType);
+                    return; // Exit the function if the spawn type is unknown
+            }
+            if (spawnLvlLabel.style.display === 'flex') {
+                spawnLvlLabel.style.display = 'none'; 
+                setTimeout(() => {
+                    spawnLvlLabel.style.display = 'flex'; 
+                    showUpdatedSpawnList(characterActiveSpawnMobTypeName); 
+                }, 100); 
+            } else {
                 spawnLvlLabel.style.display = 'flex'; 
-                showUpdatedSpawnList(characterActiveSpawnMobTypeName); 
-            }, 100); 
-        } else {
-            spawnLvlLabel.style.display = 'flex'; 
-            showUpdatedSpawnList(characterActiveSpawnMobTypeName);
+                showUpdatedSpawnList(characterActiveSpawnMobTypeName);
+            }
         }
-    }
 
-    const characterActiveSpawnMobId = parseInt(localStorage.getItem("characterActiveSpawnMobId"), 10);
-    if (characterActiveSpawnMobId) {
-        loadIframeContentMobBattle(characterActiveSpawnMobId);
+        const characterActiveSpawnMobId = parseInt(localStorage.getItem("characterActiveSpawnMobId"), 10);
+        if (characterActiveSpawnMobId) {
+            loadIframeContentMobBattle(characterActiveSpawnMobId);
+        }
     }
 }
+
 });
