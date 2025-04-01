@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("userId");
         localStorage.removeItem("logedInCharacterId");
+        localStorage.removeItem("characterOperationKindId");
+        localStorage.removeItem("characterOperationEndDate");
+        localStorage.removeItem("characterActiveSpawnId");
+        localStorage.removeItem("characterActiveSpawnMobId");
+        localStorage.removeItem("characterActiveSpawnMobType");
+        
 
         // Przekieruj na login.html
         window.location.href = "login.html";
