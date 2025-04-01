@@ -463,6 +463,7 @@ function fetchSpawnDetails(spawnId) {
         localStorage.setItem("characterActiveSpawnMobId", data.mobId);
         console.log('Mob ID:', localStorage.getItem('characterActiveSpawnMobId'));
         localStorage.setItem("characterActiveSpawnMobType", data.spawnType);
+        console.log('Mob type:', localStorage.getItem('characterActiveSpawnMobType'));
         // Process the received JSON dictionary as needed
     })
     .catch(error => console.error('Error fetching spawn details:', error));
@@ -476,32 +477,34 @@ if (characterOperationKindId === 3) {
     fetchSpawnDetails(spawnId);
     localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
 
-    let characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
+    const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
     if (characterActiveSpawnMobType) {
+        let characterActiveSpawnMobTypeName;
         switch (characterActiveSpawnMobType) {
             case 1:
-                characterActiveSpawnMobType = "normal";
+                characterActiveSpawnMobTypeName = "normal";
                 break;
             case 2:
-                characterActiveSpawnMobType = "boss";
+                characterActiveSpawnMobTypeName = "boss";
                 break;
             case 3:
             case 9:
-                characterActiveSpawnMobType = "unique";
+                characterActiveSpawnMobTypeName = "unique";
                 break;
             case 4:
-                characterActiveSpawnMobType = "elemental";
+                characterActiveSpawnMobTypeName = "elemental";
                 break;
             case 5:
             case 6:
             case 7:
             case 8:
-                characterActiveSpawnMobType = "battleground";
+                characterActiveSpawnMobTypeName = "battleground";
                 break;
             default:
                 console.error("Unknown spawn type:", characterActiveSpawnMobType);
+                return; // Exit the function if the spawn type is unknown
         }
-        showUpdatedSpawnList(characterActiveSpawnMobType);
+        showUpdatedSpawnList(characterActiveSpawnMobTypeName);
     }
 
     const characterActiveSpawnMobId = parseInt(localStorage.getItem("characterActiveSpawnMobId"), 10);
