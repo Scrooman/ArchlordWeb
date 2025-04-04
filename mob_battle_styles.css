@@ -178,25 +178,18 @@ body {
 
 .minimap_img_container {
     margin-top: 10px;
-    width: 135px;
-    height: 127px;
     display: flex;
     background-color: #06060d;
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
-    position: relative; /* Ensure child elements can be positioned relative to this container */
-}
-
-.map-container {
     position: relative; /* Needed for absolute positioning of images inside */
     width: 125px; /* Set container size - same as images */
     height: 125px; /* Set container size - same as images */
-    margin: 20px auto; /* Center for example */
-    border: 1px solid #ccc; /* Optional border around the container */
 }
+
   
-.map-container .background-map {
+.minimap_img_container .background-map {
     position: absolute; /* Position the background image */
     top: 0;
     left: 0;
@@ -205,7 +198,7 @@ body {
     z-index: 1; /* Background image is underneath */
 }
   
-.map-container .foreground-map {
+.minimap_img_container .foreground-map {
     position: absolute; /* Position the foreground image */
     top: 0;
     left: 0;
