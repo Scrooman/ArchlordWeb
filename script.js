@@ -474,8 +474,6 @@ function fetchSpawnDetails(spawnId) {
         console.log('Mob ID after fetching_spawn:', localStorage.getItem('characterActiveSpawnMobId'));
         localStorage.setItem("characterActiveSpawnMobType", data.spawnType);
         console.log('Mob type:', localStorage.getItem('characterActiveSpawnMobType'));
-        const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
-        console.log('Mob type after fetching spawn type:', characterActiveSpawnMobType);
         // Process the received JSON dictionary as needed
     })
     .catch(error => console.error('Error fetching spawn details:', error));

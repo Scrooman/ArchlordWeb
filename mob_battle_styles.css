@@ -80,6 +80,8 @@ body {
     align-items: center;
 }
 
+
+
 .mob_info_column_container {
     width: 650px;
     height: 300px;
@@ -184,6 +186,32 @@ body {
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
 }
+
+.map-container {
+    position: relative; /* Potrzebne do pozycjonowania absolutnego obrazów wewnątrz */
+    width: 125px; /* Ustaw rozmiar kontenera - taki sam jak obrazy */
+    height: 125px; /* Ustaw rozmiar kontenera - taki sam jak obrazy */
+    margin: 20px auto; /* Wyśrodkowanie dla przykładu */
+    border: 1px solid #ccc; /* Opcjonalna ramka wokół kontenera */
+  }
+  
+  .map-container img {
+    position: absolute; /* Nakładanie obrazów */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .background-map {
+    z-index: 1; /* Obrazek tła jest pod spodem */
+  }
+  
+  .foreground-map {
+    z-index: 2;
+    clip-path: circle(45% at center);
+    -webkit-clip-path: circle(45% at center);
+  }
 
 .minimap_img_container img {
     display: flex;
