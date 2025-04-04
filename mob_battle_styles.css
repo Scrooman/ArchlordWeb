@@ -185,33 +185,36 @@ body {
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
+    position: relative; /* Ensure child elements can be positioned relative to this container */
 }
 
 .map-container {
-    position: relative; /* Potrzebne do pozycjonowania absolutnego obrazów wewnątrz */
-    width: 125px; /* Ustaw rozmiar kontenera - taki sam jak obrazy */
-    height: 125px; /* Ustaw rozmiar kontenera - taki sam jak obrazy */
-    margin: 20px auto; /* Wyśrodkowanie dla przykładu */
-    border: 1px solid #ccc; /* Opcjonalna ramka wokół kontenera */
-  }
+    position: relative; /* Needed for absolute positioning of images inside */
+    width: 125px; /* Set container size - same as images */
+    height: 125px; /* Set container size - same as images */
+    margin: 20px auto; /* Center for example */
+    border: 1px solid #ccc; /* Optional border around the container */
+}
   
-  .map-container img {
-    position: absolute; /* Nakładanie obrazów */
+.map-container .background-map {
+    position: absolute; /* Position the background image */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  }
+    z-index: 1; /* Background image is underneath */
+}
   
-  .background-map {
-    z-index: 1; /* Obrazek tła jest pod spodem */
-  }
-  
-  .foreground-map {
-    z-index: 2;
+.map-container .foreground-map {
+    position: absolute; /* Position the foreground image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Foreground image is above */
     clip-path: circle(45% at center);
     -webkit-clip-path: circle(45% at center);
-  }
+}
 
 .minimap_img_container img {
     display: flex;
