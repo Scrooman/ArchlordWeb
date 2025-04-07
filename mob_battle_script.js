@@ -56,27 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.error('Error: Element with class "mob_img_container" not found.');
                 }
 
-                const mapContainer = document.querySelector('.travelling_destination_map_container');
-                if (mapContainer) {
-                    const mapImagePath = data.mobLocalizationOnMiniMapSource;
-                    if (mapImagePath) {
-                        // Clear existing content in the container
-                        mapContainer.innerHTML = '';
-                        
-                        // Create a new <img> element
-                        const mapImgElement = document.createElement('img');
-                        mapImgElement.src = mapImagePath;
-                        mapImgElement.alt = "Mob Localization Map"; // Set the alt attribute
-                        
-                        // Append the <img> element to the container
-                        mapContainer.appendChild(mapImgElement);
-                    } else {
-                        console.error('Error: mobLocalizationOnMiniMapSource is missing in data.');
-                    }
-                } else {
-                    console.error('Error: Element with class "travelling_destination_map_container" not found.');
-                }
-
                 const timeContainer = document.querySelector('.travelling_time_container');
                 const endTimeString = localStorage.getItem('characterOperationEndDate');
                 if (timeContainer) {
@@ -109,6 +88,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
+        
+        const endpointForSpawn = `http://127.0.0.1:5000/fetch_spawn`;
+        fetch(endpointForSpawn)
+            .then(responseForSpawn => {
+                if (!responseForSpawn.ok) {
+                    throw new Error(`HTTP error! Status: ${responseForSpawn.status}`);
+                }
+                return responseForSpawn.json();
+            })
+            .then(dataForSpawn => {
+                console.log('Spawn data:', dataForSpawn); // Log spawn data
+            })
+            const mapContainer = document.querySelector('.travelling_destination_map_container');
+                if (mapContainer) {
+                    const mapImagePath = dataForSpawn.mobLocalizationOnMiniMapSource;
+                    if (mapImagePath) {
+                        // Clear existing content in the container
+                        mapContainer.innerHTML = '';
+                        
+                        // Create a new <img> element
+                        const mapImgElement = document.createElement('img');
+                        mapImgElement.src = mapImagePath;
+                        mapImgElement.alt = "Mob Localization Map"; // Set the alt attribute
+                        
+                        // Append the <img> element to the container
+                        mapContainer.appendChild(mapImgElement);
+                    } else {
+                        console.error('Error: mobLocalizationOnMiniMapSource is missing in data.');
+                    }
+                } else {
+                    console.error('Error: Element with class "travelling_destination_map_container" not found.');
+                }
     }
 
     // Function to toggle visibility of the section based on localStorage value
