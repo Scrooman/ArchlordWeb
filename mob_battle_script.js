@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
             mobId = localStorage.getItem('characterActiveSpawnMobId');
             console.log('mobId from localStorage:', mobId); // Log mobId from localStorage
             if (!mobId) {
-            console.error('Error: mobId is missing in the URL and localStorage.');
-            return;
+                console.error('Error: mobId is missing in the URL and localStorage.');
+                return;
             }
         }
 
@@ -35,19 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         element.textContent = transform ? transform(value) : value;
                     }
                 });
+
                 const imgContainer = document.querySelector('.mob_img_container');
                 if (imgContainer) {
                     const imagePath = data.mobImageSource;
                     if (imagePath) {
-                        // Clear existing content in the container
-                        imgContainer.innerHTML = '';
-                        
-                        // Create a new <img> element
+                        imgContainer.innerHTML = ''; // Clear existing content
                         const imgElement = document.createElement('img');
                         imgElement.src = imagePath;
-                        imgElement.alt = "Mob Image"; // Set the alt attribute
-                        
-                        // Append the <img> element to the container
+                        imgElement.alt = "Mob Image";
                         imgContainer.appendChild(imgElement);
                     } else {
                         console.error('Error: mobImageSource is missing in data.');
@@ -88,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
-        
+
         const endpointForSpawn = `http://127.0.0.1:5000/fetch_spawn`;
         const spawnId = localStorage.getItem('characterActiveSpawnId');
         if (!spawnId) {
@@ -99,33 +95,26 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(endpointForSpawn, {
             method: 'POST',
             headers: {
-            'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({ spawn_id: spawnId })
         })
             .then(responseForSpawn => {
-            if (!responseForSpawn.ok) {
-                throw new Error(`HTTP error! Status: ${responseForSpawn.status}`);
-            }
-            return responseForSpawn.json();
+                if (!responseForSpawn.ok) {
+                    throw new Error(`HTTP error! Status: ${responseForSpawn.status}`);
+                }
+                return responseForSpawn.json();
             })
             .then(dataForSpawn => {
-            console.log('Spawn data:', dataForSpawn); // Log spawn data
-            })
-            .catch(error => console.error(`Error fetching spawn data from ${endpointForSpawn}:`, error));
-            const mapContainer = document.querySelector('.travelling_destination_map_container');
+                console.log('Spawn data:', dataForSpawn); // Log spawn data
+                const mapContainer = document.querySelector('.travelling_destination_map_container');
                 if (mapContainer) {
                     const mapImagePath = dataForSpawn.mobLocalizationOnMiniMapSource;
                     if (mapImagePath) {
-                        // Clear existing content in the container
-                        mapContainer.innerHTML = '';
-                        
-                        // Create a new <img> element
+                        mapContainer.innerHTML = ''; // Clear existing content
                         const mapImgElement = document.createElement('img');
                         mapImgElement.src = mapImagePath;
-                        mapImgElement.alt = "Mob Localization Map"; // Set the alt attribute
-                        
-                        // Append the <img> element to the container
+                        mapImgElement.alt = "Mob Localization Map";
                         mapContainer.appendChild(mapImgElement);
                     } else {
                         console.error('Error: mobLocalizationOnMiniMapSource is missing in data.');
@@ -133,6 +122,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     console.error('Error: Element with class "travelling_destination_map_container" not found.');
                 }
+            })
+            .catch(error => console.error(`Error fetching spawn data from ${endpointForSpawn}:`, error));
     }
 
     // Function to toggle visibility of the section based on localStorage value
