@@ -175,6 +175,47 @@ body {
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
     justify-self: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#mob_img_container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.8); /* Szara nakładka */
+    mask-image: conic-gradient(from -90deg at 50% 50%, transparent 0deg, transparent var(--angle), black var(--angle), black 360deg);
+    -webkit-mask-image: conic-gradient(from -90deg at 50% 50%, transparent 0deg, transparent var(--angle), black var(--angle), black 360deg);
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    transition: mask-image 0.1s linear;
+}
+
+#mob_img_container.reveal-complete::before {
+    --angle: 360deg;
+}
+
+#mob_img_container .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    line-height: 1.3;
+    font-family: sans-serif;
 }
 
 .minimap_img_container {

@@ -484,7 +484,7 @@ function fetchSpawnDetails(spawnId) {
 function displayMobSpawnIFrame() {
     const characterOperationKindId = parseInt(localStorage.getItem("characterOperationKindId"), 10);
 
-    if (characterOperationKindId === 3 || characterOperationKindId === 1) {
+    if (characterOperationKindId === 3 || characterOperationKindId === 1 || characterOperationKindId === 4) {
         const spawnId = localStorage.getItem("characterActiveSpawnId");
         fetchSpawnDetails(spawnId);
         const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
