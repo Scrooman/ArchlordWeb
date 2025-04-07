@@ -47,7 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         const overlayText = document.createElement('div');
                         overlayText.classList.add('overlay-text');
+                        overlayText.textContent = "Mob respawning:";
                         imgContainer.appendChild(overlayText);
+
+                        const timerSuffix = document.createElement('span');
+                        timerSuffix.classList.add('timer-suffix');
+                        timerSuffix.textContent = " s.";
+                        overlayText.appendChild(timerSuffix);
 
                         imgElement.onload = () => {
                             animateImageReveal('mob_img_container', 10); // 10 seconds duration
