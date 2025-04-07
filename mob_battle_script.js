@@ -90,16 +90,29 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error(`Error fetching data from ${endpoint}:`, error));
         
         const endpointForSpawn = `http://127.0.0.1:5000/fetch_spawn`;
-        fetch(endpointForSpawn)
+        const spawnId = localStorage.getItem('characterActiveSpawnId');
+        if (!spawnId) {
+            console.error('Error: ActiveSpawnId is missing in localStorage.');
+            return;
+        }
+
+        fetch(endpointForSpawn, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ spawn_id: spawnId })
+        })
             .then(responseForSpawn => {
-                if (!responseForSpawn.ok) {
-                    throw new Error(`HTTP error! Status: ${responseForSpawn.status}`);
-                }
-                return responseForSpawn.json();
+            if (!responseForSpawn.ok) {
+                throw new Error(`HTTP error! Status: ${responseForSpawn.status}`);
+            }
+            return responseForSpawn.json();
             })
             .then(dataForSpawn => {
-                console.log('Spawn data:', dataForSpawn); // Log spawn data
+            console.log('Spawn data:', dataForSpawn); // Log spawn data
             })
+            .catch(error => console.error(`Error fetching spawn data from ${endpointForSpawn}:`, error));
             const mapContainer = document.querySelector('.travelling_destination_map_container');
                 if (mapContainer) {
                     const mapImagePath = dataForSpawn.mobLocalizationOnMiniMapSource;

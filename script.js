@@ -487,7 +487,6 @@ function displayMobSpawnIFrame() {
     if (characterOperationKindId === 3 || characterOperationKindId === 1) {
         const spawnId = localStorage.getItem("characterActiveSpawnId");
         fetchSpawnDetails(spawnId);
-        localStorage.removeItem("characterActiveSpawnId"); // Remove the variable after use
         const characterActiveSpawnMobType = parseInt(localStorage.getItem("characterActiveSpawnMobType"), 10);
         console.log('Mob type after fetching spawn type while displaying iframe:', characterActiveSpawnMobType);
         if (characterActiveSpawnMobType) {
