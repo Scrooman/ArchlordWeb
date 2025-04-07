@@ -122,6 +122,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     console.error('Error: Element with class "travelling_destination_map_container" not found.');
                 }
+                const minimapContainer = document.querySelector('.minimap_img_container .foreground-map');
+                if (minimapContainer) {
+                    const foregroundMapImagePath = dataForSpawn.mobLocalizationOnMiniMapSource;
+                    if (foregroundMapImagePath) {
+                        minimapContainer.src = foregroundMapImagePath;
+                    } else {
+                        console.error('Error: mobLocalizationOnMiniMapSource is missing in data.');
+                    }
+                } else {
+                    console.error('Error: Element with class "foreground-map" not found.');
+                }
             })
             .catch(error => console.error(`Error fetching spawn data from ${endpointForSpawn}:`, error));
     }
