@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         const overlayText = document.createElement('div');
                         overlayText.classList.add('overlay-text');
+                        overlayText.textContent = "Mob respawning: 10s"; // Tekst początkowy
                         imgContainer.appendChild(overlayText);
 
                         imgElement.onload = () => {
@@ -304,50 +305,50 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function animateImageReveal(containerId, duration) {
-        const container = document.getElementById(containerId);
-        const timerDisplay = container.querySelector('.overlay-text');
-    
-        if (!container) {
-            console.error(`Error: Element with ID "${containerId}" not found.`);
-            return;
-        }
-    
-        const startTime = performance.now();
-        const totalDurationMs = duration * 1000;
-    
-        function updateTimerDisplay(elapsedMs) {
-            const remainingMs = Math.max(0, totalDurationMs - elapsedMs);
-            const remainingSeconds = Math.ceil(remainingMs / 1000);
-            if (timerDisplay) {
-                timerDisplay.textContent = remainingSeconds;
-            }
-        }
-    
-        function animate(currentTime) {
-            const elapsedTime = currentTime - startTime;
-            const progress = Math.min(elapsedTime / totalDurationMs, 1);
-            const currentAngle = progress * 360;
-    
-            container.style.setProperty('--angle', `${currentAngle}deg`);
-            updateTimerDisplay(elapsedTime);
-    
-            if (progress < 1) {
-                requestAnimationFrame(animate);
-            } else {
-                container.style.setProperty('--angle', '360deg');
-                if (timerDisplay) {
-                    timerDisplay.textContent = '0';
-                }
-                container.classList.add('reveal-complete');
-            }
-        }
-    
-        container.style.setProperty('--angle', '0deg');
-        if (timerDisplay) {
-            timerDisplay.textContent = duration;
-        }
-        requestAnimationFrame(animate);
+    const container = document.getElementById(containerId);
+    const timerDisplay = container.querySelector('.overlay-text');
+
+    if (!container) {
+        console.error(`Error: Element with ID "${containerId}" not found.`);
+        return;
     }
+
+    const startTime = performance.now();
+    const totalDurationMs = duration * 1000;
+
+    function updateTimerDisplay(elapsedMs) {
+        const remainingMs = Math.max(0, totalDurationMs - elapsedMs);
+        const remainingSeconds = Math.ceil(remainingMs / 1000);
+        if (timerDisplay) {
+            timerDisplay.textContent = `Mob respawning: ${remainingSeconds}s`; // Dodanie tekstu przed licznikiem
+        }
+    }
+
+    function animate(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / totalDurationMs, 1);
+        const currentAngle = progress * 360;
+
+        container.style.setProperty('--angle', `${currentAngle}deg`);
+        updateTimerDisplay(elapsedTime);
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        } else {
+            container.style.setProperty('--angle', '360deg');
+            if (timerDisplay) {
+                timerDisplay.textContent = 'Mob respawning: 0s'; // Tekst po zakończeniu animacji
+            }
+            container.classList.add('reveal-complete');
+        }
+    }
+
+    container.style.setProperty('--angle', '0deg');
+    if (timerDisplay) {
+        timerDisplay.textContent = `Mob respawning: ${duration}s`; // Tekst początkowy
+    }
+    requestAnimationFrame(animate);
+}
 
     // Call the function to update data on the page
     updateMobInfo();
