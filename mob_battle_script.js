@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 const timeContainer = document.querySelector('.travelling_time_container');
-                const endTimeString = localStorage.getItem('characterOperationEndDate');
                 if (timeContainer) {
                     if (!endTimeString) {
                         console.error('Error: characterOperationEndDate is missing in localStorage.');
