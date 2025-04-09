@@ -39,33 +39,36 @@ document.addEventListener('DOMContentLoaded', function () {
                 const imgContainer = document.querySelector('#mob_img_container');
                 const endTimeString = localStorage.getItem('characterOperationEndDate');
                 const startTimeString = localStorage.getItem('characterOperationStartDate');
-                if (imgContainer) {
-                    const imagePath = data.mobImageSource;
-                    if (imagePath) {
-                        imgContainer.innerHTML = ''; // Clear existing content
-                        const imgElement = document.createElement('img');
-                        imgElement.src = imagePath;
-                        imgElement.alt = "Mob Image";
+                const operationKindId = localStorage.getItem('characterOperationKindId');
+                if (operationKindId === '4') {
+                    if (imgContainer) {
+                        const imagePath = data.mobImageSource;
+                        if (imagePath) {
+                            imgContainer.innerHTML = ''; // Clear existing content
+                            const imgElement = document.createElement('img');
+                            imgElement.src = imagePath;
+                            imgElement.alt = "Mob Image";
 
-                        const overlayText = document.createElement('div');
-                        overlayText.classList.add('overlay-text');
-                        overlayText.textContent = "Mob respawning: 10s"; // Initial text
-                        imgContainer.appendChild(overlayText);
+                            const overlayText = document.createElement('div');
+                            overlayText.classList.add('overlay-text');
+                            overlayText.textContent = "Mob respawning:"; // Initial text
+                            imgContainer.appendChild(overlayText);
 
-                        imgElement.onload = () => {
-                            if (startTimeString && endTimeString) {
-                                animateImageReveal('mob_img_container', startTimeString, endTimeString);
-                            } else {
-                                console.error('Error: startTimeString or endTimeString is missing in localStorage.');
-                            }
-                        };
+                            imgElement.onload = () => {
+                                if (startTimeString && endTimeString) {
+                                    animateImageReveal('mob_img_container', startTimeString, endTimeString);
+                                } else {
+                                    console.error('Error: startTimeString or endTimeString is missing in localStorage.');
+                                }
+                            };
 
-                        imgContainer.appendChild(imgElement);
+                            imgContainer.appendChild(imgElement);
+                        } else {
+                            console.error('Error: mobImageSource is missing in data.');
+                        }
                     } else {
-                        console.error('Error: mobImageSource is missing in data.');
+                        console.error('Error: Element with ID "mob_img_container" not found.');
                     }
-                } else {
-                    console.error('Error: Element with ID "mob_img_container" not found.');
                 }
 
                 const timeContainer = document.querySelector('.travelling_time_container');
@@ -333,9 +336,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        console.log('Start Date:', startDate);
-        console.log('End Date:', endDate);
-        console.log('Total Duration (ms):', totalDurationMs);
 
         function updateTimerDisplay() {
             const now = new Date();
@@ -352,9 +352,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const progress = Math.min(elapsedMs / totalDurationMs, 1);
             const currentAngle = progress * 360;
 
-            console.log(`Elapsed Time (ms): ${elapsedMs}`);
-            console.log(`Progress: ${(progress * 100).toFixed(2)}%`);
-
 
             container.style.setProperty('--angle', `${currentAngle}deg`);
             updateTimerDisplay();
@@ -364,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 container.style.setProperty('--angle', '360deg');
                 if (timerDisplay) {
-                    timerDisplay.textContent = 'Mob respawning: 0s';
+                    timerDisplay.textContent = '';
                 }
                 container.classList.add('reveal-complete');
                 console.log('Animation complete.');
