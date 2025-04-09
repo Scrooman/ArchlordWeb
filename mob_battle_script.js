@@ -40,35 +40,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 const endTimeString = localStorage.getItem('characterOperationEndDate');
                 const startTimeString = localStorage.getItem('characterOperationStartDate');
                 const operationKindId = localStorage.getItem('characterOperationKindId');
-                if (operationKindId === '4') {
-                    if (imgContainer) {
-                        const imagePath = data.mobImageSource;
-                        if (imagePath) {
-                            imgContainer.innerHTML = ''; // Clear existing content
-                            const imgElement = document.createElement('img');
-                            imgElement.src = imagePath;
-                            imgElement.alt = "Mob Image";
+                if (imgContainer) {
+                    const imagePath = data.mobImageSource;
+                    if (imagePath) {
+                        imgContainer.innerHTML = ''; // Clear existing content
+                        const imgElement = document.createElement('img');
+                        imgElement.src = imagePath;
+                        imgElement.alt = "Mob Image";
 
-                            const overlayText = document.createElement('div');
-                            overlayText.classList.add('overlay-text');
-                            overlayText.textContent = "Mob respawning:"; // Initial text
-                            imgContainer.appendChild(overlayText);
+                        const overlayText = document.createElement('div');
+                        overlayText.classList.add('overlay-text');
+                        overlayText.textContent = "Mob respawning:"; // Initial text
+                        imgContainer.appendChild(overlayText);
 
-                            imgElement.onload = () => {
-                                if (startTimeString && endTimeString) {
+                        imgElement.onload = () => {
+                            if (startTimeString && endTimeString) {
+                                if (operationKindId === '4') {
                                     animateImageReveal('mob_img_container', startTimeString, endTimeString);
-                                } else {
-                                    console.error('Error: startTimeString or endTimeString is missing in localStorage.');
                                 }
-                            };
+                            } else {
+                                console.error('Error: startTimeString or endTimeString is missing in localStorage.');
+                            }
+                        };
 
-                            imgContainer.appendChild(imgElement);
-                        } else {
-                            console.error('Error: mobImageSource is missing in data.');
-                        }
+                        imgContainer.appendChild(imgElement);
                     } else {
-                        console.error('Error: Element with ID "mob_img_container" not found.');
+                        console.error('Error: mobImageSource is missing in data.');
                     }
+                } else {
+                    console.error('Error: Element with ID "mob_img_container" not found.');
                 }
 
                 const timeContainer = document.querySelector('.travelling_time_container');
