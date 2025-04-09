@@ -48,20 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         imgElement.src = imagePath;
                         imgElement.alt = "Mob Image";
 
-                        const overlayText = document.createElement('div');
-                        overlayText.classList.add('overlay-text');
-                        overlayText.textContent = "Mob respawning:"; // Initial text
-                        imgContainer.appendChild(overlayText);
+                        if (operationKindId === '4') {
+                            const overlayText = document.createElement('div');
+                            overlayText.classList.add('overlay-text');
+                            overlayText.textContent = "Mob respawning:"; // Initial text
+                            imgContainer.appendChild(overlayText);
 
-                        imgElement.onload = () => {
-                            if (startTimeString && endTimeString) {
-                                if (operationKindId === '4') {
+                            imgElement.onload = () => {
+                                if (startTimeString && endTimeString) {
                                     animateImageReveal('mob_img_container', startTimeString, endTimeString);
+                                } else {
+                                    console.error('Error: startTimeString or endTimeString is missing in localStorage.');
                                 }
-                            } else {
-                                console.error('Error: startTimeString or endTimeString is missing in localStorage.');
-                            }
-                        };
+                            };
+                        }
 
                         imgContainer.appendChild(imgElement);
                     } else {
