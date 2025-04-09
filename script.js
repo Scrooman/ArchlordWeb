@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Operation kind id:', localStorage.getItem('characterOperationKindId'));
             localStorage.setItem("characterOperationEndDate", data.characterOperation?.operationEndDate || null);
             console.log('Operation endTime:', localStorage.getItem('characterOperationEndDate')); 
+            localStorage.setItem("characterOperationStartDate", data.characterOperation?.operationStartDate || null);
+            console.log('Operation startTime:', localStorage.getItem('characterOperationStartDate'));
             localStorage.setItem("characterActiveSpawnId", data.activeSpawnId);
             console.log('Character active spawnId:', localStorage.getItem('characterActiveSpawnId')); 
             displayMobSpawnIFrame()

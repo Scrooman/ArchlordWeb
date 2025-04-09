@@ -162,6 +162,7 @@ body {
     width: 350px;
     height: 260px;
     justify-self: center;
+    font-size: 8px;
 }
 
 .mob_img_container {
