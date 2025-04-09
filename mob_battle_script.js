@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        function updateTimerDisplay(currentTime) {
+        function updateTimerDisplay() {
             const now = new Date();
             const remainingMs = Math.max(0, endDate - now);
             const remainingSeconds = Math.ceil(remainingMs / 1000);
@@ -342,14 +342,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        function animate(currentTime) {
+        function animate() {
             const now = new Date();
-            const elapsedTime = now - startDate;
+            const elapsedTime = Math.max(0, now - startDate);
             const progress = Math.min(elapsedTime / totalDurationMs, 1);
             const currentAngle = progress * 360;
 
             container.style.setProperty('--angle', `${currentAngle}deg`);
-            updateTimerDisplay(now);
+            updateTimerDisplay();
 
             if (progress < 1) {
                 requestAnimationFrame(animate);
@@ -362,8 +362,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        container.style.setProperty('--angle', '0deg');
-        updateTimerDisplay(new Date());
+        const now = new Date();
+        if (now >= startDate && now <= endDate) {
+            const elapsedTime = now - startDate;
+            const initialProgress = elapsedTime / totalDurationMs;
+            const initialAngle = initialProgress * 360;
+            container.style.setProperty('--angle', `${initialAngle}deg`);
+        } else {
+            container.style.setProperty('--angle', '0deg');
+        }
+
+        updateTimerDisplay();
         requestAnimationFrame(animate);
     }
 
