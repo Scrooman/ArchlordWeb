@@ -351,6 +351,8 @@ document.addEventListener('DOMContentLoaded', function () {
             container.style.setProperty('--angle', `${currentAngle}deg`);
             updateTimerDisplay();
 
+            console.log(`Animation progress: ${(progress * 100).toFixed(2)}%`); // Log animation progress
+
             if (progress < 1) {
                 requestAnimationFrame(animate);
             } else {
