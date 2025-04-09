@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         const imgElement = document.createElement('img');
                         imgElement.src = imagePath;
                         imgElement.alt = "Mob Image";
+                        const styleElement = document.createElement('style');
+                        styleElement.textContent = `
+                            #mob_img_container::before {
+                                content: unset;
+                            }
+                        `;
+                        document.head.appendChild(styleElement);
 
                         if (operationKindId === '4') {
                             const overlayText = document.createElement('div');
