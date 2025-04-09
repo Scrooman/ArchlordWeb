@@ -68,6 +68,15 @@ document.addEventListener('DOMContentLoaded', function () {
                                     console.error('Error: startTimeString or endTimeString is missing in localStorage.');
                                 }
                             };
+
+                            // Ensure #mob_img_container::before has content set to ''
+                            const styleElementBefore = document.createElement('style');
+                            styleElementBefore.textContent = `
+                                #mob_img_container::before {
+                                    content: '';
+                                }
+                            `;
+                            document.head.appendChild(styleElementBefore);
                         }
 
                         imgContainer.appendChild(imgElement);
