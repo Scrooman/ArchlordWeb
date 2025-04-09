@@ -326,16 +326,17 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const totalDurationSeconds = Math.floor((endDate - startDate) / 1000);
+        const totalDurationMs = endDate - startDate;
 
-        if (totalDurationSeconds <= 0) {
+        if (totalDurationMs <= 0) {
             console.error('Error: endTime must be greater than startTime.');
             return;
         }
 
         function updateTimerDisplay() {
             const now = new Date();
-            const remainingSeconds = Math.max(0, Math.floor((endDate - now) / 1000));
+            const remainingMs = Math.max(0, endDate - now);
+            const remainingSeconds = Math.floor(remainingMs / 1000);
             if (timerDisplay) {
                 timerDisplay.textContent = `Mob respawning: ${remainingSeconds}s`;
             }
@@ -343,15 +344,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function animate() {
             const now = new Date();
-            const elapsedSeconds = Math.max(0, Math.floor((now - startDate) / 1000));
-            const progress = Math.min(elapsedSeconds / totalDurationSeconds, 1);
+            const elapsedMs = Math.max(0, now - startDate);
+            const progress = Math.min(elapsedMs / totalDurationMs, 1);
             const currentAngle = progress * 360;
 
             container.style.setProperty('--angle', `${currentAngle}deg`);
             updateTimerDisplay();
-
-            // Log progress to the console
-            console.log(`Animation progress: ${(progress * 100).toFixed(2)}%`);
 
             if (progress < 1) {
                 requestAnimationFrame(animate);
@@ -367,8 +365,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const now = new Date();
         if (now >= startDate && now <= endDate) {
-            const elapsedSeconds = Math.floor((now - startDate) / 1000);
-            const initialProgress = elapsedSeconds / totalDurationSeconds;
+            const elapsedMs = now - startDate;
+            const initialProgress = elapsedMs / totalDurationMs;
             const initialAngle = initialProgress * 360;
             container.style.setProperty('--angle', `${initialAngle}deg`);
         } else {
