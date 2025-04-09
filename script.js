@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 1: return 'Battle';
                 case 2: return 'Idle';
                 case 3: return 'Travelling';
-                case 4: return 'Waiting for mob to respawn';
+                case 4: return 'Waiting at spawn';
                 case 5: return 'Respawning';
                 default: return 'Unknown';
                     }   

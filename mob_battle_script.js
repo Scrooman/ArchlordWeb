@@ -351,6 +351,9 @@ document.addEventListener('DOMContentLoaded', function () {
             container.style.setProperty('--angle', `${currentAngle}deg`);
             updateTimerDisplay();
 
+            // Log progress to the console
+            console.log(`Animation progress: ${(progress * 100).toFixed(2)}%`);
+
             if (progress < 1) {
                 requestAnimationFrame(animate);
             } else {
@@ -359,6 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     timerDisplay.textContent = 'Mob respawning: 0s';
                 }
                 container.classList.add('reveal-complete');
+                console.log('Animation complete.');
             }
         }
 
