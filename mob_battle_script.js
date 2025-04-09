@@ -333,6 +333,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        console.log('Start Date:', startDate);
+        console.log('End Date:', endDate);
+        console.log('Total Duration (ms):', totalDurationMs);
+
         function updateTimerDisplay() {
             const now = new Date();
             const remainingMs = Math.max(0, endDate - now);
@@ -348,10 +352,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const progress = Math.min(elapsedMs / totalDurationMs, 1);
             const currentAngle = progress * 360;
 
+            console.log(`Elapsed Time (ms): ${elapsedMs}`);
+            console.log(`Progress: ${(progress * 100).toFixed(2)}%`);
+
+
             container.style.setProperty('--angle', `${currentAngle}deg`);
             updateTimerDisplay();
-
-            console.log(`Animation progress: ${(progress * 100).toFixed(2)}%`); // Log animation progress
 
             if (progress < 1) {
                 requestAnimationFrame(animate);
