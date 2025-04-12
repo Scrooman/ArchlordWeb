@@ -4,7 +4,7 @@ body {
     color: #f8f9fa;
     background-color: #050a11;
     background-image: url('images/world_map_croped.png'); 
-    backdrop-filter: blur(5px); /* Dodanie rozmazania */
+    backdrop-filter: blur(2px); /* Dodanie rozmazania */
     background-size: contain;
     cursor: url('images/cursor_m1.png'), auto;
 }
@@ -30,7 +30,7 @@ header {
     padding: 5px;
     width: 900px;
     height: 1190px;
-    background-color: #0f121a;
+    background-color: rgba(15, 18, 26, 0.8);
     border: 1px solid #a7a7a7;
     outline: 2px solid #000000;
     border-radius: 5px;
@@ -41,7 +41,7 @@ header {
     margin: 5px;
     width: 900px;
     height: 1200px;
-    background-color: #0f121a;
+    background-color: rgba(15, 18, 26, 0.8);
     border: 1px solid #a7a7a7;
     outline: 2px solid #000000;
     border-radius: 5px;
@@ -58,7 +58,7 @@ header {
     padding: 5px;
     width: 870px;
     height: 150px;
-    background-color: #06060d;
+    background-color: rgba(6, 6, 13, 0.8);
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
@@ -244,7 +244,7 @@ header {
     padding: 5px;
     width: 870px;
     height: 200px;
-    background-color: #06060d;
+    background-color: rgba(6, 6, 13, 0.8);
     border: 1px solid #a7a7a7;
     border-radius: 5px;
     box-shadow: 0 1px 4px #7a817a;
