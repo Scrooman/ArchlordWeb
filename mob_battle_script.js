@@ -1,4 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Inicjalizacja WebSocket
+    const socket = io('http://localhost:5000'); // Adres serwera WebSocket
+
+    // Pobierz character_id z localStorage
+    const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
+    if (characterId) {
+        // Dołącz do pokoju dla character_id
+        socket.emit('join', { character_id: characterId });
+
+        // Odbieranie aktualizacji walki
+        socket.on('fight_update', (data) => {
+            console.log('Fight update:', data);
+            updateFightUI(data); // Aktualizuj UI
+        });
+
+        // Obsługa opuszczenia pokoju
+        window.addEventListener('beforeunload', () => {
+            socket.emit('leave', { character_id: characterId });
+        });
+    } else {
+        console.error('Error: character_id is missing.');
+    }
+
+    // Funkcja do aktualizacji UI na podstawie danych walki
+    function updateFightUI(data) {
+        const mobHpLabel = document.getElementById('mobHpLabel');
+        if (mobHpLabel && data.mobHP !== undefined) {
+            mobHpLabel.textContent = `${data.mobHP} HP`;
+        }
+
+        const mobTypeLabel = document.getElementById('mobTypeLabel');
+        if (mobTypeLabel && data.mobType !== undefined) {
+            mobTypeLabel.textContent = data.mobType;
+        }
+    }
+
+
     // Function to update data on the page
     function updateMobData(fields) {
         let mobId = new URLSearchParams(window.location.search).get('mobId');
