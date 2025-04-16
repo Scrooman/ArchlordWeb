@@ -41,20 +41,21 @@ document.addEventListener('DOMContentLoaded', function () {
             damageElement.style.fontWeight = 'bold';
             damageElement.style.pointerEvents = 'none';
             damageElement.style.left = '50%';
+            damageElement.style.bottom = '0'; // Start at the bottom of the container
             damageElement.style.transform = 'translateX(-50%)';
-            damageElement.style.animation = 'fadeOutAndMove 2s forwards';
+            damageElement.style.animation = 'fadeOutAndMoveWithinContainer 2s forwards';
 
-            // Add animation keyframes for fade-out and vertical movement effect
+            // Add animation keyframes for fade-out and vertical movement effect within the container
             const styleElement = document.createElement('style');
             styleElement.textContent = `
-            @keyframes fadeOutAndMove {
+            @keyframes fadeOutAndMoveWithinContainer {
             0% {
-            opacity: 1;
-            top: 66%;
+                opacity: 1;
+                bottom: 0;
             }
             100% {
-            opacity: 0;
-            top: 41%;
+                opacity: 0;
+                bottom: 100%;
             }
             }
             `;
