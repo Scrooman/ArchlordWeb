@@ -53,10 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
             document.head.appendChild(styleElement);
 
             mobImgAndMinimapContainer.appendChild(damageElement);
+            console.log('Displayed damage_to_mob:', data.damage_to_mob); // Log display
 
             // Remove the element after 1,5 seconds
             setTimeout(() => {
-            mobImgAndMinimapContainer.removeChild(damageElement);
+                mobImgAndMinimapContainer.removeChild(damageElement);
+                console.log('Removed damage element from mobImgAndMinimapContainer'); // Log removal
             }, 1500);
         }
     }
