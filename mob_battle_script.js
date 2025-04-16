@@ -40,14 +40,22 @@ document.addEventListener('DOMContentLoaded', function () {
             damageElement.style.fontSize = '20px';
             damageElement.style.fontWeight = 'bold';
             damageElement.style.pointerEvents = 'none';
-            damageElement.style.animation = 'fadeOut 2s forwards';
-            
-            // Add animation keyframes for fade-out effect
+            damageElement.style.left = '50%';
+            damageElement.style.transform = 'translateX(-50%)';
+            damageElement.style.animation = 'fadeOutAndMove 2s forwards';
+
+            // Add animation keyframes for fade-out and vertical movement effect
             const styleElement = document.createElement('style');
             styleElement.textContent = `
-            @keyframes fadeOut {
-                0% { opacity: 1; }
-                100% { opacity: 0; }
+            @keyframes fadeOutAndMove {
+            0% {
+                opacity: 1;
+                top: 33%;
+            }
+            100% {
+                opacity: 0;
+                top: 66%;
+            }
             }
             `;
             document.head.appendChild(styleElement);
@@ -55,11 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
             mobImgAndMinimapContainer.appendChild(damageElement);
             console.log('Displayed damage_to_mob:', data.damage_to_mob); // Log display
 
-            // Remove the element after 1,5 seconds
+            // Remove the element after 2 seconds
             setTimeout(() => {
-                mobImgAndMinimapContainer.removeChild(damageElement);
-                console.log('Removed damage element from mobImgAndMinimapContainer'); // Log removal
-            }, 1500);
+            mobImgAndMinimapContainer.removeChild(damageElement);
+            console.log('Removed damage element from mobImgAndMinimapContainer'); // Log removal
+            }, 2000);
         }
     }
 
