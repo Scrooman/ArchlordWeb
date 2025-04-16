@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // Inicjalizacja WebSocket
-    const socket = io('http://localhost:5000'); // Adres serwera WebSocket
+    const socket = io('http://127.0.0.1:5000'); // Adres serwera WebSocket
 
     // Pobierz character_id z localStorage
     const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
