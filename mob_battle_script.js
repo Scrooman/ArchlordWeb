@@ -26,14 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Funkcja do aktualizacji UI na podstawie danych walki
     function updateFightUI(data) {
         const mobHpLabel = document.getElementById('mobHpLabel');
-        if (mobHpLabel && data.mobHP !== undefined) {
-            mobHpLabel.textContent = `${data.mobHP} HP`;
+        if (mobHpLabel && data.mob_hp !== undefined) {
+            mobHpLabel.textContent = data.mob_hp;
         }
 
-        const mobTypeLabel = document.getElementById('mobTypeLabel');
-        if (mobTypeLabel && data.mobType !== undefined) {
-            mobTypeLabel.textContent = data.mobType;
-        }
     }
 
 
