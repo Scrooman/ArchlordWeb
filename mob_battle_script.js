@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
             @keyframes fadeOutAndMove {
             0% {
             opacity: 1;
-            top: 12%;
+            top: 30%;
             }
             100% {
             opacity: 0;
-            top: 30%;
+            top: 12%;
             }
             }
             `;
