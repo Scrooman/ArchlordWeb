@@ -24,12 +24,41 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Funkcja do aktualizacji UI na podstawie danych walki
-    function updateFightUI(data) {
+    function updateFightUI(data) { // ta konkretka funkcja jest testowa i zostanie w przyszłości usunięta
         const mobHpLabel = document.getElementById('mobHpLabel');
         if (mobHpLabel && data.mob_hp !== undefined) {
             mobHpLabel.textContent = data.mob_hp;
         }
 
+        // Display damage_to_mob value in the mob_img_and_minimap_container
+        const mobImgAndMinimapContainer = document.getElementById('mob_img_and_minimap_container');
+        if (mobImgAndMinimapContainer && data.damage_to_mob !== undefined) {
+            const damageElement = document.createElement('div');
+            damageElement.textContent = data.damage_to_mob;
+            damageElement.style.position = 'absolute';
+            damageElement.style.color = 'white';
+            damageElement.style.fontSize = '20px';
+            damageElement.style.fontWeight = 'bold';
+            damageElement.style.pointerEvents = 'none';
+            damageElement.style.animation = 'fadeOut 2s forwards';
+            
+            // Add animation keyframes for fade-out effect
+            const styleElement = document.createElement('style');
+            styleElement.textContent = `
+            @keyframes fadeOut {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+            `;
+            document.head.appendChild(styleElement);
+
+            mobImgAndMinimapContainer.appendChild(damageElement);
+
+            // Remove the element after 1,5 seconds
+            setTimeout(() => {
+            mobImgAndMinimapContainer.removeChild(damageElement);
+            }, 1500);
+        }
     }
 
 
