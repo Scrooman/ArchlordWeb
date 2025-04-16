@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             damageElement.textContent = data.damage_to_mob;
             damageElement.style.position = 'absolute';
             damageElement.style.color = 'white';
-            damageElement.style.fontSize = '20px';
+            damageElement.style.fontSize = '30px';
             damageElement.style.fontWeight = 'bold';
             damageElement.style.pointerEvents = 'none';
             damageElement.style.left = '50%';
@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
             styleElement.textContent = `
             @keyframes fadeOutAndMove {
             0% {
-                opacity: 1;
-                top: 33%;
+            opacity: 1;
+            top: 66%;
             }
             100% {
-                opacity: 0;
-                top: 66%;
+            opacity: 0;
+            top: 41%;
             }
             }
             `;
