@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Display damage_to_mob value in the mob_img_and_minimap_container
-        const mobImgAndMinimapContainer = document.getElementByClassName('mob_img_and_minimap_container');
+        const mobImgAndMinimapContainer = document.getElementByClassName('mob_img_and_minimap_container')[0];
         if (mobImgAndMinimapContainer && data.damage_to_mob !== undefined) {
             const damageElement = document.createElement('div');
             damageElement.textContent = data.damage_to_mob;
