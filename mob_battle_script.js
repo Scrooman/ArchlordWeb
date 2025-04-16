@@ -38,24 +38,22 @@ document.addEventListener('DOMContentLoaded', function () {
             damageElement.style.position = 'absolute';
             damageElement.style.color = 'white';
             damageElement.style.fontSize = '30px';
-            damageElement.style.fontWeight = 'bold';
             damageElement.style.pointerEvents = 'none';
             damageElement.style.left = '50%';
-            damageElement.style.bottom = '0'; // Start at the bottom of the container
             damageElement.style.transform = 'translateX(-50%)';
-            damageElement.style.animation = 'fadeOutAndMoveWithinContainer 2s forwards';
+            damageElement.style.animation = 'fadeOutAndMove 2s forwards';
 
-            // Add animation keyframes for fade-out and vertical movement effect within the container
+            // Add animation keyframes for fade-out and vertical movement effect
             const styleElement = document.createElement('style');
             styleElement.textContent = `
-            @keyframes fadeOutAndMoveWithinContainer {
+            @keyframes fadeOutAndMove {
             0% {
-                opacity: 1;
-                bottom: 0;
+            opacity: 1;
+            top: 88%;
             }
             100% {
-                opacity: 0;
-                bottom: 100%;
+            opacity: 0;
+            top: 61%;
             }
             }
             `;
