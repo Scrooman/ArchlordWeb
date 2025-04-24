@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
             elementId: 'characterIgnoreSkillBlock',
-            valuePath: ['attributes', 'IgnsoreSkillBlock'],
+            valuePath: ['attributes', 'IgnoreSkillBlock'],
             transform: (ignoreSkillBlock) => `${ignoreSkillBlock.baseValue + ignoreSkillBlock.additionalValue}%`
             },
             {
