@@ -508,13 +508,13 @@ header {
 }
 
 .character_gui_bar_left_section {
-    width: 200px;
+    width: 225px;
     height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
+    margin-top: 10px;
 }
 
 .character_gui_bar_center_section {
@@ -526,6 +526,7 @@ header {
     align-items: center;
     background-image: url("images/character_bar_gui_container_center_section_background.png");
     background-size: 100% 100%;
+    margin-top: 10px;
 }
 
 .character_gui_bar_right_section {
@@ -536,6 +537,18 @@ header {
     justify-content: flex-start;
     align-items: center;
     background-image: url("images/character_bar_gui_container_right_section_background.png");
+    background-size: 100% 100%;
+    margin-top: 10px;
+}
+
+.character_gui_bar_exp_bar {
+    width: 1300px;
+    height: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("images/character_gui_bar_exp_bar_background.png.png");
     background-size: 100% 100%;
 }
 
