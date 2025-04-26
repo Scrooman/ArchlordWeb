@@ -34,10 +34,9 @@ header {
 
 .main_container_bottom_section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 20px 0;
     width: 1800px;
-    height: 300px;
 }
 
 
@@ -432,7 +431,7 @@ header {
 }
 
 
-/* sekcja z paskiem GUI dla Postaci */
+/* 
 .main_container_right_section_bottom_section {
     width: 900px;
     height: 300px;
@@ -441,9 +440,12 @@ header {
     justify-content: flex-start;
     align-items: center;
 }
+ */
 
+
+ /* sekcja z paskiem GUI dla Postaci */
 .character_bar_section {
-    width: 900px;
+    width: 1300px;
     height: 150px;
     display: flex;
     flex-direction: column;
@@ -452,7 +454,7 @@ header {
 }
 
 .character_life_mana_container {
-    width: 400px;
+    width: 800px;
     height: 40px;
     display: flex;
     flex-direction: column;
@@ -463,7 +465,7 @@ header {
 }
 
 .character_life_bar {
-    width: 370px;
+    width: 745px;
     height: 20px;
     background-image: url("images/character_life_bar.png");
     background-size: 100% 100%;
@@ -474,7 +476,7 @@ header {
 }
 
 .character_mana_bar {
-    width: 370px;
+    width: 745px;
     height: 20px;
     background-image: url("images/character_mana_bar.png");
     background-size: 100% 100%;
@@ -485,8 +487,8 @@ header {
 }
 
 .character_gui_bar_section {
-    width: 800px;
-    height: 100px;
+    width: 1300px;
+    height: 75px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -495,8 +497,8 @@ header {
 
 
 .character_gui_bar_container {
-    width: 800px;
-    height: 100px;
+    width: 1300px;
+    height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -507,7 +509,7 @@ header {
 
 .character_gui_bar_left_section {
     width: 200px;
-    height: 100px;
+    height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -516,8 +518,8 @@ header {
 }
 
 .character_gui_bar_center_section {
-    width: 400px;
-    height: 100px;
+    width: 800px;
+    height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -527,8 +529,8 @@ header {
 }
 
 .character_gui_bar_right_section {
-    width: 200px;
-    height: 100px;
+    width: 225px;
+    height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
