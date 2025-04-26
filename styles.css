@@ -442,12 +442,14 @@ header {
     justify-content: flex-start;
     align-items: center;
     background-image: url("images/character_life_mana_container_background.png");
+    background-size: 100% 100%;
 }
 
 .character_life_bar {
-    width: 380px;
+    width: 370px;
     height: 20px;
     background-image: url("images/character_life_bar.png");
+    background-size: 100% 100%;
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -455,9 +457,10 @@ header {
 }
 
 .character_mana_bar {
-    width: 380px;
+    width: 370px;
     height: 20px;
     background-image: url("images/character_mana_bar.png");
+    background-size: 100% 100%;
     display: flex;
     justify-content: space-around;
     align-content: center;
