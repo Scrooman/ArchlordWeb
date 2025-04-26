@@ -508,7 +508,7 @@ header {
 }
 
 .character_gui_bar_left_section {
-    width: 225px;
+    width: 275px;
     height: 75px;
     display: flex;
     flex-direction: row;
@@ -542,40 +542,42 @@ header {
 }
 
 .character_gui_bar_left_section_info_container {
-    width: 100px;
     height: 75px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 5px;
 }
 
 .character_gui_bar_level_label {
-    height: 30px;
-    width: 50px;
-    line-height: 30px;
-    margin: 2px;
+    height: 15px;
+    width: 75px;
+    line-height: 15px;
     padding: 5px;
     color: #ffffff;
     background-image: url('images/button.png'); 
     background-size: 100% 100%;
+    margin-left: 35px;
+    margin-bottom:5 px;
+    margin-top: 2px;
 }
 
 
 .character_gui_bar_exp_label {
-    height: 30px;
-    width: 50px;
-    line-height: 30px;
-    margin: 2px;
+    height: 20px;
+    width: 100px;
+    line-height: 20px;
     padding: 5px;
     color: #ffffff;
     background-image: url('images/black_label_small.png'); 
     background-size: 100% 100%;
+    margin-left: 35px;
 }
 
 
 .character_gui_bar_left_section_potions_container {
-    width: 100px;
+    width: 125px;
     height: 75px;
     display: flex;
     flex-direction: row;
@@ -585,13 +587,19 @@ header {
 
 
 .character_gui_bar_left_section_potions_life_potion {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 .character_gui_bar_left_section_potions_mana_potion {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+
 }
 
 .character_gui_bar_exp_bar {
