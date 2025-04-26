@@ -7,10 +7,15 @@ body {
     backdrop-filter: blur(2px); /* Dodanie rozmazania */
     background-size: contain;
     cursor: url('images/cursor_m1.png'), auto;
+    transform: scale(0.8); /* Skaluje stronę do 80% */
+    transform-origin: top left; /* Ustawia punkt początkowy skalowania */
+    width: 125%; /* Kompensuje zmniejszenie szerokości */
+    height: 125%; /* Kompensuje zmniejszenie wysokości */
+    overflow-x: hidden; /* Ukrywa poziomy pasek przewijania */
 }
 
 header {
-    height: 150px;
+    height: 100px;
     background-image: url('images/ArchLord_Logo.png');
     background-size: contain;
     align-items: center;
@@ -21,21 +26,18 @@ header {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 20px 0;
     width: 1800px;
 }
 
 .main_container_top_section {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
     width: 1800px;
 }
 
 .main_container_bottom_section {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
     width: 1800px;
 }
 
@@ -445,8 +447,6 @@ header {
 
  /* sekcja z paskiem GUI dla Postaci */
 .character_bar_section {
-    width: 1300px;
-    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -487,8 +487,6 @@ header {
 }
 
 .character_gui_bar_section {
-    width: 1300px;
-    height: 75px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
