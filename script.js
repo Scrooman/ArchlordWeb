@@ -563,8 +563,22 @@ function fetchActivePotions() {
             imgElement.alt = "Life Potion";
             imgElement.style.width = "100%"; // Adjust size as needed
             imgElement.style.height = "100%"; // Adjust size as needed
+
+            const stackedAmountElement = document.createElement("div");
+            stackedAmountElement.textContent = `x${data.stackedAmount || 0}`;
+            stackedAmountElement.style.position = "absolute";
+            stackedAmountElement.style.bottom = "5px";
+            stackedAmountElement.style.right = "5px";
+            stackedAmountElement.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+            stackedAmountElement.style.color = "white";
+            stackedAmountElement.style.padding = "2px 5px";
+            stackedAmountElement.style.borderRadius = "3px";
+            stackedAmountElement.style.fontSize = "12px";
+
             lifePotionSlot.innerHTML = ""; // Clear any existing content
+            lifePotionSlot.style.position = "relative"; // Ensure the container is positioned
             lifePotionSlot.appendChild(imgElement);
+            lifePotionSlot.appendChild(stackedAmountElement);
         }
     })
     .catch(error => console.error('Error fetching active potions:', error));
