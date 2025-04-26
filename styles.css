@@ -7,11 +7,7 @@ body {
     backdrop-filter: blur(2px); /* Dodanie rozmazania */
     background-size: contain;
     cursor: url('images/cursor_m1.png'), auto;
-    transform: scale(0.8); /* Skaluje stronę do 80% */
-    transform-origin: top left; /* Ustawia punkt początkowy skalowania */
-    width: 125%; /* Kompensuje zmniejszenie szerokości */
-    height: 125%; /* Kompensuje zmniejszenie wysokości */
-    overflow-x: hidden; /* Ukrywa poziomy pasek przewijania */
+ 
 }
 
 header {
@@ -58,7 +54,7 @@ header {
 .main_container .right_section {
     margin: 5px;
     width: 900px;
-    height: 1300px;
+    height: 1200px;
     background-color: rgba(15, 18, 26, 0.8);
     border: 1px solid #a7a7a7;
     outline: 2px solid #000000;
@@ -589,6 +585,8 @@ header {
     height: 55px;
     margin-bottom: 10px;
     margin-left: 5px;
+    background-image: url("images/inventory_slot.png");
+    background-size: 100% 100%;
 }
 
 .character_gui_bar_left_section_potions_mana_potion {
@@ -597,7 +595,8 @@ header {
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
-
+    background-image: url("images/inventory_slot.png");
+    background-size: 100% 100%;
 }
 
 .character_gui_bar_exp_bar {
