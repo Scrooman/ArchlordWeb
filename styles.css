@@ -52,26 +52,9 @@ header {
     align-items: center;
 }
 
-.main_container_right_section_upper_section {
-    width: 900px;
-    height: 1125px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.main_container_right_section_bottom_section {
-    width: 900px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-
 /* sekcje lewego ekranu */
+
+/* górna sekcja lewego ekranu */
 .main_container .left_section .top_section {
     display: flex;
     flex-wrap: wrap;
@@ -119,6 +102,7 @@ header {
 }
 
 
+/* środkowa sekcja lewego ekranu */
 .main_container .left_section .middle_section {
     display: flex;
     margin: 10px;
@@ -274,6 +258,18 @@ header {
 
 
 /* sekcje prawego ekranu */
+
+.main_container_right_section_upper_section {
+    width: 900px;
+    height: 1125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* spawn types */
 .main_container .right_section .monster_type_label {
     /* width: 970px; */
     height: 75px;
@@ -286,7 +282,6 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-
 
 .monster_type_container {
     width: 130px;
@@ -343,7 +338,7 @@ header {
     justify-self: center;
 }
 
-
+/* mob lvl */
 .spawn_lvl_container {
     width: 80px;
     height: 35px;
@@ -410,12 +405,51 @@ header {
     background-blend-mode: lighten;
 }
 
+/* sekcja z ekranem walki */
 .mob_battle_container {
     width: 700px;
     height: 950px;
     margin: 10px;
     border-radius: 5px;
     justify-self: center;
+}
+
+
+/* sekcja z paskiem GUI dla Postaci */
+.main_container_right_section_bottom_section {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.character_bar_section {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.character_life_mana_container {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.character_gui_bar_section {
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 footer {
