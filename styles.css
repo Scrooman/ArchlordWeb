@@ -46,6 +46,28 @@ header {
     outline: 2px solid #000000;
     border-radius: 5px;
     box-shadow: 0 5px 10px #7a817a;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main_container_right_section_upper_section {
+    width: 900px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main_container_right_section_bottom_section {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 
