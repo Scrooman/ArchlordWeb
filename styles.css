@@ -432,8 +432,6 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-image: url("images/character_life_mana_container_background.png");
-    background-size: 100% 100%;
 }
 
 .character_life_mana_container {
@@ -443,20 +441,27 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-image: url("images/character_life_mana_container_background.png");
 }
 
 .character_life_bar {
-    width: 400px;
-    height: 25px;
+    width: 380px;
+    height: 20px;
     background-image: url("images/character_life_bar.png");
-    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .character_mana_bar {
-    width: 400px;
-    height: 25px;
+    width: 380px;
+    height: 20px;
     background-image: url("images/character_mana_bar.png");
-    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .character_gui_bar_section {
