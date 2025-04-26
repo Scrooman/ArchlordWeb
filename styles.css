@@ -476,6 +476,52 @@ header {
     align-items: center;
 }
 
+
+.character_gui_bar_container {
+    width: 800px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("images/character_bar_gui_container_background.png");
+    background-size: 100% 100%;
+}
+
+.character_gui_bar_left_section {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.character_gui_bar_center_section {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("images/character_bar_gui_container_center_section_background.png");
+    background-size: 100% 100%;
+}
+
+.character_gui_bar_right_section {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("images/character_bar_gui_container_right_section_background.png");
+    background-size: 100% 100%;
+}
+
+
+
 footer {
     background-color: #f8f9fa;
     text-align: center;
