@@ -436,7 +436,7 @@ header {
 
 .character_life_mana_container {
     width: 400px;
-    height: 50px;
+    height: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -510,7 +510,7 @@ header {
 }
 
 .character_gui_bar_right_section {
-    width: 400px;
+    width: 200px;
     height: 100px;
     display: flex;
     flex-direction: row;
