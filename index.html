@@ -14,99 +14,104 @@
     </header>
     <main>
         <div class="main_container">
-            <section class="left_section">
-                <div class="top_section">
-                    <div class="top_section_row_container">
-                        <div class="top_section_container">Hero state:
-                            <div class="top_section_label" id="characterState"></div>
+            <div class="main_container_top_section">
+                <section class="left_section">
+                    <div class="top_section">
+                        <div class="top_section_row_container">
+                            <div class="top_section_container">Hero state:
+                                <div class="top_section_label" id="characterState"></div>
+                            </div>
+                            <div class="top_section_container">Status:
+                                <div class="top_section_label" id="characterOperationStatus"></div>
+                            </div>
                         </div>
-                        <div class="top_section_container">Status:
-                            <div class="top_section_label" id="characterOperationStatus"></div>
+                        <div class="top_section_row_container">
+                            <div class="top_section_container">Localization:
+                                <div class="top_section_label" id="characterLocalization"></div> 
+                            </div>
+                            <div class="top_section_container">Other:
+                                <div class="top_section_label">Null</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="top_section_row_container">
-                        <div class="top_section_container">Localization:
-                            <div class="top_section_label" id="characterLocalization"></div> 
-                        </div>
-                        <div class="top_section_container">Other:
-                            <div class="top_section_label">Null</div>
+                    <div class="middle_section">
+                        <div class="middle_section_main_container">
+                            <div class="middle_section_upper_label_img"></div>
+                            <div class="middle_section_column_container">
+                                <div class="middle_section_menu_container">
+                                    <div class="menu_container">
+                                        <div class="menu_name_label_container">Menu</div>
+                                        <div class="menu_options_container">
+                                            <div class="menu_option_label_container">Character</div>
+                                            <div class="menu_option_label_container">Inventory</div>
+                                            <div class="menu_option_label_container">Skills</div>
+                                            <div class="menu_option_label_container">Materials</div>
+                                            <div class="menu_option_label_container">Cooking</div>
+                                            <div class="menu_option_label_container">Rafinery</div>
+                                            <div class="menu_option_label_container">Sets</div>
+                                            <div class="menu_option_label_container">Monsters</div>
+                                            <div class="menu_option_label_container">Map</div>
+                                            <div class="menu_option_label_container">Quest</div>
+                                            <div class="logout_button_label_container" id="logoutButton">Log Out</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="middle_section_opened_menu_option_container">
+                                    <iframe id="contentIframe" src="" width="100%" height="100%" frameborder="0"></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="middle_section">
-                    <div class="middle_section_main_container">
-                        <div class="middle_section_upper_label_img"></div>
-                        <div class="middle_section_column_container">
-                            <div class="middle_section_menu_container">
-                                <div class="menu_container">
-                                    <div class="menu_name_label_container">Menu</div>
-                                    <div class="menu_options_container">
-                                        <div class="menu_option_label_container">Character</div>
-                                        <div class="menu_option_label_container">Inventory</div>
-                                        <div class="menu_option_label_container">Skills</div>
-                                        <div class="menu_option_label_container">Materials</div>
-                                        <div class="menu_option_label_container">Cooking</div>
-                                        <div class="menu_option_label_container">Rafinery</div>
-                                        <div class="menu_option_label_container">Sets</div>
-                                        <div class="menu_option_label_container">Monsters</div>
-                                        <div class="menu_option_label_container">Map</div>
-                                        <div class="menu_option_label_container">Quest</div>
-                                        <div class="logout_button_label_container" id="logoutButton">Log Out</div>
+                    <div class="bottom_section">
+                        <h2>Logs</h2>
+                    </div>
+                </section>
+                <section class="right_section">
+                    <div class="main_container_right_section_upper_section">
+                        <div class="monster_type_label">
+                            <div class="monster_type_container normal_mob" id="monster_type_label_normal">Normal</div>
+                            <div class="monster_type_container elemental_mob" id="monster_type_label_elemental">Elemental</div>
+                            <div class="monster_type_container battleground_mob" id="monster_type_label_battleground">Battleground</div>
+                            <div class="monster_type_container normal_boss" id="monster_type_label_boss">Boss</div>
+                            <div class="monster_type_container unique_boss" id="monster_type_label_boss_unique">Unique Boss</div>
+                        </div>
+                        <div class="spawn_lvl_label" id="spawnLvlLabel">
+                            <div class="spawn_lvl_change_button_left" id="spawn_lvl_change_button_left"></div>
+                            <div class="spawn_lvl_container spawn_lvl" id="spawn_lvl_left"></div>
+                            <div class="spawn_lvl_container spawn_lvl" id="spawn_lvl_center"></div>
+                            <div class="spawn_lvl_container spawn_lvl" id="spawn_lvl_right"></div>
+                            <div class="spawn_lvl_change_button_right" id="spawn_lvl_change_button_right"></div>
+                        </div>
+                        <div class="mob_battle_container">
+                            <iframe id="contentIframeMobBattle" src="" width="100%" height="100%" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="main_container_right_section_bottom_section">
+                        <div class="character_bar_section">
+                            <div class="character_life_mana_container">
+                                <div class="character_life_bar">80/80</div>
+                                <div class="character_mana_bar">40/40</div>
+                            </div>
+                            <div class="character_gui_bar_section">
+                                <div class="character_gui_bar_container">
+                                    <div class="character_gui_bar_left_section">
+
+                                    </div>
+                                    <div class="character_gui_bar_center_section">
+
+                                    </div>
+                                    <div class="character_gui_bar_right_section">
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="middle_section_opened_menu_option_container">
-                                <iframe id="contentIframe" src="" width="100%" height="100%" frameborder="0"></iframe>
-                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="bottom_section">
-                    <h2>Logs</h2>
-                </div>
-            </section>
-            <section class="right_section">
-                <div class="main_container_right_section_upper_section">
-                    <div class="monster_type_label">
-                        <div class="monster_type_container normal_mob" id="monster_type_label_normal">Normal</div>
-                        <div class="monster_type_container elemental_mob" id="monster_type_label_elemental">Elemental</div>
-                        <div class="monster_type_container battleground_mob" id="monster_type_label_battleground">Battleground</div>
-                        <div class="monster_type_container normal_boss" id="monster_type_label_boss">Boss</div>
-                        <div class="monster_type_container unique_boss" id="monster_type_label_boss_unique">Unique Boss</div>
-                    </div>
-                    <div class="spawn_lvl_label" id="spawnLvlLabel">
-                        <div class="spawn_lvl_change_button_left" id="spawn_lvl_change_button_left"></div>
-                        <div class="spawn_lvl_container spawn_lvl" id="spawn_lvl_left"></div>
-                        <div class="spawn_lvl_container spawn_lvl" id="spawn_lvl_center"></div>
-                        <div class="spawn_lvl_container spawn_lvl" id="spawn_lvl_right"></div>
-                        <div class="spawn_lvl_change_button_right" id="spawn_lvl_change_button_right"></div>
-                    </div>
-                    <div class="mob_battle_container">
-                        <iframe id="contentIframeMobBattle" src="" width="100%" height="100%" frameborder="0"></iframe>
-                    </div>
-                </div>
-                <div class="main_container_right_section_bottom_section">
-                    <div class="character_bar_section">
-                        <div class="character_life_mana_container">
-                            <div class="character_life_bar">80/80</div>
-                            <div class="character_mana_bar">40/40</div>
-                        </div>
-                        <div class="character_gui_bar_section">
-                            <div class="character_gui_bar_container">
-                                <div class="character_gui_bar_left_section">
+                </section>
+            </div>
+            <div class="main_container_bottom_section">
 
-                                </div>
-                                <div class="character_gui_bar_center_section">
-
-                                </div>
-                                <div class="character_gui_bar_right_section">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
     </main>
 </body>

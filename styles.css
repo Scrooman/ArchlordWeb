@@ -20,9 +20,26 @@ header {
 .main_container {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     margin: 20px 0;
     width: 1800px;
 }
+
+.main_container_top_section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 1800px;
+}
+
+.main_container_bottom_section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 1800px;
+    height: 300px;
+}
+
 
 /* dwie główne sekcje ekranu */
 .main_container .left_section {
