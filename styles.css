@@ -524,7 +524,7 @@ header {
 }
 
 .character_gui_bar_right_section {
-    width: 225px;
+    width: 185px;
     height: 75px;
     display: flex;
     flex-direction: row;
@@ -553,7 +553,7 @@ header {
     background-image: url('images/button.png'); 
     background-size: 100% 100%;
     margin-left: 35px;
-    margin-bottom:5 px;
+    margin-bottom: 5px;
     margin-top: 2px;
 }
 
