@@ -40,7 +40,7 @@ header {
 .main_container .right_section {
     margin: 5px;
     width: 900px;
-    height: 1200px;
+    height: 1300px;
     background-color: rgba(15, 18, 26, 0.8);
     border: 1px solid #a7a7a7;
     outline: 2px solid #000000;
@@ -54,7 +54,7 @@ header {
 
 .main_container_right_section_upper_section {
     width: 900px;
-    height: 900px;
+    height: 1125px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
