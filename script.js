@@ -554,10 +554,25 @@ function fetchActivePotions() {
     })
     .then(data => {
         console.log('Active potions:', data);
+
+        // Display the life potion image in the life_potion_slot element
+        const lifePotionSlot = document.getElementById("life_potion_slot");
+        if (data.image_source) {
+            const imgElement = document.createElement("img");
+            imgElement.src = data.image_source;
+            imgElement.alt = "Life Potion";
+            imgElement.style.width = "100%"; // Adjust size as needed
+            imgElement.style.height = "100%"; // Adjust size as needed
+            lifePotionSlot.innerHTML = ""; // Clear any existing content
+            lifePotionSlot.appendChild(imgElement);
+        }
     })
     .catch(error => console.error('Error fetching active potions:', error));
 }
 
 fetchActivePotions();
+
+
+
 
 });
