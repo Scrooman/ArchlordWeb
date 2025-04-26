@@ -536,4 +536,28 @@ function displayMobSpawnIFrame() {
     }
 }
 
+function fetchActivePotions() {
+    const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
+
+    fetch('http://127.0.0.1:5000/get_active_potions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ characterId })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Active potions:', data);
+    })
+    .catch(error => console.error('Error fetching active potions:', error));
+}
+
+fetchActivePotions();
+
 });
