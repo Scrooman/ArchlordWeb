@@ -582,9 +582,9 @@ fetchActivePotions();
 
 const customSlider = document.getElementById('customSlider');
 
-customSlider.addEventListener('input', (event) => {
+customSlider.addEventListener('change', (event) => {
     const value = event.target.value;
-    console.log(`Slider value: ${value}%`);
+    console.log(`Slider value after release: ${value}%`);
 });
 
 });
