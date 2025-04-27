@@ -596,6 +596,18 @@ header {
     font-size: 12px;
 }
 
+
+.stacked-amount {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5); /* Opcjonalne, można odkomentować */
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
 .character_gui_bar_left_section_potions_mana_potion {
     width: 55px;
     height: 55px;

@@ -566,7 +566,7 @@ function fetchActivePotions() {
 
             const stackedAmountElement = document.createElement("div");
             stackedAmountElement.textContent = `${data.stackedAmount || 0}`;
-            //stackedAmountElement.classList.add("stacked-amount");
+            stackedAmountElement.classList.add("stacked-amount");
 
             lifePotionSlot.innerHTML = ""; // Clear any existing content
             lifePotionSlot.style.position = "relative"; // Ensure the container is positioned
