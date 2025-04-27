@@ -587,6 +587,13 @@ header {
     margin-left: 5px;
     background-image: url("images/inventory_slot.png");
     background-size: 100% 100%;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
 }
 
 .character_gui_bar_left_section_potions_mana_potion {
