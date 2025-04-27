@@ -580,6 +580,39 @@ function fetchActivePotions() {
 fetchActivePotions();
 
 
+function fetchPotionThresholds() {
+    const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
+
+    fetch('http://127.0.0.1:5000/get_potion_thresholds', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ characterId })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.lifePotionThreshold !== undefined && data.manaPotionThreshold !== undefined) {
+            localStorage.setItem("lifePotionThreshold", data.lifePotionThreshold);
+            localStorage.setItem("manaPotionThreshold", data.manaPotionThreshold);
+            console.log('Potion thresholds saved:', data);
+        } else {
+            console.error('Invalid thresholds data received:', data);
+        }
+    })
+    .catch(error => console.error('Error fetching potion thresholds:', error));
+}
+
+fetchPotionThresholds();
+
+
+
+
 const lifePotionActivationSliderThreshold = document.getElementById('lifePotionActivationSliderThreshold');
 
 lifePotionActivationSliderThreshold.addEventListener('change', (event) => {
