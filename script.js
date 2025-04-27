@@ -580,6 +580,11 @@ function fetchActivePotions() {
 fetchActivePotions();
 
 
+const customSlider = document.getElementById('customSlider');
 
+customSlider.addEventListener('input', (event) => {
+    const value = event.target.value;
+    console.log(`Slider value: ${value}%`);
+});
 
 });
