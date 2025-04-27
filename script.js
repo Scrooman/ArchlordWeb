@@ -580,9 +580,9 @@ function fetchActivePotions() {
 fetchActivePotions();
 
 
-const customSlider = document.getElementById('customSlider');
+const lifePotionActivationSliderThreshold = document.getElementById('lifePotionActivationSliderThreshold');
 
-customSlider.addEventListener('change', (event) => {
+lifePotionActivationSliderThreshold.addEventListener('change', (event) => {
     const value = event.target.value;
     console.log(`Slider value after release: ${value}%`);
 });

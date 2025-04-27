@@ -480,7 +480,7 @@ header {
     justify-content: center;
 }
 
-#customSlider {
+#lifePotionActivationSliderThreshold {
     -webkit-appearance: none; /* Usuwa domyślny styl suwaka */
     appearance: none;
     width: 100%; /* Suwak zajmuje całą szerokość kontenera */
@@ -490,7 +490,7 @@ header {
 }
 
 /* Styl uchwytu suwaka */
-#customSlider::-webkit-slider-thumb {
+#lifePotionActivationSliderThreshold::-webkit-slider-thumb {
     -webkit-appearance: none; /* Usuwa domyślny styl uchwytu */
     appearance: none;
     width: 20px; /* Szerokość uchwytu */
@@ -501,7 +501,7 @@ header {
     border: none; /* Usunięcie obramowania */
 }
 
-#customSlider::-moz-range-thumb {
+#lifePotionActivationSliderThreshold::-moz-range-thumb {
     width: 20px;
     height: 20px;
     background: url('images/custom_slider_icon.png') no-repeat center center;
@@ -510,7 +510,7 @@ header {
     border: none;
 }
 
-#customSlider::-ms-thumb {
+#lifePotionActivationSliderThreshold::-ms-thumb {
     width: 20px;
     height: 20px;
     background: url('images/custom_slider_icon.png') no-repeat center center;
