@@ -471,6 +471,54 @@ header {
     flex-wrap: wrap;
 }
 
+
+.custom-slider-container {
+    width: 100%; /* Suwak zajmuje całą szerokość elementu */
+    height: 100%; /* Suwak zajmuje całą wysokość elementu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#customSlider {
+    -webkit-appearance: none; /* Usuwa domyślny styl suwaka */
+    appearance: none;
+    width: 100%; /* Suwak zajmuje całą szerokość kontenera */
+    height: 100%; /* Suwak zajmuje całą wysokość kontenera */
+    background: transparent; /* Tło suwaka jest niewidoczne */
+    cursor: pointer;
+}
+
+/* Styl uchwytu suwaka */
+#customSlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Usuwa domyślny styl uchwytu */
+    appearance: none;
+    width: 20px; /* Szerokość uchwytu */
+    height: 20px; /* Wysokość uchwytu */
+    background: url('images/custom_slider_icon.png') no-repeat center center; /* Ikona uchwytu */
+    background-size: contain; /* Dopasowanie rozmiaru ikony */
+    cursor: pointer;
+    border: none; /* Usunięcie obramowania */
+}
+
+#customSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: url('images/custom_slider_icon.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+}
+
+#customSlider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: url('images/custom_slider_icon.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+}
+
 .character_mana_bar {
     width: 745px;
     height: 20px;
@@ -587,13 +635,7 @@ header {
     margin-left: 5px;
     background-image: url("images/inventory_slot.png");
     background-size: 100% 100%;
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 12px;
+
 }
 
 
