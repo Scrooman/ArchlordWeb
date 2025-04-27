@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "login.html";
     });
     
+
+    
+
     // funkcje aktualizowania danych na stronie
 
     function updateData(endpoint, fields) {
@@ -601,6 +604,15 @@ function fetchPotionThresholds() {
             localStorage.setItem("lifePotionThreshold", data.lifePotionThreshold);
             localStorage.setItem("manaPotionThreshold", data.manaPotionThreshold);
             console.log('Potion thresholds saved:', data);
+            // Jeśli wartość istnieje, ustaw pozycję suwaka
+            const lifePotionActivationSliderThreshold = document.getElementById('lifePotionActivationSliderThreshold');
+
+            const savedLifePotionThreshold = localStorage.getItem("lifePotionThreshold");
+
+            if (savedLifePotionThreshold !== null) {
+                lifePotionActivationSliderThreshold.value = savedLifePotionThreshold;
+                console.log(`Slider initialized to saved value: ${savedLifePotionThreshold}%`);
+}
         } else {
             console.error('Invalid thresholds data received:', data);
         }
@@ -612,11 +624,13 @@ fetchPotionThresholds();
 
 
 
-
+// suwak do aktywacji potki życia
 const lifePotionActivationSliderThreshold = document.getElementById('lifePotionActivationSliderThreshold');
 
 lifePotionActivationSliderThreshold.addEventListener('change', (event) => {
     const value = event.target.value;
+    // zapisz wartość do localStorage po zmianie na GUI
+    localStorage.setItem("lifePotionThreshold", value);
     console.log(`Slider value after release: ${value}%`);
 });
 
