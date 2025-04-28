@@ -713,6 +713,12 @@ header {
 }
 
 
+.pointsLabel {
+    color: #ffffff;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
 
 footer {
     background-color: #f8f9fa;
