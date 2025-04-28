@@ -536,7 +536,7 @@ header {
     appearance: none;
     width: 20px; /* Szerokość uchwytu */
     height: 20px; /* Wysokość uchwytu */
-    background: url('images/custom_slider_icon.png') no-repeat center center; /* Ikona uchwytu */
+    background: url('images/custom_mana_slider_icon.png') no-repeat center center; /* Ikona uchwytu */
     background-size: contain; /* Dopasowanie rozmiaru ikony */
     cursor: pointer;
     border: none; /* Usunięcie obramowania */
@@ -545,7 +545,7 @@ header {
 #manaPotionActivationSliderThreshold::-moz-range-thumb {
     width: 20px;
     height: 20px;
-    background: url('images/custom_slider_icon.png') no-repeat center center;
+    background: url('images/custom_mana_slider_icon.png') no-repeat center center;
     background-size: contain;
     cursor: pointer;
     border: none;
@@ -554,7 +554,7 @@ header {
 #manaPotionActivationSliderThreshold::-ms-thumb {
     width: 20px;
     height: 20px;
-    background: url('images/custom_slider_icon.png') no-repeat center center;
+    background: url('images/custom_mana_slider_icon.png') no-repeat center center;
     background-size: contain;
     cursor: pointer;
     border: none;
