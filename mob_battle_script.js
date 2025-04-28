@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Odbieranie aktualizacji walki
         socket.on('fight_update', (data) => {
             console.log('Fight update:', data);
+            localStorage.setItem('currentCharacterHp', data.character_hp); // Zapisz aktualne HP postaci w localStorage
+            localStorage.setItem('currentMobHp', data.mob_hp); // Zapisz aktualne HP bossa w localStorage
+            localStorage.setItem('characterMaxHp', data.character_max_hp); // Zapisz maksymalne HP postaci w localStorage
+            updateLifeBar(data.character_hp, data.character_max_hp); // Aktualizuj pasek życia
             updateFightUI(data); // Aktualizuj UI
         });
 
@@ -67,6 +71,24 @@ document.addEventListener('DOMContentLoaded', function () {
             mobImgAndMinimapContainer.removeChild(damageElement);
             console.log('Removed damage element from mobImgAndMinimapContainer'); // Log removal
             }, 2000);
+        }
+    }
+
+
+    function updateLifeBar(currentHp, maxHp) {
+        const currentHpElement = document.getElementById('currentHpOnLifeBar');
+        const maxHpElement = document.getElementById('maxHpOnLifeBar');
+
+        if (currentHpElement) {
+            currentHpElement.textContent = currentHp;
+        } else {
+            console.error('Error: Element with ID "currentHpOnLifeBar" not found.');
+        }
+
+        if (maxHpElement) {
+            maxHpElement.textContent = maxHp;
+        } else {
+            console.error('Error: Element with ID "maxHpOnLifeBar" not found.');
         }
     }
 
