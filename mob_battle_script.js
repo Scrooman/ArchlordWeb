@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicjalizacja WebSocket
     const socket = io('http://127.0.0.1:5000'); // Adres serwera WebSocket
 
+    window.sharedSocket = socket; // Udostępnij socket w globalnym zakresie
+
     // Pobierz character_id z localStorage
     const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
     if (characterId) {
@@ -15,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('currentCharacterHp', data.character_hp); // Zapisz aktualne HP postaci w localStorage
             localStorage.setItem('currentMobHp', data.mob_hp); // Zapisz aktualne HP bossa w localStorage
             localStorage.setItem('characterMaxHp', data.character_max_hp); // Zapisz maksymalne HP postaci w localStorage
-            updateLifeBar(data.character_hp, data.character_max_hp); // Aktualizuj pasek życia
             updateFightUI(data); // Aktualizuj UI
         });
 
@@ -74,28 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    console.log('currentHpElement:', currentHpElement); // Sprawdź, czy element istnieje
-    console.log('maxHpElement:', maxHpElement); // Sprawdź, czy element istnieje
 
-    function updateLifeBar(currentHp, maxHp) {
-        const currentHpElement = document.getElementById('currentHpOnLifeBar');
-        const maxHpElement = document.getElementById('maxHpOnLifeBar');
 
-        console.log('currentHpElement:', currentHpElement); // Sprawdź, czy element istnieje
-        console.log('maxHpElement:', maxHpElement); // Sprawdź, czy element istnieje
-
-        if (currentHpElement) {
-            currentHpElement.textContent = currentHp;
-        } else {
-            console.error('Error: Element with ID "currentHpOnLifeBar" not found.');
-        }
-
-        if (maxHpElement) {
-            maxHpElement.textContent = maxHp;
-        } else {
-            console.error('Error: Element with ID "maxHpOnLifeBar" not found.');
-        }
-    }
 
 
     // Function to update data on the page
