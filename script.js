@@ -640,6 +640,7 @@ lifePotionActivationSliderThreshold.addEventListener('change', (event) => {
     // zapisz wartość do localStorage po zmianie na GUI
     localStorage.setItem("lifePotionThreshold", value);
     console.log(`Slider value after release for HP: ${value}%`);
+    updatePotionThresholds(logedInCharacterId, lifePotionThreshold, manaPotionThreshold);
 });
 
 
@@ -651,6 +652,36 @@ manaPotionActivationSliderThreshold.addEventListener('change', (event) => {
     // zapisz wartość do localStorage po zmianie na GUI
     localStorage.setItem("manaPotionThreshold", value);
     console.log(`Slider value after release fo mana: ${value}%`);
+    updatePotionThresholds(logedInCharacterId, lifePotionThreshold, manaPotionThreshold);
 });
+
+function updatePotionThresholds(logedInCharacterId, lifePotionThreshold, manaPotionThreshold) {
+    const url = "http://127.0.0.1:5000/update_potion_threshold";
+    const payload = {
+        characterId: logedInCharacterId,
+        newPotionActivatingThreshold: {
+            lifePotionThreshold: lifePotionThreshold,
+            manaPotionThreshold: manaPotionThreshold
+        }
+    };
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Potion thresholds updated successfully:", data);
+    })
+    .catch(error => console.error("Error updating potion thresholds:", error));
+}
 
 });
