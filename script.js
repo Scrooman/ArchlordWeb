@@ -606,13 +606,21 @@ function fetchPotionThresholds() {
             console.log('Potion thresholds saved:', data);
             // Jeśli wartość istnieje, ustaw pozycję suwaka
             const lifePotionActivationSliderThreshold = document.getElementById('lifePotionActivationSliderThreshold');
+            const manaPotionActivationSliderThreshold = document.getElementById('manaPotionActivationSliderThreshold');
 
             const savedLifePotionThreshold = localStorage.getItem("lifePotionThreshold");
-
+            const savedManaPotionThreshold = localStorage.getItem("manaPotionThreshold");
+            
             if (savedLifePotionThreshold !== null) {
                 lifePotionActivationSliderThreshold.value = savedLifePotionThreshold;
-                console.log(`Slider initialized to saved value: ${savedLifePotionThreshold}%`);
-}
+                console.log(`Life slider initialized to saved value: ${savedLifePotionThreshold}%`);
+            }
+
+            if (savedManaPotionThreshold !== null) {
+                manaPotionActivationSliderThreshold.value = savedManaPotionThreshold;
+                console.log(`Mana slider initialized to saved value: ${savedManaPotionThreshold}%`);
+            }
+
         } else {
             console.error('Invalid thresholds data received:', data);
         }
@@ -631,7 +639,18 @@ lifePotionActivationSliderThreshold.addEventListener('change', (event) => {
     const value = event.target.value;
     // zapisz wartość do localStorage po zmianie na GUI
     localStorage.setItem("lifePotionThreshold", value);
-    console.log(`Slider value after release: ${value}%`);
+    console.log(`Slider value after release for HP: ${value}%`);
+});
+
+
+// suwak do aktywacji potki many
+const manaPotionActivationSliderThreshold = document.getElementById('manaPotionActivationSliderThreshold');
+
+manaPotionActivationSliderThreshold.addEventListener('change', (event) => {
+    const value = event.target.value;
+    // zapisz wartość do localStorage po zmianie na GUI
+    localStorage.setItem("manaPotionThreshold", value);
+    console.log(`Slider value after release fo mana: ${value}%`);
 });
 
 });
