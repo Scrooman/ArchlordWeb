@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function updateLifeBar(currentHp, maxHp) {
-        const currentHpElement = document.querySelector('#currentHpOnLifeBar');
-        const maxHpElement = document.querySelector('#maxHpOnLifeBar');
+        const currentHpElement = document.getElementById('currentHpOnLifeBar');
+        const maxHpElement = document.getElementById('maxHpOnLifeBar');
 
         if (currentHpElement) {
             currentHpElement.textContent = currentHp;
