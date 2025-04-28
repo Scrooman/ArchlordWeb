@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    console.log('currentHpElement:', currentHpElement); // Sprawdź, czy element istnieje
+    console.log('maxHpElement:', maxHpElement); // Sprawdź, czy element istnieje
 
     function updateLifeBar(currentHp, maxHp) {
         const currentHpElement = document.getElementById('currentHpOnLifeBar');
