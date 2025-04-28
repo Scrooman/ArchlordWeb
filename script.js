@@ -640,7 +640,9 @@ lifePotionActivationSliderThreshold.addEventListener('change', (event) => {
     // zapisz wartość do localStorage po zmianie na GUI
     localStorage.setItem("lifePotionThreshold", value);
     console.log(`Slider value after release for HP: ${value}%`);
-    updatePotionThresholds(logedInCharacterId, lifePotionThreshold, manaPotionThreshold);
+    newLifePotionThreshold = localStorage.getItem("lifePotionThreshold");
+    newManaPotionThreshold = localStorage.getItem("manaPotionThreshold");
+    updatePotionThresholds(logedInCharacterId, newLifePotionThreshold, newManaPotionThreshold);
 });
 
 
@@ -652,10 +654,12 @@ manaPotionActivationSliderThreshold.addEventListener('change', (event) => {
     // zapisz wartość do localStorage po zmianie na GUI
     localStorage.setItem("manaPotionThreshold", value);
     console.log(`Slider value after release fo mana: ${value}%`);
-    updatePotionThresholds(logedInCharacterId, lifePotionThreshold, manaPotionThreshold);
+    newLifePotionThreshold = localStorage.getItem("lifePotionThreshold");
+    newManaPotionThreshold = localStorage.getItem("manaPotionThreshold");
+    updatePotionThresholds(logedInCharacterId, newLifePotionThreshold, newManaPotionThreshold);
 });
 
-function updatePotionThresholds(logedInCharacterId, lifePotionThreshold, manaPotionThreshold) {
+function updatePotionThresholds(logedInCharacterId, newLifePotionThreshold, newManaPotionThreshold) {
     const url = "http://127.0.0.1:5000/update_potion_threshold";
     const payload = {
         characterId: logedInCharacterId,
