@@ -480,6 +480,7 @@ header {
     justify-content: center;
 }
 
+/*style dla paska dla potek hp */
 #lifePotionActivationSliderThreshold {
     -webkit-appearance: none; /* Usuwa domyślny styl suwaka */
     appearance: none;
@@ -511,6 +512,46 @@ header {
 }
 
 #lifePotionActivationSliderThreshold::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: url('images/custom_slider_icon.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+}
+
+/*style dla paska dla potek many */
+#manaPotionActivationSliderThreshold {
+    -webkit-appearance: none; /* Usuwa domyślny styl suwaka */
+    appearance: none;
+    width: 100%; /* Suwak zajmuje całą szerokość kontenera */
+    height: 100%; /* Suwak zajmuje całą wysokość kontenera */
+    background: transparent; /* Tło suwaka jest niewidoczne */
+    cursor: pointer;
+}
+
+/* Styl uchwytu suwaka */
+#manaPotionActivationSliderThreshold::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Usuwa domyślny styl uchwytu */
+    appearance: none;
+    width: 20px; /* Szerokość uchwytu */
+    height: 20px; /* Wysokość uchwytu */
+    background: url('images/custom_slider_icon.png') no-repeat center center; /* Ikona uchwytu */
+    background-size: contain; /* Dopasowanie rozmiaru ikony */
+    cursor: pointer;
+    border: none; /* Usunięcie obramowania */
+}
+
+#manaPotionActivationSliderThreshold::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: url('images/custom_slider_icon.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+}
+
+#manaPotionActivationSliderThreshold::-ms-thumb {
     width: 20px;
     height: 20px;
     background: url('images/custom_slider_icon.png') no-repeat center center;
