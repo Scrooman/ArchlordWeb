@@ -660,12 +660,14 @@ manaPotionActivationSliderThreshold.addEventListener('change', (event) => {
 });
 
 function updatePotionThresholds(logedInCharacterId, newLifePotionThreshold, newManaPotionThreshold) {
+    newLifePotionThreshold = localStorage.getItem("lifePotionThreshold");
+    newManaPotionThreshold = localStorage.getItem("manaPotionThreshold");
     const url = "http://127.0.0.1:5000/update_potion_threshold";
     const payload = {
         characterId: logedInCharacterId,
         newPotionActivatingThreshold: {
-            lifePotionThreshold: lifePotionThreshold,
-            manaPotionThreshold: manaPotionThreshold
+            lifePotionThreshold: newLifePotionThreshold,
+            manaPotionThreshold: newManaPotionThreshold
         }
     };
 
