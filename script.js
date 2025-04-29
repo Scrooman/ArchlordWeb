@@ -22,37 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Przekieruj na login.html
         window.location.href = "login.html";
     });
-    
 
-    // funckja aktualizacja pask życia w LIFEBAR
-    if (window.sharedSocket) {
-        // Odbieranie aktualizacji walki
-        window.sharedSocket.on('fight_update', (data) => {
-            console.log('Fight update received in script.js:', data);
-    
-            // Aktualizacja paska życia
-            const currentHp = data.character_hp;
-            const maxHp = data.character_max_hp;
-    
-            const currentHpElement = document.getElementById('currentHpOnLifeBar');
-            const maxHpElement = document.getElementById('maxHpOnLifeBar');
-    
-            if (currentHpElement) {
-                currentHpElement.textContent = currentHp; // Ustaw aktualne HP
-            } else {
-                console.error('Element #currentHpOnLifeBar not found.');
-            }
-    
-            if (maxHpElement) {
-                maxHpElement.textContent = maxHp; // Ustaw maksymalne HP
-            } else {
-                console.error('Element #maxHpOnLifeBar not found.');
-            }
-    
-        });
-    } else {
-        console.error('WebSocket connection not initialized.');
-    }
 
     
 

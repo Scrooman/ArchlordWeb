@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const socket = io('http://127.0.0.1:5000'); // Adres serwera WebSocket
 
-    window.sharedSocket = socket; // Udostępnij socket w globalnym zakresie
 
     // Pobierz character_id z localStorage
     const characterId = parseInt(localStorage.getItem("logedInCharacterId"), 10);
