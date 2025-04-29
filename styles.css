@@ -502,6 +502,20 @@ header {
     border: none; /* Usunięcie obramowania */
 }
 
+.slider-values {
+    position: absolute;
+    top: 100%; /* Wyświetl wartości pod suwakiem */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Odstęp między wartościami */
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    z-index: 2;
+}
+
 #lifePotionActivationSliderThreshold::-moz-range-thumb {
     width: 20px;
     height: 20px;
