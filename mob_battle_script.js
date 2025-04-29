@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // Inicjalizacja WebSocket
+
+    if (typeof io === 'undefined') {
+        console.error('Socket.IO library is not loaded.');
+        return;
+    }
     const socket = io('http://127.0.0.1:5000'); // Adres serwera WebSocket
 
     window.sharedSocket = socket; // Udostępnij socket w globalnym zakresie
