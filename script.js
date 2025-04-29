@@ -23,6 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "login.html";
     });
 
+    function updateLifeBar() {
+        const currentHpElement = document.getElementById('currentHpOnLifeBar');
+        const maxHpElement = document.getElementById('maxHpOnLifeBar');
+
+        const currentHp = localStorage.getItem('currentCharacterHp');
+        const maxHp = localStorage.getItem('characterMaxHp');
+
+        if (currentHp !== null && maxHp !== null) {
+            currentHpElement.textContent = currentHp;
+            maxHpElement.textContent = maxHp;
+        } else {
+            console.error('HP data not found in localStorage.');
+        }
+    }
+
+    // Call the function to initialize the values on page load
+    updateLifeBar();
 
     
 
