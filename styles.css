@@ -504,9 +504,6 @@ header {
 
 .slider-values {
     position: absolute;
-    top: 50%; /* Wyśrodkuj wartości w pionie względem suwaka */
-    left: 50%; /* Wyśrodkuj wartości w poziomie */
-    transform: translate(-50%, -50%); /* Przesuń wartości, aby były dokładnie na środku */
     display: flex;
     justify-content: center;
     gap: 10px; /* Odstęp między wartościami */

@@ -27,18 +27,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentHpElement = document.getElementById('currentHpOnLifeBar');
         const maxHpElement = document.getElementById('maxHpOnLifeBar');
 
-        const currentHp = localStorage.getItem('currentCharacterHp');
-        const maxHp = localStorage.getItem('characterMaxHp');
+        function refreshLifeBar() {
+            const currentHp = localStorage.getItem('currentCharacterHp');
+            const maxHp = localStorage.getItem('characterMaxHp');
 
-        if (currentHp !== null && maxHp !== null) {
-            currentHpElement.textContent = currentHp;
-            maxHpElement.textContent = maxHp;
-        } else {
-            console.error('HP data not found in localStorage.');
+            if (currentHp !== null && maxHp !== null) {
+                currentHpElement.textContent = `${currentHp} /`;
+                maxHpElement.textContent = maxHp;
+            } else {
+                console.error('HP data not found in localStorage.');
+            }
         }
+
+        // Observe changes in localStorage and update the life bar
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'currentCharacterHp' || event.key === 'characterMaxHp') {
+                refreshLifeBar();
+            }
+        });
+
+        // Call the function to initialize the values on page load
+        refreshLifeBar();
     }
 
-    // Call the function to initialize the values on page load
     updateLifeBar();
 
     
