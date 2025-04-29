@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const maxHp = localStorage.getItem('characterMaxHp');
 
             if (currentHp !== null && maxHp !== null) {
-                currentHpElement.textContent = `${currentHp} /`;
+                currentHpElement.textContent = `HP ${currentHp}/`;
                 maxHpElement.textContent = maxHp;
             } else {
                 console.error('HP data not found in localStorage.');

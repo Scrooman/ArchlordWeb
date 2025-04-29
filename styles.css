@@ -506,12 +506,8 @@ header {
     position: absolute;
     display: flex;
     justify-content: center;
-    gap: 10px; /* Odstęp między wartościami */
     font-size: 14px;
-    font-weight: bold;
-    color: #fff; /* Zmień kolor na biały dla lepszej widoczności */
     z-index: 2; /* Ustaw wyższy z-index, aby wartości były nad suwakiem */
-    pointer-events: none; /* Zapobiega interakcji z wartościami */
 }
 
 #lifePotionActivationSliderThreshold::-moz-range-thumb {
