@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 elementId: 'characterState',
                 valuePath: ['characterState', 'stateId'],
-                transform: (stateId) => stateId === 1 ? 'Dead' : 'Alive'
+                transform: (stateId) => stateId === 1 ? 'Alive' : 'Dead'
             },
             {
                 elementId: 'characterLocalization',
